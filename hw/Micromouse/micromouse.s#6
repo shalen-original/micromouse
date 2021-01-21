@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -732,21 +732,21 @@ This library includes the former libraries ribcon.lbr and ribcon4.lbr.&lt;p&gt;
 <wire x1="-10" y1="2.3" x2="-10" y2="2.3" width="0.2" layer="21"/>
 <wire x1="-10" y1="2.3" x2="-9.8" y2="2.3" width="0.2" layer="21" curve="180"/>
 </package>
-<package name="CAPC2012X90N">
-<description>&lt;b&gt;C0805 (thickness 0.9mm)&lt;/b&gt;&lt;br&gt;
+<package name="CAPC1005X55N">
+<description>&lt;b&gt;C1005&lt;/b&gt;&lt;br&gt;
 </description>
-<smd name="1" x="-0.8" y="0" dx="1.47" dy="1.02" layer="1" rot="R90"/>
-<smd name="2" x="0.8" y="0" dx="1.47" dy="1.02" layer="1" rot="R90"/>
+<smd name="1" x="-0.55" y="0" dx="0.62" dy="0.42" layer="1" rot="R90"/>
+<smd name="2" x="0.55" y="0" dx="0.62" dy="0.42" layer="1" rot="R90"/>
 <text x="0" y="0" size="1.27" layer="25" align="center">&gt;NAME</text>
 <text x="0" y="0" size="1.27" layer="27" align="center">&gt;VALUE</text>
-<wire x1="-1.46" y1="0.89" x2="1.46" y2="0.89" width="0.05" layer="51"/>
-<wire x1="1.46" y1="0.89" x2="1.46" y2="-0.89" width="0.05" layer="51"/>
-<wire x1="1.46" y1="-0.89" x2="-1.46" y2="-0.89" width="0.05" layer="51"/>
-<wire x1="-1.46" y1="-0.89" x2="-1.46" y2="0.89" width="0.05" layer="51"/>
-<wire x1="-1" y1="0.625" x2="1" y2="0.625" width="0.1" layer="51"/>
-<wire x1="1" y1="0.625" x2="1" y2="-0.625" width="0.1" layer="51"/>
-<wire x1="1" y1="-0.625" x2="-1" y2="-0.625" width="0.1" layer="51"/>
-<wire x1="-1" y1="-0.625" x2="-1" y2="0.625" width="0.1" layer="51"/>
+<wire x1="-0.91" y1="0.46" x2="0.91" y2="0.46" width="0.05" layer="51"/>
+<wire x1="0.91" y1="0.46" x2="0.91" y2="-0.46" width="0.05" layer="51"/>
+<wire x1="0.91" y1="-0.46" x2="-0.91" y2="-0.46" width="0.05" layer="51"/>
+<wire x1="-0.91" y1="-0.46" x2="-0.91" y2="0.46" width="0.05" layer="51"/>
+<wire x1="-0.5" y1="0.25" x2="0.5" y2="0.25" width="0.1" layer="51"/>
+<wire x1="0.5" y1="0.25" x2="0.5" y2="-0.25" width="0.1" layer="51"/>
+<wire x1="0.5" y1="-0.25" x2="-0.5" y2="-0.25" width="0.1" layer="51"/>
+<wire x1="-0.5" y1="-0.25" x2="-0.5" y2="0.25" width="0.1" layer="51"/>
 </package>
 </packages>
 <symbols>
@@ -796,15 +796,15 @@ This library includes the former libraries ribcon.lbr and ribcon4.lbr.&lt;p&gt;
 <pin name="OUT" x="30.48" y="0" length="middle" rot="R180"/>
 <pin name="IN" x="0" y="-2.54" length="middle"/>
 </symbol>
-<symbol name="C0805C220F5GACTU">
+<symbol name="C1005C0G1H221J050BE">
 <wire x1="5.588" y1="2.54" x2="5.588" y2="-2.54" width="0.254" layer="94"/>
 <wire x1="7.112" y1="2.54" x2="7.112" y2="-2.54" width="0.254" layer="94"/>
 <wire x1="5.08" y1="0" x2="5.588" y2="0" width="0.254" layer="94"/>
 <wire x1="7.112" y1="0" x2="7.62" y2="0" width="0.254" layer="94"/>
 <text x="8.89" y="6.35" size="1.778" layer="95" align="center-left">&gt;NAME</text>
+<text x="8.89" y="3.81" size="1.778" layer="96" align="center-left">&gt;VALUE</text>
 <pin name="1" x="0" y="0" visible="pad" length="middle"/>
 <pin name="2" x="12.7" y="0" visible="pad" length="middle" rot="R180"/>
-<text x="8.89" y="2.54" size="1.778" layer="96">22p</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -899,26 +899,26 @@ Source: &lt;a href="https://www.ti.com/lit/ds/symlink/lm1117.pdf?ts=159888052940
 </device>
 </devices>
 </deviceset>
-<deviceset name="C0805C220F5GACTU" prefix="C">
-<description>&lt;b&gt;Multilayer Ceramic Capacitors MLCC - SMD/SMT 50volts 22pF 1% 0805 C0G&lt;/b&gt;&lt;p&gt;
-Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/C0805C220F5GACTU.pdf"&gt; Datasheet &lt;/a&gt;</description>
+<deviceset name="C1005C0G1H221J050BE" prefix="C">
+<description>&lt;b&gt;Multilayer Ceramic Capacitors MLCC - SMD/SMT 0402 50VDC 0.22nF 5% C0G&lt;/b&gt;&lt;p&gt;
+Source: &lt;a href="https://product.tdk.com/info/en/catalog/datasheets/mlcc_commercial_midvoltage_en.pdf"&gt; Datasheet &lt;/a&gt;</description>
 <gates>
-<gate name="G$1" symbol="C0805C220F5GACTU" x="0" y="0"/>
+<gate name="G$1" symbol="C1005C0G1H221J050BE" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="CAPC2012X90N">
+<device name="" package="CAPC1005X55N">
 <connects>
 <connect gate="G$1" pin="1" pad="1"/>
 <connect gate="G$1" pin="2" pad="2"/>
 </connects>
 <technologies>
 <technology name="">
-<attribute name="DESCRIPTION" value="Multilayer Ceramic Capacitors MLCC - SMD/SMT 50volts 22pF 1% 0805 C0G" constant="no"/>
-<attribute name="HEIGHT" value="0.9mm" constant="no"/>
-<attribute name="MANUFACTURER_NAME" value="Kemet" constant="no"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="C0805C220F5GACTU" constant="no"/>
-<attribute name="MOUSER_PART_NUMBER" value="80-C0805C220F5G" constant="no"/>
-<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/KEMET/C0805C220F5GACTU/?qs=RXK%252BYb%252BisXRjMukjg6azjA%3D%3D" constant="no"/>
+<attribute name="DESCRIPTION" value="Multilayer Ceramic Capacitors MLCC - SMD/SMT 0402 50VDC 0.22nF 5% C0G" constant="no"/>
+<attribute name="HEIGHT" value="0.55mm" constant="no"/>
+<attribute name="MANUFACTURER_NAME" value="TDK" constant="no"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="C1005C0G1H221J050BE" constant="no"/>
+<attribute name="MOUSER_PART_NUMBER" value="810-C1005C0G1H221J05" constant="no"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/TDK/C1005C0G1H221J050BE/?qs=P1JMDcb91o7Xvwq58YU8UA%3D%3D" constant="no"/>
 </technology>
 </technologies>
 </device>
@@ -3804,8 +3804,8 @@ Source: http://www.osram.convergy.de/</description>
 <part name="C5" library="micromouse" deviceset="CPOL_0805" device="" value="100u"/>
 <part name="SUPPLY5" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="+9V" device=""/>
 <part name="SUPPLY6" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="C6" library="SamacSys_Parts" deviceset="C0805C220F5GACTU" device=""/>
-<part name="C7" library="SamacSys_Parts" deviceset="C0805C220F5GACTU" device=""/>
+<part name="C6" library="SamacSys_Parts" deviceset="C1005C0G1H221J050BE" device=""/>
+<part name="C7" library="SamacSys_Parts" deviceset="C1005C0G1H221J050BE" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -3853,7 +3853,7 @@ close to uC pin.</text>
 </instance>
 <instance part="Y1" gate="G$1" x="157.48" y="10.16" smashed="yes" rot="R90">
 <attribute name="NAME" x="155.191540625" y="8.12306875" size="1.77991875" layer="95" rot="R180"/>
-<attribute name="VALUE" x="163.32733125" y="17.26696875" size="1.016" layer="96" rot="R180"/>
+<attribute name="VALUE" x="167.13733125" y="18.53696875" size="1.78006875" layer="96" rot="R180"/>
 </instance>
 <instance part="SENSOR1" gate="G$1" x="-73.66" y="27.94" smashed="yes">
 <attribute name="NAME" x="-77.216" y="34.036" size="1.27" layer="95"/>
@@ -3935,14 +3935,16 @@ close to uC pin.</text>
 <instance part="SUPPLY5" gate="G$1" x="20.32" y="121.92" smashed="yes">
 <attribute name="VALUE" x="18.415" y="125.095" size="1.778" layer="96"/>
 </instance>
-<instance part="SUPPLY6" gate="GND" x="187.96" y="10.16" smashed="yes" rot="R90">
-<attribute name="VALUE" x="191.135" y="8.255" size="1.778" layer="96" rot="R90"/>
+<instance part="SUPPLY6" gate="GND" x="190.5" y="10.16" smashed="yes" rot="R90">
+<attribute name="VALUE" x="193.675" y="8.255" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="C6" gate="G$1" x="170.18" y="15.24" smashed="yes">
-<attribute name="NAME" x="170.18" y="13.97" size="1.778" layer="95" align="center-left"/>
+<attribute name="NAME" x="171.45" y="19.05" size="1.778" layer="95" align="center-left"/>
+<attribute name="VALUE" x="171.45" y="11.43" size="0.8128" layer="96" align="center-left"/>
 </instance>
 <instance part="C7" gate="G$1" x="170.18" y="5.08" smashed="yes">
-<attribute name="NAME" x="170.18" y="3.81" size="1.778" layer="95" align="center-left"/>
+<attribute name="NAME" x="171.45" y="8.89" size="1.778" layer="95" align="center-left"/>
+<attribute name="VALUE" x="171.45" y="1.27" size="0.8128" layer="96" align="center-left"/>
 </instance>
 </instances>
 <busses>
@@ -4006,14 +4008,14 @@ close to uC pin.</text>
 <wire x1="129.54" y1="5.08" x2="129.54" y2="-5.08" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<wire x1="182.88" y1="5.08" x2="185.42" y2="5.08" width="0.1524" layer="91"/>
 <pinref part="SUPPLY6" gate="GND" pin="GND"/>
-<wire x1="185.42" y1="5.08" x2="185.42" y2="10.16" width="0.1524" layer="91"/>
-<wire x1="185.42" y1="10.16" x2="185.42" y2="15.24" width="0.1524" layer="91"/>
-<junction x="185.42" y="10.16"/>
-<wire x1="185.42" y1="15.24" x2="182.88" y2="15.24" width="0.1524" layer="91"/>
+<wire x1="187.96" y1="5.08" x2="187.96" y2="10.16" width="0.1524" layer="91"/>
+<wire x1="187.96" y1="10.16" x2="187.96" y2="15.24" width="0.1524" layer="91"/>
+<junction x="187.96" y="10.16"/>
 <pinref part="C6" gate="G$1" pin="2"/>
+<wire x1="187.96" y1="15.24" x2="182.88" y2="15.24" width="0.1524" layer="91"/>
 <pinref part="C7" gate="G$1" pin="2"/>
+<wire x1="187.96" y1="5.08" x2="182.88" y2="5.08" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="+9V" class="0">
