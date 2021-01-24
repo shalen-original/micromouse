@@ -4,12 +4,8 @@
 #include "PWMfunction.h"
 #include <stdio.h>
 #include <string.h>
+#include "utils.h"
 
-typedef enum
-{
-    FALSE=0,
-    TRUE
-} BOOL;
 
 BOOL isCmdBuffering = FALSE;
 //unsigned int commandDataBufferSize = 100;

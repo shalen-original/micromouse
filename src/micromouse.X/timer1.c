@@ -60,6 +60,10 @@ void __attribute__((__interrupt__, auto_psv)) _T1Interrupt(void)
    
    sprintf(sendData, "%f, %d, %d \n", (double) time, TEST_SENSOR, IO_1);
    //putsUART1(sendData);
+   
+   // TODO:
+   // READ IN SENSOR DATA (over dma)
+   // Send to robot controller
   
    if (count >= maxCycleCount)
    {

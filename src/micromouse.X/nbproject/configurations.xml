@@ -11,6 +11,9 @@
       <itemPath>serialComms.h</itemPath>
       <itemPath>dma.h</itemPath>
       <itemPath>adc.h</itemPath>
+      <itemPath>robotControl.h</itemPath>
+      <itemPath>maze.h</itemPath>
+      <itemPath>utils.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -27,6 +30,8 @@
       <itemPath>serialComms.c</itemPath>
       <itemPath>dma.c</itemPath>
       <itemPath>adc.c</itemPath>
+      <itemPath>robotControl.c</itemPath>
+      <itemPath>maze.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

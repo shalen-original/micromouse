@@ -4,7 +4,7 @@
 
 #include <xc.h>
 
-// CHANGE THIS
+// CHANGE THIS (3 sensors, front and sides)
 #define IO_1 adcData[0] //AN0
 #define TEST_SENSOR adcData[1]  //AN5
 
