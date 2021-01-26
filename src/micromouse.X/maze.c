@@ -106,6 +106,16 @@ cell* getCellAt(position pos)
     return &maze[pos.x][pos.y];
 }
 
+BOOL isMazeWallAt(position pos, dir direction)
+{
+    if (((*getCellAt(pos)).wall & direction) == 1) 
+    {
+        return TRUE;
+    } else {
+        return FALSE;
+    }
+}
+
 void floodFillAlgorithm(position startPos, position goalPos)
 {
     return; // TODO

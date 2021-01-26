@@ -45,6 +45,9 @@
 #include "serialComms.h"
 #include "dma.h"
 #include "adc.h"
+#include "utils.h"
+#include "maze.h"
+#include "robotControl.h"
 
 /// Defines----------------------------
 #define SEVEN_MEG_OSC 1//set to 1 if we use slow (7.3728 MHz) oscillator and not 16 MHz
@@ -107,8 +110,14 @@ int main()
     initADC1();
     startADC1();
     
+    initMaze(16, 16);
+    initRobot();
+    
     initTimer1(100); //creates a 100ms timer interrupt
     startTimer1();
+    
+    initTimer2(10); //creates a 10ms timer interrupt (for reading encoder value)
+    startTimer2();
     
     // RUN_TIME LOOP --------------------------------
     while(1)
