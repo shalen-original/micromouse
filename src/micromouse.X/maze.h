@@ -11,6 +11,7 @@ typedef struct { // cell struct
     BOOL visited;
     uint8_t wall; // 8 bit integer, we need only 4 bits
 } cell;
+
 // setups maze with border walls
 void initMaze(int width, int height);
 // gets cell at target maze position
@@ -22,6 +23,8 @@ cell* getNeighborCellInDir(position pos, dir direction);
 void addMazeWall(position pos, dir direction);
 // same for removal
 void removeMazeWall(position pos, dir direction);
+// checks if wall at specified pos and dir exists
+BOOL isMazeWallAt(position pos, dir direction);
 
 // NOT YET IMPLEMENTED, path algorithm to find fastest route from start to goal (a* maybe better?)
 void floodFillAlgorithm(position startPos, position goalPos);

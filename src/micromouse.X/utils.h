@@ -4,6 +4,7 @@
 #define	UTILS_H
 
 #include <xc.h> // include processor files - each processor file is guarded.  
+#include "position.h"
 
 // This is just a dummy / temporary file
 typedef enum // for booleans
@@ -11,11 +12,6 @@ typedef enum // for booleans
     FALSE=0,
     TRUE
 } BOOL;
-
-typedef struct { // general 2D maze cell position
-    int x;
-    int y;
-} position;
 
 typedef enum // cardinal direction enum (binary, 4 bits required)
 {
