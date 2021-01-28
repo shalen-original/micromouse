@@ -7,6 +7,7 @@
 #include <math.h>
 #include "dma.h"
 
+
 char sendData[100]; // buffer to send data
 unsigned int timerInterruptFrequency = 1; // timer interrupt call frequency in ms
 unsigned int cycleInMilliSeconds = 2000; // fixed cycle length in milliseconds
