@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <math.h>
 #include "dma.h"
-
+#include "controller.h"
 
 char sendData[100]; // buffer to send data
 unsigned int timerInterruptFrequency = 1; // timer interrupt call frequency in ms
@@ -65,7 +65,23 @@ void __attribute__((__interrupt__, auto_psv)) _T1Interrupt(void)
    // TODO:
    // READ IN SENSOR DATA (over dma)
    // Send to robot controller
-  
+   
+   /* ------------------------------------------------------------------------
+    * Assume we have SENSOR DATA saved to following variables:
+    * Front sensor value: sensorF (cm)
+    * Right sensor value: sensorR (cm)
+    * Left sensor value: sensorL (cm)
+    */
+   float sensorF; // variables connected to sensor values
+   float sensorR;
+   float sensorL;
+   
+   /* 1. Corridor scenario: achieve same distances to left and right walls
+    * 2. One side opening scenario: achieve constant distance to one wall
+    * 3. Both side opening scenarios: achieve same speed on both wheels*/
+
+   
+   
    if (count >= maxCycleCount)
    {
        cycleAction();
