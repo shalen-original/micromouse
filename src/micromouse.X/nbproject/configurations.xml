@@ -16,6 +16,7 @@
       <itemPath>utils.h</itemPath>
       <itemPath>position.h</itemPath>
       <itemPath>timer2.h</itemPath>
+      <itemPath>controller.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -36,6 +37,7 @@
       <itemPath>maze.c</itemPath>
       <itemPath>position.c</itemPath>
       <itemPath>timer2.c</itemPath>
+      <itemPath>controller.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -53,7 +55,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>pk4hybrid</platformTool>
         <languageToolchain>XC16</languageToolchain>
-        <languageToolchainVersion>1.60</languageToolchainVersion>
+        <languageToolchainVersion>1.61</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
@@ -776,7 +778,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>Simulator</platformTool>
         <languageToolchain>XC16</languageToolchain>
-        <languageToolchainVersion>1.60</languageToolchainVersion>
+        <languageToolchainVersion>1.61</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
