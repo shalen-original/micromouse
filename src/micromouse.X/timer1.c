@@ -7,7 +7,7 @@
 #include <math.h>
 #include "dma.h"
 #include "robotControl.h"
-#include "controller.h
+#include "controller.h"
 
 char sendData[100]; // buffer to send data
 unsigned int timerInterruptFrequency = 1; // timer interrupt call frequency in ms
