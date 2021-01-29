@@ -60,7 +60,7 @@ void __attribute__((__interrupt__, auto_psv)) _T2Interrupt(void)
   
    if (count >= maxCycleCount)
    {
-       cycleAction();
+       cycle2Action();
        count = 0;
    }
    // end of actions

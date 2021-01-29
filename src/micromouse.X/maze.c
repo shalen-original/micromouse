@@ -108,7 +108,7 @@ cell* getCellAt(position pos)
 
 BOOL isMazeWallAt(position pos, dir direction)
 {
-    if (((*getCellAt(pos)).wall & direction) == 1) 
+    if (((*getCellAt(pos)).wall & direction) == 1)
     {
         return TRUE;
     } else {

@@ -2,20 +2,37 @@
 #ifndef ROBOT_H
 #define	ROBOT_H
 
-#include <xc.h> // include processor files - each processor file is guarded.  
+#include <xc.h> // include processor files - each processor file is guarded.
+#include "utils.h"
 
-// TODO Insert declarations
+typedef enum // movement state of robot
+{
+    IDLE=0,
+    MOVE,
+    TURNL,
+    TURNR
+} movementState;
+
+typedef enum // environement state of robot (where are walls)
+{
+    LRWALL=0,
+    LWALL,
+    RWALL,
+    NWALL
+} envState;
+
+
+// setups the initial robot configuration
 void initRobot(void);
-// general move function (where both motor move have to turn with same speed)
-void move(int steps, int maxSpeed, int exitSpeed);
-// uses move() to move straight ahead
-void driveStraight(int steps, int maxSpeed, int exitSpeed);
-// turn 90° smoothly (motors not with same speed)
-void turn90Left(int maxSpeed);
-void turn90Right(int maxSpeed);
-// rotates while standing (both motors with same speed, but inversed to each other)
-void spin(int steps, int maxSpeed);
 
+// is called whenever the sensors are read
+void onSensorUpdate(float timeInterval, unsigned int sensorFront, unsigned int sensorLeft, unsigned int sensorRight);
+// sets the rotation value of the robot (in a 8-axis system) and all corresponding changes
+void setRotation(dir direction);
+// sets the movement state and all corresponding changes
+void setMovState(movementState state);
+// checks whether the robot has proceeded in a cell position, if yes: updates maze map and robot position
+void checkCellChange(void);
 
-#endif	/* XC_HEADER_TEMPLATE_H */
+#endif	/* ROBOT_H */
 

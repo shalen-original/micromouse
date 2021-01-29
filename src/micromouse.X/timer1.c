@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <math.h>
 #include "dma.h"
+#include "robotControl.h"
 #include "controller.h"
 
 char sendData[100]; // buffer to send data
@@ -60,12 +61,10 @@ void __attribute__((__interrupt__, auto_psv)) _T1Interrupt(void)
    time += ((float)timerInterruptFrequency / 1000);
    LED4=~LED4;
    
-   sprintf(sendData, "%f, %d, %d \n", (double) time, TEST_SENSOR, IO_1);
-   //putsUART1(sendData);
+   sprintf(sendData, "%f, %d, %d, %d\n", (double) time, SENSOR_FRONT, SENSOR_LEFT, SENSOR_RIGHT);
+   putsUART1(sendData);
    
-   // TODO:
-   // READ IN SENSOR DATA (over dma)
-   // Send to robot controller
+   onSensorUpdate(timerInterruptFrequency, SENSOR_FRONT, SENSOR_LEFT, SENSOR_RIGHT);
    
    /* ------------------------------------------------------------------------
     * Assume we have SENSOR DATA saved to following variables:
