@@ -4,6 +4,7 @@
 #define	DIRECTION_H
 
 #include <xc.h> // include processor files - each processor file is guarded.  
+#include "position.h"
 
 typedef enum // cardinal direction enum (binary, 4 bits required)
 {

@@ -2,7 +2,8 @@
 #ifndef ROBOT_H
 #define	ROBOT_H
 
-#include <xc.h> // include processor files - each processor file is guarded.  
+#include <xc.h> // include processor files - each processor file is guarded.
+#include "utils.h"
 
 typedef enum // movement state of robot
 {
