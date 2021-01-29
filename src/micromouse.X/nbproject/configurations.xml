@@ -16,6 +16,8 @@
       <itemPath>utils.h</itemPath>
       <itemPath>position.h</itemPath>
       <itemPath>timer2.h</itemPath>
+      <itemPath>motionControl.h</itemPath>
+      <itemPath>direction.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -36,6 +38,8 @@
       <itemPath>maze.c</itemPath>
       <itemPath>position.c</itemPath>
       <itemPath>timer2.c</itemPath>
+      <itemPath>motionControl.c</itemPath>
+      <itemPath>direction.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
