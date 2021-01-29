@@ -26,6 +26,12 @@ typedef struct{
 // initialize controller set
 void initControllerset(Controllerset*);
 
+// user level API to set Left motor speed
+void user_SpeedL(Controllerset *cset, float speed);
+
+// user level API to set Right motor speed
+void user_SpeedR(Controllerset *cset, float speed);
+
 // set control goal (set point)
 void setPI (PI *controller, float sp);
 

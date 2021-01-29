@@ -67,14 +67,14 @@ void __attribute__((__interrupt__, auto_psv)) _T1Interrupt(void)
    onSensorUpdate(timerInterruptFrequency, SENSOR_FRONT, SENSOR_LEFT, SENSOR_RIGHT);
    
    /* ------------------------------------------------------------------------
-    * Assume we have SENSOR DATA saved to following variables:
+    * (Checked) Data wired
     * Front sensor value: sensorF (cm)
     * Right sensor value: sensorR (cm)
     * Left sensor value: sensorL (cm)
     */
-   float sensorF = 9999; // variables to receive values from sensors
-   float sensorR = 9999;
-   float sensorL = 9999;
+   float sensorF = SENSOR_FRONT; // variables to receive values from sensors
+   float sensorR = SENSOR_LEFT;
+   float sensorL = SENSOR_RIGHT;
    
    /* 1. Corridor scenario: achieve same distances to left and right walls
     * 2. One side opening scenario: achieve constant distance to one wall

@@ -12,15 +12,25 @@
 void initControllerset(Controllerset *cset){
     // below are default values for controllers 
     // !!! modify accordingly
-    // (PI){kp, ki, e_sum, sp, enable, rawVelocityR, L, desiredVelocityR, L}  
+    // (PI){kp, ki, e_sum, sp, enable}  
     cset->DL = (PI){0.1, 0.1, 0, 0, 0};
     cset->DR = (PI){0.1, 0.1, 0, 0, 0};
     cset->DF = (PI){0.1, 0.1, 0, 0, 0};
     cset->VL = (PI){0.1, 0.1, 0, 0, 0};
     cset->VR = (PI){0.1, 0.1, 0, 0, 0};
+    cset->rawVelocityL = 0;
+    cset->rawVelocityR = 0;
+    cset->desiredVelocityL = 0;
+    cset->desiredVelocityR = 0;
 }
 
+void user_SpeedL(Controllerset *cset, float speed){
+    cset->rawVelocityL = speed;
+}
 
+void user_SpeedR(Controllerset *cset, float speed){
+    cset->rawVelocityR = speed;
+}
 
 void setPI (PI *controller, float sp){
     controller->e_sum = 0;
