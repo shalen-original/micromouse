@@ -5,8 +5,9 @@
 #include <xc.h>
 
 // CHANGE THIS (3 sensors, front and sides)
-#define IO_1 adcData[0] //AN0
-#define TEST_SENSOR adcData[1]  //AN5
+#define SENSOR_FRONT adcData[0] //AN0
+#define SENSOR_LEFT adcData[1]  //AN5
+#define SENSOR_RIGHT adcData[2]  //TBD
 
 extern unsigned int adcData[32]__attribute__((space(dma)));
 
