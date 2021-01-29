@@ -10,22 +10,32 @@ typedef struct{
     int enable; // 1: enable controller , 0: disable controller
 } PI;
 
-// define a set to contain all controllers (VR,VL,DR,DL)
+// define a set to contain all controllers (VR,VL,DR,DL,DF)
 typedef struct{
     PI VR; // Velocity controller Right motor
     PI VL; // Velocity controller Left motor
     PI DR; // Distance controller Right sensor
     PI DL; // Distance controller Left sensor
     PI DF; // Distance controller Front sensor
+    float rawVelocityR;
+    float rawVelocityL;
+    float desiredVelocityR;
+    float desiredVelocityL;
 } Controllerset;
 
-// initialize the set
+// initialize controller set
 void initControllerset(Controllerset*);
 
-// reset controller to new desired sp (set point)
+// set control goal (set point)
 void setPI (PI *controller, float sp);
 
-// receive pv (measurement), step controller and return adjust value for pwm/ velocity
+// enable controller
+void enablePI (PI *controller);
+
+// disable controller
+void disablePI (PI *controller);
+
+// receive pv (measurement), step controller and return value for control
 float stepPI(PI *controller, float pv);
 
 #endif	/* CONTROLLER_H */

@@ -115,7 +115,7 @@ int main()
     initMaze(16, 16);
     initRobot();
     
-    initControllerset(&controllerset); // create 
+    initControllerset(&controllerset); // initialize controller
     
     initTimer1(100); //creates a 100ms timer interrupt
     startTimer1();

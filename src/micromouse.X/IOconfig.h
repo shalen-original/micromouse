@@ -10,6 +10,9 @@
 #define LEDON 0
 #define LEDOFF 1
 
+#define True 1
+#define False 0 
+
 // configures the IO management
 void initIO();
 
