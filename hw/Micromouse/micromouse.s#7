@@ -3945,7 +3945,7 @@ Example: SX-32S</description>
 <clearance class="0" value="0.2"/>
 </class>
 <class number="1" name="POWER" width="0" drill="0">
-<clearance class="1" value="0.3"/>
+<clearance class="1" value="0.29"/>
 </class>
 </classes>
 <parts>

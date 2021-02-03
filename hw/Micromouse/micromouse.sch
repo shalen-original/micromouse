@@ -3944,9 +3944,6 @@ Example: SX-32S</description>
 <class number="0" name="default" width="0" drill="0.3">
 <clearance class="0" value="0.2"/>
 </class>
-<class number="1" name="POWER" width="0" drill="0">
-<clearance class="1" value="0.29"/>
-</class>
 </classes>
 <parts>
 <part name="IC1" library="microchip-dspic33fjxxmc" deviceset="DSPIC33FJ64MC804" device="-PT"/>

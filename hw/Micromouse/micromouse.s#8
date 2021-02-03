@@ -3944,6 +3944,9 @@ Example: SX-32S</description>
 <class number="0" name="default" width="0" drill="0.3">
 <clearance class="0" value="0.2"/>
 </class>
+<class number="1" name="POWER" width="0" drill="0">
+<clearance class="1" value="0.3"/>
+</class>
 </classes>
 <parts>
 <part name="IC1" library="microchip-dspic33fjxxmc" deviceset="DSPIC33FJ64MC804" device="-PT"/>
@@ -4533,7 +4536,7 @@ VCFG = 0x000</text>
 <pinref part="R12" gate="R$1" pin="2"/>
 </segment>
 </net>
-<net name="+3V3" class="0">
+<net name="+3V3" class="1">
 <segment>
 <pinref part="IC1" gate="G$1" pin="AVDD"/>
 <pinref part="+3V3" gate="G$1" pin="+3V3"/>
@@ -4697,7 +4700,7 @@ VCFG = 0x000</text>
 <label x="177.8" y="-27.94" size="0.8128" layer="95" xref="yes"/>
 </segment>
 </net>
-<net name="+9V" class="0">
+<net name="+9V" class="1">
 <segment>
 <pinref part="G1" gate="G$1" pin="+"/>
 <pinref part="SUPPLY5" gate="G$1" pin="+9V"/>
@@ -4727,7 +4730,7 @@ VCFG = 0x000</text>
 <junction x="-43.18" y="60.96"/>
 </segment>
 </net>
-<net name="+5V" class="0">
+<net name="+5V" class="1">
 <segment>
 <wire x1="35.56" y1="83.82" x2="38.1" y2="83.82" width="0.1524" layer="91"/>
 <pinref part="C3" gate="C$1" pin="+"/>
@@ -4780,7 +4783,7 @@ VCFG = 0x000</text>
 <wire x1="-7.62" y1="-25.4" x2="-7.62" y2="-27.94" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="M1-" class="0">
+<net name="M1-" class="1">
 <segment>
 <wire x1="-134.62" y1="91.44" x2="-132.08" y2="91.44" width="0.1524" layer="91"/>
 <label x="-132.08" y="91.44" size="0.8128" layer="95" xref="yes"/>
@@ -4792,7 +4795,7 @@ VCFG = 0x000</text>
 <label x="-101.6" y="73.66" size="0.8128" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
-<net name="M1+" class="0">
+<net name="M1+" class="1">
 <segment>
 <wire x1="-134.62" y1="88.9" x2="-132.08" y2="88.9" width="0.1524" layer="91"/>
 <label x="-132.08" y="88.9" size="0.8128" layer="95" xref="yes"/>
@@ -4828,7 +4831,7 @@ VCFG = 0x000</text>
 <label x="177.8" y="-12.7" size="0.8128" layer="95" xref="yes"/>
 </segment>
 </net>
-<net name="M2-" class="0">
+<net name="M2-" class="1">
 <segment>
 <wire x1="-134.62" y1="68.58" x2="-132.08" y2="68.58" width="0.1524" layer="91"/>
 <label x="-132.08" y="68.58" size="0.8128" layer="95" xref="yes"/>
@@ -4840,7 +4843,7 @@ VCFG = 0x000</text>
 <label x="-101.6" y="71.12" size="0.8128" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
-<net name="M2+" class="0">
+<net name="M2+" class="1">
 <segment>
 <wire x1="-134.62" y1="66.04" x2="-132.08" y2="66.04" width="0.1524" layer="91"/>
 <label x="-132.08" y="66.04" size="0.8128" layer="95" xref="yes"/>
