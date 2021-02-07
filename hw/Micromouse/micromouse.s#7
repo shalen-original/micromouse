@@ -4144,6 +4144,13 @@ PICKIT Programmer Users Guide</text>
 <wire x1="-71.12" y1="7.62" x2="-101.6" y2="7.62" width="0.1524" layer="97"/>
 <text x="48.26" y="-30.48" size="2.54" layer="97" rot="R90">Set VCFG to use AVSS and AVDD
 VCFG = 0x000</text>
+<wire x1="-68.58" y1="-15.24" x2="-68.58" y2="12.7" width="0.1524" layer="97"/>
+<wire x1="-68.58" y1="12.7" x2="-30.48" y2="12.7" width="0.1524" layer="97"/>
+<wire x1="-30.48" y1="12.7" x2="-30.48" y2="-15.24" width="0.1524" layer="97"/>
+<wire x1="-30.48" y1="-15.24" x2="-68.58" y2="-15.24" width="0.1524" layer="97"/>
+<text x="-48.26" y="-12.7" size="0.8128" layer="97">TX and RX of BT module become
+RX and TX for the controller</text>
+<text x="-55.88" y="10.16" size="0.8128" layer="97">DFU pin (8) of BT module set high</text>
 </plain>
 <instances>
 <instance part="IC1" gate="G$1" x="129.54" y="-17.78" smashed="yes">
@@ -4401,8 +4408,8 @@ VCFG = 0x000</text>
 <instance part="+3V9" gate="G$1" x="-76.2" y="2.54" smashed="yes" rot="R270">
 <attribute name="VALUE" x="-73.66" y="0" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="SUPPLY20" gate="GND" x="-43.18" y="0" smashed="yes">
-<attribute name="VALUE" x="-45.085" y="-3.175" size="1.778" layer="96"/>
+<instance part="SUPPLY20" gate="GND" x="-40.64" y="0" smashed="yes">
+<attribute name="VALUE" x="-42.545" y="-3.175" size="1.778" layer="96"/>
 </instance>
 <instance part="J3" gate="G$1" x="-139.7" y="12.7" smashed="yes">
 <attribute name="VALUE" x="-140.97" y="5.08" size="1.778" layer="96"/>
@@ -4441,12 +4448,12 @@ VCFG = 0x000</text>
 <instance part="+3V10" gate="G$1" x="205.74" y="-7.62" smashed="yes" rot="R180">
 <attribute name="VALUE" x="203.2" y="-10.16" size="1.778" layer="96"/>
 </instance>
-<instance part="HDR2" gate="G$1" x="-66.04" y="0" smashed="yes" rot="R180">
-<attribute name="NAME" x="-61.595" y="10.16" size="1.778" layer="95" rot="R180" align="top-left"/>
-<attribute name="VALUE" x="-53.975" y="-13.6525" size="1.778" layer="96" rot="R180" align="top-left"/>
+<instance part="HDR2" gate="G$1" x="-63.5" y="0" smashed="yes" rot="R180">
+<attribute name="NAME" x="-59.055" y="10.16" size="1.778" layer="95" rot="R180" align="top-left"/>
+<attribute name="VALUE" x="-51.435" y="-13.6525" size="1.778" layer="96" rot="R180" align="top-left"/>
 </instance>
-<instance part="+3V11" gate="G$1" x="-48.26" y="-5.08" smashed="yes" rot="R180">
-<attribute name="VALUE" x="-50.8" y="-7.62" size="1.778" layer="96"/>
+<instance part="+3V11" gate="G$1" x="-45.72" y="-5.08" smashed="yes" rot="R180">
+<attribute name="VALUE" x="-48.26" y="-7.62" size="1.778" layer="96"/>
 </instance>
 </instances>
 <busses>
@@ -4620,8 +4627,8 @@ VCFG = 0x000</text>
 </segment>
 <segment>
 <pinref part="HDR2" gate="G$1" pin="7"/>
-<wire x1="-60.96" y1="5.08" x2="-43.18" y2="5.08" width="0.1524" layer="91"/>
-<wire x1="-43.18" y1="5.08" x2="-43.18" y2="2.54" width="0.1524" layer="91"/>
+<wire x1="-58.42" y1="5.08" x2="-40.64" y2="5.08" width="0.1524" layer="91"/>
+<wire x1="-40.64" y1="5.08" x2="-40.64" y2="2.54" width="0.1524" layer="91"/>
 <pinref part="SUPPLY20" gate="GND" pin="GND"/>
 </segment>
 </net>
@@ -4708,9 +4715,13 @@ VCFG = 0x000</text>
 </segment>
 <segment>
 <pinref part="HDR2" gate="G$1" pin="5"/>
-<wire x1="-60.96" y1="0" x2="-48.26" y2="0" width="0.1524" layer="91"/>
+<wire x1="-58.42" y1="0" x2="-45.72" y2="0" width="0.1524" layer="91"/>
 <pinref part="+3V11" gate="G$1" pin="+3V3"/>
-<wire x1="-48.26" y1="0" x2="-48.26" y2="-2.54" width="0.1524" layer="91"/>
+<wire x1="-45.72" y1="0" x2="-45.72" y2="-2.54" width="0.1524" layer="91"/>
+<wire x1="-45.72" y1="0" x2="-45.72" y2="7.62" width="0.1524" layer="91"/>
+<junction x="-45.72" y="0"/>
+<pinref part="HDR2" gate="G$1" pin="8"/>
+<wire x1="-45.72" y1="7.62" x2="-58.42" y2="7.62" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="VCAP/VDDCORE" class="0">
@@ -5228,46 +5239,39 @@ VCFG = 0x000</text>
 <wire x1="-106.68" y1="68.58" x2="-106.68" y2="83.82" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="BT_DFU" class="0">
-<segment>
-<pinref part="HDR2" gate="G$1" pin="8"/>
-<wire x1="-60.96" y1="7.62" x2="-58.42" y2="7.62" width="0.1524" layer="91"/>
-<label x="-58.42" y="7.62" size="0.8128" layer="95" xref="yes"/>
-</segment>
-</net>
 <net name="BT_RTS" class="0">
 <segment>
 <pinref part="HDR2" gate="G$1" pin="6"/>
-<wire x1="-60.96" y1="2.54" x2="-58.42" y2="2.54" width="0.1524" layer="91"/>
-<label x="-58.42" y="2.54" size="0.8128" layer="95" xref="yes"/>
+<wire x1="-58.42" y1="2.54" x2="-55.88" y2="2.54" width="0.1524" layer="91"/>
+<label x="-55.88" y="2.54" size="0.8128" layer="95" xref="yes"/>
 </segment>
 </net>
-<net name="BT_RX" class="0">
+<net name="UART_TX" class="0">
 <segment>
 <pinref part="HDR2" gate="G$1" pin="4"/>
-<wire x1="-60.96" y1="-2.54" x2="-58.42" y2="-2.54" width="0.1524" layer="91"/>
-<label x="-58.42" y="-2.54" size="0.8128" layer="95" xref="yes"/>
+<wire x1="-58.42" y1="-2.54" x2="-55.88" y2="-2.54" width="0.1524" layer="91"/>
+<label x="-55.88" y="-2.54" size="0.8128" layer="95" xref="yes"/>
 </segment>
 </net>
-<net name="BT_TX" class="0">
+<net name="UART_RX" class="0">
 <segment>
 <pinref part="HDR2" gate="G$1" pin="3"/>
-<wire x1="-60.96" y1="-5.08" x2="-58.42" y2="-5.08" width="0.1524" layer="91"/>
-<label x="-58.42" y="-5.08" size="0.8128" layer="95" xref="yes"/>
+<wire x1="-58.42" y1="-5.08" x2="-55.88" y2="-5.08" width="0.1524" layer="91"/>
+<label x="-55.88" y="-5.08" size="0.8128" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="BT_CTS" class="0">
 <segment>
 <pinref part="HDR2" gate="G$1" pin="2"/>
-<wire x1="-60.96" y1="-7.62" x2="-58.42" y2="-7.62" width="0.1524" layer="91"/>
-<label x="-58.42" y="-7.62" size="0.8128" layer="95" xref="yes"/>
+<wire x1="-58.42" y1="-7.62" x2="-55.88" y2="-7.62" width="0.1524" layer="91"/>
+<label x="-55.88" y="-7.62" size="0.8128" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="BT_MOD" class="0">
 <segment>
 <pinref part="HDR2" gate="G$1" pin="1"/>
-<wire x1="-60.96" y1="-10.16" x2="-58.42" y2="-10.16" width="0.1524" layer="91"/>
-<label x="-58.42" y="-10.16" size="0.8128" layer="95" xref="yes"/>
+<wire x1="-58.42" y1="-10.16" x2="-55.88" y2="-10.16" width="0.1524" layer="91"/>
+<label x="-55.88" y="-10.16" size="0.8128" layer="95" xref="yes"/>
 </segment>
 </net>
 </nets>

@@ -9,25 +9,25 @@
 <grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
-<layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
-<layer number="3" name="Route3" color="4" fill="3" visible="no" active="no"/>
-<layer number="4" name="Route4" color="1" fill="4" visible="no" active="no"/>
-<layer number="5" name="Route5" color="4" fill="4" visible="no" active="no"/>
-<layer number="6" name="Route6" color="1" fill="8" visible="no" active="no"/>
-<layer number="7" name="Route7" color="4" fill="8" visible="no" active="no"/>
-<layer number="8" name="Route8" color="1" fill="2" visible="no" active="no"/>
-<layer number="9" name="Route9" color="4" fill="2" visible="no" active="no"/>
-<layer number="10" name="Route10" color="1" fill="7" visible="no" active="no"/>
-<layer number="11" name="Route11" color="4" fill="7" visible="no" active="no"/>
-<layer number="12" name="Route12" color="1" fill="5" visible="no" active="no"/>
-<layer number="13" name="Route13" color="4" fill="5" visible="no" active="no"/>
-<layer number="14" name="Route14" color="1" fill="6" visible="no" active="no"/>
-<layer number="15" name="Route15" color="4" fill="6" visible="no" active="no"/>
+<layer number="2" name="Route2" color="16" fill="1" visible="no" active="no"/>
+<layer number="3" name="Route3" color="17" fill="1" visible="no" active="no"/>
+<layer number="4" name="Route4" color="18" fill="1" visible="no" active="no"/>
+<layer number="5" name="Route5" color="19" fill="1" visible="no" active="no"/>
+<layer number="6" name="Route6" color="25" fill="1" visible="no" active="no"/>
+<layer number="7" name="Route7" color="26" fill="1" visible="no" active="no"/>
+<layer number="8" name="Route8" color="27" fill="1" visible="no" active="no"/>
+<layer number="9" name="Route9" color="28" fill="1" visible="no" active="no"/>
+<layer number="10" name="Route10" color="29" fill="1" visible="no" active="no"/>
+<layer number="11" name="Route11" color="30" fill="1" visible="no" active="no"/>
+<layer number="12" name="Route12" color="20" fill="1" visible="no" active="no"/>
+<layer number="13" name="Route13" color="21" fill="1" visible="no" active="no"/>
+<layer number="14" name="Route14" color="22" fill="1" visible="no" active="no"/>
+<layer number="15" name="Route15" color="23" fill="1" visible="no" active="no"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="no" active="no"/>
 <layer number="17" name="Pads" color="2" fill="1" visible="no" active="no"/>
 <layer number="18" name="Vias" color="2" fill="1" visible="no" active="no"/>
 <layer number="19" name="Unrouted" color="6" fill="1" visible="no" active="no"/>
-<layer number="20" name="Dimension" color="15" fill="1" visible="no" active="no"/>
+<layer number="20" name="Dimension" color="24" fill="1" visible="no" active="no"/>
 <layer number="21" name="tPlace" color="7" fill="1" visible="no" active="no"/>
 <layer number="22" name="bPlace" color="7" fill="1" visible="no" active="no"/>
 <layer number="23" name="tOrigins" color="15" fill="1" visible="no" active="no"/>
@@ -2370,7 +2370,7 @@ Source: http://www.osram.convergy.de/</description>
 </library>
 <library name="micromouse" urn="urn:adsk.eagle:library:26475156">
 <packages>
-<package name="0805_POL" urn="urn:adsk.eagle:footprint:26475160/1" library_version="4">
+<package name="0805_POL" urn="urn:adsk.eagle:footprint:26475160/3" library_version="20">
 <description>&lt;b&gt;CAPACITOR&lt;/b&gt;&lt;p&gt;</description>
 <wire x1="-1.973" y1="0.983" x2="1.973" y2="0.983" width="0.0508" layer="39"/>
 <wire x1="1.973" y1="-0.983" x2="-1.973" y2="-0.983" width="0.0508" layer="39"/>
@@ -2391,8 +2391,9 @@ Source: http://www.osram.convergy.de/</description>
 <text x="-1.27" y="-1.64" size="0.4064" layer="27">&gt;VALUE</text>
 <rectangle x1="-0.1001" y1="-0.4001" x2="0.1001" y2="0.4001" layer="35"/>
 <rectangle x1="-2.1" y1="-0.9" x2="-1.8" y2="0.9" layer="21"/>
+<rectangle x1="-0.2794" y1="-0.8128" x2="0.2794" y2="0.8128" layer="41"/>
 </package>
-<package name="0805" urn="urn:adsk.eagle:footprint:26475161/1" library_version="4">
+<package name="0805" urn="urn:adsk.eagle:footprint:26475161/3" library_version="20">
 <description>&lt;b&gt;CAPACITOR&lt;/b&gt;&lt;p&gt;</description>
 <wire x1="-1.973" y1="0.983" x2="1.973" y2="0.983" width="0.0508" layer="39"/>
 <wire x1="1.973" y1="-0.983" x2="-1.973" y2="-0.983" width="0.0508" layer="39"/>
@@ -2407,6 +2408,7 @@ Source: http://www.osram.convergy.de/</description>
 <text x="-1.27" y="1.27" size="0.4064" layer="25">&gt;NAME</text>
 <text x="-1.27" y="-1.64" size="0.4064" layer="27">&gt;VALUE</text>
 <rectangle x1="-0.1001" y1="-0.4001" x2="0.1001" y2="0.4001" layer="35"/>
+<rectangle x1="-0.2794" y1="-0.8128" x2="0.2794" y2="0.8128" layer="41"/>
 </package>
 <package name="SOT-223-4" urn="urn:adsk.eagle:footprint:20920735/6">
 <description>Small Outline Transistor (SOT223), 2.30 mm pitch; 4 pin, 6.50 mm L X 3.50 mm W X 1.80 mm H body&lt;p&gt;&lt;i&gt;PCB Libraries Packages&lt;/i&gt;</description>
@@ -2778,6 +2780,68 @@ Source: http://www.osram.convergy.de/</description>
 <circle x="-7.62" y="1.27" radius="0.0508" width="0.127" layer="21"/>
 <circle x="-7.62" y="-1.27" radius="0.0508" width="0.127" layer="21"/>
 </package>
+<package name="1X08/90" urn="urn:adsk.eagle:footprint:22261/1" library_version="18">
+<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
+<wire x1="-10.16" y1="-1.905" x2="-7.62" y2="-1.905" width="0.1524" layer="21"/>
+<wire x1="-7.62" y1="-1.905" x2="-7.62" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="-7.62" y1="0.635" x2="-10.16" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="-10.16" y1="0.635" x2="-10.16" y2="-1.905" width="0.1524" layer="21"/>
+<wire x1="-8.89" y1="6.985" x2="-8.89" y2="1.27" width="0.762" layer="21"/>
+<wire x1="-7.62" y1="-1.905" x2="-5.08" y2="-1.905" width="0.1524" layer="21"/>
+<wire x1="-5.08" y1="-1.905" x2="-5.08" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="-5.08" y1="0.635" x2="-7.62" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="-6.35" y1="6.985" x2="-6.35" y2="1.27" width="0.762" layer="21"/>
+<wire x1="-5.08" y1="-1.905" x2="-2.54" y2="-1.905" width="0.1524" layer="21"/>
+<wire x1="-2.54" y1="-1.905" x2="-2.54" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="-2.54" y1="0.635" x2="-5.08" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="-3.81" y1="6.985" x2="-3.81" y2="1.27" width="0.762" layer="21"/>
+<wire x1="-2.54" y1="-1.905" x2="0" y2="-1.905" width="0.1524" layer="21"/>
+<wire x1="0" y1="-1.905" x2="0" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="0" y1="0.635" x2="-2.54" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="-1.27" y1="6.985" x2="-1.27" y2="1.27" width="0.762" layer="21"/>
+<wire x1="0" y1="-1.905" x2="2.54" y2="-1.905" width="0.1524" layer="21"/>
+<wire x1="2.54" y1="-1.905" x2="2.54" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="2.54" y1="0.635" x2="0" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="1.27" y1="6.985" x2="1.27" y2="1.27" width="0.762" layer="21"/>
+<wire x1="2.54" y1="-1.905" x2="5.08" y2="-1.905" width="0.1524" layer="21"/>
+<wire x1="5.08" y1="-1.905" x2="5.08" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="5.08" y1="0.635" x2="2.54" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="3.81" y1="6.985" x2="3.81" y2="1.27" width="0.762" layer="21"/>
+<wire x1="5.08" y1="-1.905" x2="7.62" y2="-1.905" width="0.1524" layer="21"/>
+<wire x1="7.62" y1="-1.905" x2="7.62" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="7.62" y1="0.635" x2="5.08" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="6.35" y1="6.985" x2="6.35" y2="1.27" width="0.762" layer="21"/>
+<wire x1="7.62" y1="-1.905" x2="10.16" y2="-1.905" width="0.1524" layer="21"/>
+<wire x1="10.16" y1="-1.905" x2="10.16" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="10.16" y1="0.635" x2="7.62" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="8.89" y1="6.985" x2="8.89" y2="1.27" width="0.762" layer="21"/>
+<pad name="1" x="-8.89" y="-3.81" drill="1.016" shape="long" rot="R90"/>
+<pad name="2" x="-6.35" y="-3.81" drill="1.016" shape="long" rot="R90"/>
+<pad name="3" x="-3.81" y="-3.81" drill="1.016" shape="long" rot="R90"/>
+<pad name="4" x="-1.27" y="-3.81" drill="1.016" shape="long" rot="R90"/>
+<pad name="5" x="1.27" y="-3.81" drill="1.016" shape="long" rot="R90"/>
+<pad name="6" x="3.81" y="-3.81" drill="1.016" shape="long" rot="R90"/>
+<pad name="7" x="6.35" y="-3.81" drill="1.016" shape="long" rot="R90"/>
+<pad name="8" x="8.89" y="-3.81" drill="1.016" shape="long" rot="R90"/>
+<text x="-10.795" y="-3.81" size="1.27" layer="25" ratio="10" rot="R90">&gt;NAME</text>
+<text x="12.065" y="-3.81" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
+<rectangle x1="-9.271" y1="0.635" x2="-8.509" y2="1.143" layer="21"/>
+<rectangle x1="-6.731" y1="0.635" x2="-5.969" y2="1.143" layer="21"/>
+<rectangle x1="-4.191" y1="0.635" x2="-3.429" y2="1.143" layer="21"/>
+<rectangle x1="-1.651" y1="0.635" x2="-0.889" y2="1.143" layer="21"/>
+<rectangle x1="0.889" y1="0.635" x2="1.651" y2="1.143" layer="21"/>
+<rectangle x1="3.429" y1="0.635" x2="4.191" y2="1.143" layer="21"/>
+<rectangle x1="5.969" y1="0.635" x2="6.731" y2="1.143" layer="21"/>
+<rectangle x1="8.509" y1="0.635" x2="9.271" y2="1.143" layer="21"/>
+<rectangle x1="-9.271" y1="-2.921" x2="-8.509" y2="-1.905" layer="21"/>
+<rectangle x1="-6.731" y1="-2.921" x2="-5.969" y2="-1.905" layer="21"/>
+<rectangle x1="-4.191" y1="-2.921" x2="-3.429" y2="-1.905" layer="21"/>
+<rectangle x1="-1.651" y1="-2.921" x2="-0.889" y2="-1.905" layer="21"/>
+<rectangle x1="0.889" y1="-2.921" x2="1.651" y2="-1.905" layer="21"/>
+<rectangle x1="3.429" y1="-2.921" x2="4.191" y2="-1.905" layer="21"/>
+<rectangle x1="5.969" y1="-2.921" x2="6.731" y2="-1.905" layer="21"/>
+<rectangle x1="8.509" y1="-2.921" x2="9.271" y2="-1.905" layer="21"/>
+</package>
 </packages>
 <packages3d>
 <package3d name="B3F-1000" urn="urn:adsk.eagle:package:10899221/2" type="model">
@@ -2785,13 +2849,13 @@ Source: http://www.osram.convergy.de/</description>
 <packageinstance name="B3F-1000"/>
 </packageinstances>
 </package3d>
-<package3d name="0805_POL" urn="urn:adsk.eagle:package:26475189/2" type="model" library_version="8">
+<package3d name="0805_POL" urn="urn:adsk.eagle:package:26475189/4" type="model" library_version="20">
 <description>&lt;b&gt;CAPACITOR&lt;/b&gt;&lt;p&gt;</description>
 <packageinstances>
 <packageinstance name="0805_POL"/>
 </packageinstances>
 </package3d>
-<package3d name="0805" urn="urn:adsk.eagle:package:26475190/2" type="model" library_version="8">
+<package3d name="0805" urn="urn:adsk.eagle:package:26475190/4" type="model" library_version="20">
 <description>&lt;b&gt;CAPACITOR&lt;/b&gt;&lt;p&gt;</description>
 <packageinstances>
 <packageinstance name="0805"/>
@@ -2855,6 +2919,12 @@ LED</description>
 <description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
 <packageinstances>
 <packageinstance name="1X08"/>
+</packageinstances>
+</package3d>
+<package3d name="1X08/90" urn="urn:adsk.eagle:package:26640884/1" type="box" library_version="18">
+<description>PIN HEADER</description>
+<packageinstances>
+<packageinstance name="1X08/90"/>
 </packageinstances>
 </package3d>
 </packages3d>
@@ -3066,7 +3136,7 @@ LED</description>
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="CPOL_0805" urn="urn:adsk.eagle:component:26475205/2" prefix="C" uservalue="yes" library_version="8">
+<deviceset name="CPOL_0805" urn="urn:adsk.eagle:component:26475205/4" prefix="C" uservalue="yes" library_version="20">
 <gates>
 <gate name="C$1" symbol="CPOL" x="0" y="0"/>
 </gates>
@@ -3077,7 +3147,7 @@ LED</description>
 <connect gate="C$1" pin="-" pad="2"/>
 </connects>
 <package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:26475189/2"/>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:26475189/4"/>
 </package3dinstances>
 <technologies>
 <technology name=""/>
@@ -3085,7 +3155,7 @@ LED</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="C_0805" urn="urn:adsk.eagle:component:26475206/2" prefix="C" uservalue="yes" library_version="8">
+<deviceset name="C_0805" urn="urn:adsk.eagle:component:26475206/4" prefix="C" uservalue="yes" library_version="20">
 <gates>
 <gate name="C$1" symbol="C" x="0" y="0"/>
 </gates>
@@ -3096,7 +3166,7 @@ LED</description>
 <connect gate="C$1" pin="-" pad="2"/>
 </connects>
 <package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:26475190/2"/>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:26475190/4"/>
 </package3dinstances>
 <technologies>
 <technology name=""/>
@@ -3147,7 +3217,7 @@ LED</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="R_0805" urn="urn:adsk.eagle:component:26475204/2" prefix="R" uservalue="yes" library_version="8">
+<deviceset name="R_0805" urn="urn:adsk.eagle:component:26475204/4" prefix="R" uservalue="yes" library_version="20">
 <gates>
 <gate name="R$1" symbol="R-EU" x="0" y="0"/>
 </gates>
@@ -3158,7 +3228,7 @@ LED</description>
 <connect gate="R$1" pin="2" pad="2"/>
 </connects>
 <package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:26475190/2"/>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:26475190/4"/>
 </package3dinstances>
 <technologies>
 <technology name=""/>
@@ -3301,7 +3371,7 @@ LED</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="BLUETOOTHSHIELD" urn="urn:adsk.eagle:component:26628099/2" prefix="HDR" uservalue="yes" library_version="17">
+<deviceset name="BLUETOOTHSHIELD" urn="urn:adsk.eagle:component:26628099/3" prefix="HDR" uservalue="yes" library_version="18">
 <gates>
 <gate name="G$1" symbol="CON-1X8" x="0" y="-2.54"/>
 </gates>
@@ -3319,6 +3389,24 @@ LED</description>
 </connects>
 <package3dinstances>
 <package3dinstance package3d_urn="urn:adsk.eagle:package:26628098/1"/>
+</package3dinstances>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="90ANGLE" package="1X08/90">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+<connect gate="G$1" pin="3" pad="3"/>
+<connect gate="G$1" pin="4" pad="4"/>
+<connect gate="G$1" pin="5" pad="5"/>
+<connect gate="G$1" pin="6" pad="6"/>
+<connect gate="G$1" pin="7" pad="7"/>
+<connect gate="G$1" pin="8" pad="8"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:26640884/1"/>
 </package3dinstances>
 <technologies>
 <technology name=""/>
@@ -4016,13 +4104,13 @@ Example: SX-32S</description>
 <part name="SUPPLY4" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY5" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="+9V" device=""/>
 <part name="SUPPLY6" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="C1" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="CPOL_0805" device="" package3d_urn="urn:adsk.eagle:package:26475189/2" value="10u"/>
-<part name="C2" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="CPOL_0805" device="" package3d_urn="urn:adsk.eagle:package:26475189/2" value="10u"/>
-<part name="C3" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="CPOL_0805" device="" package3d_urn="urn:adsk.eagle:package:26475189/2" value="100u"/>
-<part name="C4" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="CPOL_0805" device="" package3d_urn="urn:adsk.eagle:package:26475189/2" value="10u"/>
-<part name="C5" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="CPOL_0805" device="" package3d_urn="urn:adsk.eagle:package:26475189/2" value="100u"/>
-<part name="C6" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="C_0805" device="" package3d_urn="urn:adsk.eagle:package:26475190/2" value="15p"/>
-<part name="C7" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="C_0805" device="" package3d_urn="urn:adsk.eagle:package:26475190/2" value="15p"/>
+<part name="C1" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="CPOL_0805" device="" package3d_urn="urn:adsk.eagle:package:26475189/4" value="10u"/>
+<part name="C2" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="CPOL_0805" device="" package3d_urn="urn:adsk.eagle:package:26475189/4" value="10u"/>
+<part name="C3" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="CPOL_0805" device="" package3d_urn="urn:adsk.eagle:package:26475189/4" value="100u"/>
+<part name="C4" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="CPOL_0805" device="" package3d_urn="urn:adsk.eagle:package:26475189/4" value="10u"/>
+<part name="C5" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="CPOL_0805" device="" package3d_urn="urn:adsk.eagle:package:26475189/4" value="100u"/>
+<part name="C6" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="C_0805" device="" package3d_urn="urn:adsk.eagle:package:26475190/4" value="15p"/>
+<part name="C7" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="C_0805" device="" package3d_urn="urn:adsk.eagle:package:26475190/4" value="15p"/>
 <part name="Y1" library="SparkFun-Clocks" library_urn="urn:adsk.eagle:library:511" deviceset="CRYSTAL" device="PTH-HC49US" package3d_urn="urn:adsk.eagle:package:37515/1"/>
 <part name="REG1" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="LM1117_SOT223" device="" package3d_urn="urn:adsk.eagle:package:26475187/2" value="LM1117-5.0V"/>
 <part name="REG2" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="LM1117_SOT223" device="" package3d_urn="urn:adsk.eagle:package:26475187/2" value="LM1117-3.3V"/>
@@ -4033,27 +4121,27 @@ Example: SX-32S</description>
 <part name="SUPPLY7" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY8" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY9" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="+9V" device=""/>
-<part name="C8" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="C_0805" device="" package3d_urn="urn:adsk.eagle:package:26475190/2" value="0.01u"/>
-<part name="C9" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="C_0805" device="" package3d_urn="urn:adsk.eagle:package:26475190/2" value="2u2"/>
+<part name="C8" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="C_0805" device="" package3d_urn="urn:adsk.eagle:package:26475190/4" value="0.01u"/>
+<part name="C9" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="C_0805" device="" package3d_urn="urn:adsk.eagle:package:26475190/4" value="2u2"/>
 <part name="+3V6" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
-<part name="R1" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="R_0805" device="" package3d_urn="urn:adsk.eagle:package:26475190/2" value="0.2"/>
+<part name="R1" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="R_0805" device="" package3d_urn="urn:adsk.eagle:package:26475190/4" value="0.2"/>
 <part name="SUPPLY10" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="C10" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="CPOL_0805" device="" package3d_urn="urn:adsk.eagle:package:26475189/2" value="10u"/>
+<part name="C10" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="CPOL_0805" device="" package3d_urn="urn:adsk.eagle:package:26475189/4" value="10u"/>
 <part name="SUPPLY11" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="P+2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
 <part name="SW_RST" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="B3F-1000" device="" package3d_urn="urn:adsk.eagle:package:10899221/2"/>
 <part name="+3V7" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
 <part name="SUPPLY12" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="R2" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="R_0805" device="" package3d_urn="urn:adsk.eagle:package:26475190/2" value="10k"/>
-<part name="R3" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="R_0805" device="" package3d_urn="urn:adsk.eagle:package:26475190/2" value="1k"/>
+<part name="R2" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="R_0805" device="" package3d_urn="urn:adsk.eagle:package:26475190/4" value="10k"/>
+<part name="R3" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="R_0805" device="" package3d_urn="urn:adsk.eagle:package:26475190/4" value="1k"/>
 <part name="SW1" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="B3F-1000" device="" package3d_urn="urn:adsk.eagle:package:10899221/2"/>
 <part name="+3V8" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
 <part name="SUPPLY13" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="C12" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="C_0805" device="" package3d_urn="urn:adsk.eagle:package:26475190/2" value="100n"/>
-<part name="R4" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="R_0805" device="" package3d_urn="urn:adsk.eagle:package:26475190/2" value="10k"/>
-<part name="R5" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="R_0805" device="" package3d_urn="urn:adsk.eagle:package:26475190/2" value="1k"/>
+<part name="C12" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="C_0805" device="" package3d_urn="urn:adsk.eagle:package:26475190/4" value="100n"/>
+<part name="R4" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="R_0805" device="" package3d_urn="urn:adsk.eagle:package:26475190/4" value="10k"/>
+<part name="R5" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="R_0805" device="" package3d_urn="urn:adsk.eagle:package:26475190/4" value="1k"/>
 <part name="T1" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="NHDTC1X4ETR" device="" package3d_urn="urn:adsk.eagle:package:26475181/3"/>
-<part name="R6" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="R_0805" device="" package3d_urn="urn:adsk.eagle:package:26475190/2" value="130"/>
+<part name="R6" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="R_0805" device="" package3d_urn="urn:adsk.eagle:package:26475190/4" value="130"/>
 <part name="LED2" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="LED" device="" package3d_urn="urn:adsk.eagle:package:26475180/2"/>
 <part name="P+3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
 <part name="SUPPLY14" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
@@ -4069,9 +4157,9 @@ Example: SX-32S</description>
 <part name="LED5" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="LED" device="" package3d_urn="urn:adsk.eagle:package:26475180/2"/>
 <part name="P+6" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
 <part name="SUPPLY17" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="R7" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="R_0805" device="" package3d_urn="urn:adsk.eagle:package:26475190/2" value="130"/>
-<part name="R8" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="R_0805" device="" package3d_urn="urn:adsk.eagle:package:26475190/2" value="130"/>
-<part name="R9" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="R_0805" device="" package3d_urn="urn:adsk.eagle:package:26475190/2" value="130"/>
+<part name="R7" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="R_0805" device="" package3d_urn="urn:adsk.eagle:package:26475190/4" value="130"/>
+<part name="R8" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="R_0805" device="" package3d_urn="urn:adsk.eagle:package:26475190/4" value="130"/>
+<part name="R9" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="R_0805" device="" package3d_urn="urn:adsk.eagle:package:26475190/4" value="130"/>
 <part name="HDR1" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="PICKIT_CON" device="" package3d_urn="urn:adsk.eagle:package:26475179/1"/>
 <part name="SUPPLY18" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="+3V9" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
@@ -4079,11 +4167,11 @@ Example: SX-32S</description>
 <part name="J3" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="B3B-PH" device="-K-S" package3d_urn="urn:adsk.eagle:package:26495696/2" value="GP2Y0A41SK0F"/>
 <part name="J1" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="B3B-ZR" device="" package3d_urn="urn:adsk.eagle:package:26495820/2" value="GP2Y0A51SK0F"/>
 <part name="J2" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="B3B-ZR" device="" package3d_urn="urn:adsk.eagle:package:26495820/2" value="GP2Y0A51SK0F"/>
-<part name="R12" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="R_0805" device="" package3d_urn="urn:adsk.eagle:package:26475190/2" value="0.2"/>
+<part name="R12" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="R_0805" device="" package3d_urn="urn:adsk.eagle:package:26475190/4" value="0.2"/>
 <part name="SUPPLY21" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="C11" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="C_0805" device="" package3d_urn="urn:adsk.eagle:package:26475190/2"/>
-<part name="C13" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="C_0805" device="" package3d_urn="urn:adsk.eagle:package:26475190/2"/>
-<part name="C14" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="C_0805" device="" package3d_urn="urn:adsk.eagle:package:26475190/2"/>
+<part name="C11" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="C_0805" device="" package3d_urn="urn:adsk.eagle:package:26475190/4"/>
+<part name="C13" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="C_0805" device="" package3d_urn="urn:adsk.eagle:package:26475190/4"/>
+<part name="C14" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="C_0805" device="" package3d_urn="urn:adsk.eagle:package:26475190/4"/>
 <part name="SUPPLY19" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="+3V10" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
 <part name="HDR2" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="BLUETOOTHSHIELD" device="" package3d_urn="urn:adsk.eagle:package:26628098/1" value="BLUETOOTH"/>

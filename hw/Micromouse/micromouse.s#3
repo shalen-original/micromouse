@@ -4150,7 +4150,7 @@ VCFG = 0x000</text>
 <wire x1="-30.48" y1="-15.24" x2="-68.58" y2="-15.24" width="0.1524" layer="97"/>
 <text x="-48.26" y="-12.7" size="0.8128" layer="97">TX and RX of BT module become
 RX and TX for the controller</text>
-<text x="-55.88" y="10.16" size="0.8128" layer="97">DFU pin (8) of BT module set high</text>
+<text x="-57.912" y="8.128" size="0.8128" layer="97">DFU pin (8) of BT module set high</text>
 </plain>
 <instances>
 <instance part="IC1" gate="G$1" x="129.54" y="-17.78" smashed="yes">
@@ -4450,7 +4450,7 @@ RX and TX for the controller</text>
 </instance>
 <instance part="HDR2" gate="G$1" x="-63.5" y="0" smashed="yes" rot="R180">
 <attribute name="NAME" x="-59.055" y="10.16" size="1.778" layer="95" rot="R180" align="top-left"/>
-<attribute name="VALUE" x="-51.435" y="-13.6525" size="1.778" layer="96" rot="R180" align="top-left"/>
+<attribute name="VALUE" x="-51.435" y="-14.1605" size="1.778" layer="96" rot="R180" align="top-left"/>
 </instance>
 <instance part="+3V11" gate="G$1" x="-45.72" y="-5.08" smashed="yes" rot="R180">
 <attribute name="VALUE" x="-48.26" y="-7.62" size="1.778" layer="96"/>
@@ -4754,20 +4754,6 @@ RX and TX for the controller</text>
 <pinref part="HDR1" gate="G$1" pin="4"/>
 <wire x1="-91.44" y1="-5.08" x2="-88.9" y2="-5.08" width="0.1524" layer="91"/>
 <label x="-88.9" y="-5.08" size="0.8128" layer="95" xref="yes"/>
-</segment>
-</net>
-<net name="PGED2" class="0">
-<segment>
-<pinref part="IC1" gate="G$1" pin="PGED2/PWM1H3/RP10/CN16/PMD2/RB10"/>
-<wire x1="78.74" y1="-10.16" x2="76.2" y2="-10.16" width="0.1524" layer="91"/>
-<label x="76.2" y="-10.16" size="0.8128" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="PGEC2" class="0">
-<segment>
-<pinref part="IC1" gate="G$1" pin="PGEC2/PWM1L3/RP11/CN15/PMD1/RB11"/>
-<wire x1="78.74" y1="-12.7" x2="76.2" y2="-12.7" width="0.1524" layer="91"/>
-<label x="76.2" y="-12.7" size="0.8128" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="MCLR" class="0">
@@ -5245,12 +5231,22 @@ RX and TX for the controller</text>
 <wire x1="-58.42" y1="2.54" x2="-55.88" y2="2.54" width="0.1524" layer="91"/>
 <label x="-55.88" y="2.54" size="0.8128" layer="95" xref="yes"/>
 </segment>
+<segment>
+<pinref part="IC1" gate="G$1" pin="PWM1L2/DAC1RN/RP13/CN13/PMRD/RB13"/>
+<wire x1="78.74" y1="-17.78" x2="76.2" y2="-17.78" width="0.1524" layer="91"/>
+<label x="76.2" y="-17.78" size="0.8128" layer="95" rot="R180" xref="yes"/>
+</segment>
 </net>
 <net name="UART_TX" class="0">
 <segment>
 <pinref part="HDR2" gate="G$1" pin="4"/>
 <wire x1="-58.42" y1="-2.54" x2="-55.88" y2="-2.54" width="0.1524" layer="91"/>
 <label x="-55.88" y="-2.54" size="0.8128" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="IC1" gate="G$1" pin="PWM1H2/DAC1RP/RP12/CN14/PMD0/RB12"/>
+<wire x1="78.74" y1="-15.24" x2="76.2" y2="-15.24" width="0.1524" layer="91"/>
+<label x="76.2" y="-15.24" size="0.8128" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="UART_RX" class="0">
@@ -5259,12 +5255,22 @@ RX and TX for the controller</text>
 <wire x1="-58.42" y1="-5.08" x2="-55.88" y2="-5.08" width="0.1524" layer="91"/>
 <label x="-55.88" y="-5.08" size="0.8128" layer="95" xref="yes"/>
 </segment>
+<segment>
+<pinref part="IC1" gate="G$1" pin="PGEC2/PWM1L3/RP11/CN15/PMD1/RB11"/>
+<wire x1="78.74" y1="-12.7" x2="76.2" y2="-12.7" width="0.1524" layer="91"/>
+<label x="76.2" y="-12.7" size="0.8128" layer="95" rot="R180" xref="yes"/>
+</segment>
 </net>
 <net name="BT_CTS" class="0">
 <segment>
 <pinref part="HDR2" gate="G$1" pin="2"/>
 <wire x1="-58.42" y1="-7.62" x2="-55.88" y2="-7.62" width="0.1524" layer="91"/>
 <label x="-55.88" y="-7.62" size="0.8128" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="IC1" gate="G$1" pin="PGED2/PWM1H3/RP10/CN16/PMD2/RB10"/>
+<wire x1="78.74" y1="-10.16" x2="76.2" y2="-10.16" width="0.1524" layer="91"/>
+<label x="76.2" y="-10.16" size="0.8128" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="BT_MOD" class="0">

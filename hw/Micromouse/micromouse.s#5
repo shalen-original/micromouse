@@ -4150,6 +4150,7 @@ VCFG = 0x000</text>
 <wire x1="-30.48" y1="-15.24" x2="-68.58" y2="-15.24" width="0.1524" layer="97"/>
 <text x="-48.26" y="-12.7" size="0.8128" layer="97">TX and RX of BT module become
 RX and TX for the controller</text>
+<text x="-57.912" y="8.128" size="0.8128" layer="97">DFU pin (8) of BT module set high</text>
 </plain>
 <instances>
 <instance part="IC1" gate="G$1" x="129.54" y="-17.78" smashed="yes">
@@ -4407,8 +4408,8 @@ RX and TX for the controller</text>
 <instance part="+3V9" gate="G$1" x="-76.2" y="2.54" smashed="yes" rot="R270">
 <attribute name="VALUE" x="-73.66" y="0" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="SUPPLY20" gate="GND" x="-40.64" y="0" smashed="yes">
-<attribute name="VALUE" x="-42.545" y="-3.175" size="1.778" layer="96"/>
+<instance part="SUPPLY20" gate="GND" x="-35.56" y="-5.08" smashed="yes">
+<attribute name="VALUE" x="-37.465" y="-8.255" size="1.778" layer="96"/>
 </instance>
 <instance part="J3" gate="G$1" x="-139.7" y="12.7" smashed="yes">
 <attribute name="VALUE" x="-140.97" y="5.08" size="1.778" layer="96"/>
@@ -4626,9 +4627,9 @@ RX and TX for the controller</text>
 </segment>
 <segment>
 <pinref part="HDR2" gate="G$1" pin="7"/>
-<wire x1="-58.42" y1="5.08" x2="-40.64" y2="5.08" width="0.1524" layer="91"/>
-<wire x1="-40.64" y1="5.08" x2="-40.64" y2="2.54" width="0.1524" layer="91"/>
+<wire x1="-58.42" y1="5.08" x2="-35.56" y2="5.08" width="0.1524" layer="91"/>
 <pinref part="SUPPLY20" gate="GND" pin="GND"/>
+<wire x1="-35.56" y1="5.08" x2="-35.56" y2="-2.54" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="+3V3" class="0">
@@ -4717,6 +4718,10 @@ RX and TX for the controller</text>
 <wire x1="-58.42" y1="0" x2="-45.72" y2="0" width="0.1524" layer="91"/>
 <pinref part="+3V11" gate="G$1" pin="+3V3"/>
 <wire x1="-45.72" y1="0" x2="-45.72" y2="-2.54" width="0.1524" layer="91"/>
+<wire x1="-45.72" y1="0" x2="-45.72" y2="7.62" width="0.1524" layer="91"/>
+<junction x="-45.72" y="0"/>
+<pinref part="HDR2" gate="G$1" pin="8"/>
+<wire x1="-45.72" y1="7.62" x2="-58.42" y2="7.62" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="VCAP/VDDCORE" class="0">
@@ -5232,13 +5237,6 @@ RX and TX for the controller</text>
 <pinref part="R12" gate="R$1" pin="1"/>
 <wire x1="-93.98" y1="68.58" x2="-106.68" y2="68.58" width="0.1524" layer="91"/>
 <wire x1="-106.68" y1="68.58" x2="-106.68" y2="83.82" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="BT_DFU" class="0">
-<segment>
-<pinref part="HDR2" gate="G$1" pin="8"/>
-<wire x1="-58.42" y1="7.62" x2="-55.88" y2="7.62" width="0.1524" layer="91"/>
-<label x="-55.88" y="7.62" size="0.8128" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="BT_RTS" class="0">
