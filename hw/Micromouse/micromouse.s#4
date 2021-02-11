@@ -4149,8 +4149,8 @@ RX and TX for the controller</text>
 <instance part="+3V1" gate="G$1" x="104.14" y="88.9" smashed="yes">
 <attribute name="VALUE" x="104.14" y="91.44" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="+3V2" gate="G$1" x="195.58" y="-43.18" smashed="yes" rot="R180">
-<attribute name="VALUE" x="193.04" y="-45.72" size="1.778" layer="96"/>
+<instance part="+3V2" gate="G$1" x="200.66" y="-43.18" smashed="yes" rot="R180">
+<attribute name="VALUE" x="198.12" y="-45.72" size="1.778" layer="96"/>
 </instance>
 <instance part="SUPPLY3" gate="GND" x="53.34" y="-45.72" smashed="yes">
 <attribute name="VALUE" x="51.435" y="-48.895" size="1.778" layer="96"/>
@@ -4158,8 +4158,8 @@ RX and TX for the controller</text>
 <instance part="+3V3" gate="G$1" x="60.96" y="-45.72" smashed="yes" rot="R180">
 <attribute name="VALUE" x="58.42" y="-48.26" size="1.778" layer="96"/>
 </instance>
-<instance part="SUPPLY4" gate="GND" x="203.2" y="-43.18" smashed="yes">
-<attribute name="VALUE" x="201.295" y="-46.355" size="1.778" layer="96"/>
+<instance part="SUPPLY4" gate="GND" x="208.28" y="-43.18" smashed="yes">
+<attribute name="VALUE" x="206.375" y="-46.355" size="1.778" layer="96"/>
 </instance>
 <instance part="SUPPLY5" gate="G$1" x="-7.62" y="93.98" smashed="yes">
 <attribute name="VALUE" x="-9.525" y="97.155" size="1.778" layer="96"/>
@@ -4350,9 +4350,9 @@ RX and TX for the controller</text>
 <attribute name="NAME" x="194.183" y="-4.5974" size="1.778" layer="95"/>
 <attribute name="VALUE" x="194.183" y="-9.6774" size="1.778" layer="96"/>
 </instance>
-<instance part="C13" gate="C$1" x="190.5" y="-33.02" smashed="yes">
-<attribute name="NAME" x="191.643" y="-32.5374" size="1.778" layer="95"/>
-<attribute name="VALUE" x="191.643" y="-37.6174" size="1.778" layer="96"/>
+<instance part="C13" gate="C$1" x="195.58" y="-33.02" smashed="yes">
+<attribute name="NAME" x="196.723" y="-32.5374" size="1.778" layer="95"/>
+<attribute name="VALUE" x="196.723" y="-37.6174" size="1.778" layer="96"/>
 </instance>
 <instance part="C14" gate="C$1" x="55.88" y="-38.1" smashed="yes" rot="R90">
 <attribute name="NAME" x="59.817" y="-33.5026" size="1.778" layer="95" rot="R180"/>
@@ -4420,12 +4420,12 @@ RX and TX for the controller</text>
 </segment>
 <segment>
 <pinref part="IC1" gate="G$1" pin="VSS1"/>
-<wire x1="175.26" y1="-30.48" x2="190.5" y2="-30.48" width="0.1524" layer="91"/>
+<wire x1="175.26" y1="-30.48" x2="195.58" y2="-30.48" width="0.1524" layer="91"/>
 <pinref part="SUPPLY4" gate="GND" pin="GND"/>
-<wire x1="190.5" y1="-30.48" x2="203.2" y2="-30.48" width="0.1524" layer="91"/>
-<wire x1="203.2" y1="-30.48" x2="203.2" y2="-40.64" width="0.1524" layer="91"/>
+<wire x1="195.58" y1="-30.48" x2="208.28" y2="-30.48" width="0.1524" layer="91"/>
+<wire x1="208.28" y1="-30.48" x2="208.28" y2="-40.64" width="0.1524" layer="91"/>
 <pinref part="C13" gate="C$1" pin="+"/>
-<junction x="190.5" y="-30.48"/>
+<junction x="195.58" y="-30.48"/>
 </segment>
 <segment>
 <wire x1="-73.66" y1="30.48" x2="-66.04" y2="30.48" width="0.1524" layer="91"/>
@@ -4568,14 +4568,14 @@ RX and TX for the controller</text>
 </segment>
 <segment>
 <pinref part="+3V2" gate="G$1" pin="+3V3"/>
-<wire x1="195.58" y1="-40.64" x2="195.58" y2="-38.1" width="0.1524" layer="91"/>
+<wire x1="200.66" y1="-40.64" x2="200.66" y2="-38.1" width="0.1524" layer="91"/>
 <pinref part="IC1" gate="G$1" pin="VDD"/>
-<wire x1="175.26" y1="-33.02" x2="182.88" y2="-33.02" width="0.1524" layer="91"/>
-<wire x1="182.88" y1="-33.02" x2="182.88" y2="-38.1" width="0.1524" layer="91"/>
-<wire x1="182.88" y1="-38.1" x2="190.5" y2="-38.1" width="0.1524" layer="91"/>
+<wire x1="175.26" y1="-33.02" x2="187.96" y2="-33.02" width="0.1524" layer="91"/>
+<wire x1="187.96" y1="-33.02" x2="187.96" y2="-38.1" width="0.1524" layer="91"/>
+<wire x1="187.96" y1="-38.1" x2="195.58" y2="-38.1" width="0.1524" layer="91"/>
 <pinref part="C13" gate="C$1" pin="-"/>
-<wire x1="190.5" y1="-38.1" x2="195.58" y2="-38.1" width="0.1524" layer="91"/>
-<junction x="190.5" y="-38.1"/>
+<wire x1="195.58" y1="-38.1" x2="200.66" y2="-38.1" width="0.1524" layer="91"/>
+<junction x="195.58" y="-38.1"/>
 </segment>
 <segment>
 <wire x1="96.52" y1="83.82" x2="99.06" y2="83.82" width="0.1524" layer="91"/>
@@ -5066,6 +5066,11 @@ RX and TX for the controller</text>
 <pinref part="R6" gate="R$1" pin="2"/>
 <wire x1="-78.74" y1="-50.8" x2="-78.74" y2="-48.26" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="IC1" gate="G$1" pin="AN4/C1IN-/RP2/CN6/RB2"/>
+<wire x1="175.26" y1="-45.72" x2="177.8" y2="-45.72" width="0.1524" layer="91"/>
+<label x="177.8" y="-45.72" size="0.8128" layer="95" xref="yes"/>
+</segment>
 </net>
 <net name="N$13" class="0">
 <segment>
@@ -5087,6 +5092,11 @@ RX and TX for the controller</text>
 <pinref part="R7" gate="R$1" pin="2"/>
 <wire x1="-66.04" y1="-50.8" x2="-66.04" y2="-48.26" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="IC1" gate="G$1" pin="AN5/C1IN+/RP3/CN7/RB3"/>
+<wire x1="175.26" y1="-43.18" x2="177.8" y2="-43.18" width="0.1524" layer="91"/>
+<label x="177.8" y="-43.18" size="0.8128" layer="95" xref="yes"/>
+</segment>
 </net>
 <net name="LED3" class="0">
 <segment>
@@ -5094,12 +5104,22 @@ RX and TX for the controller</text>
 <pinref part="R8" gate="R$1" pin="2"/>
 <wire x1="-53.34" y1="-50.8" x2="-53.34" y2="-48.26" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="IC1" gate="G$1" pin="AN6/RP16/CN8/RC0"/>
+<wire x1="175.26" y1="-40.64" x2="177.8" y2="-40.64" width="0.1524" layer="91"/>
+<label x="177.8" y="-40.64" size="0.8128" layer="95" xref="yes"/>
+</segment>
 </net>
 <net name="LED4" class="0">
 <segment>
 <label x="-40.64" y="-50.8" size="0.8128" layer="95" rot="R270" xref="yes"/>
 <pinref part="R9" gate="R$1" pin="2"/>
 <wire x1="-40.64" y1="-50.8" x2="-40.64" y2="-48.26" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="IC1" gate="G$1" pin="AN7/RP17/CN9/RC1"/>
+<wire x1="175.26" y1="-38.1" x2="177.8" y2="-38.1" width="0.1524" layer="91"/>
+<label x="177.8" y="-38.1" size="0.8128" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="N$1" class="0">
