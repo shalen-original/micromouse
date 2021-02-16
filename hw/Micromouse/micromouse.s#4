@@ -5052,6 +5052,11 @@ RX and TX for the controller</text>
 <wire x1="-116.84" y1="-66.04" x2="-116.84" y2="-63.5" width="0.1524" layer="91"/>
 <label x="-116.84" y="-63.5" size="0.8128" layer="95" rot="R90" xref="yes"/>
 </segment>
+<segment>
+<pinref part="IC1" gate="G$1" pin="RP19/CN28/PMBE/RC3"/>
+<wire x1="175.26" y1="-12.7" x2="177.8" y2="-12.7" width="0.1524" layer="91"/>
+<label x="177.8" y="-12.7" size="0.8128" layer="95" xref="yes"/>
+</segment>
 </net>
 <net name="N$9" class="0">
 <segment>
