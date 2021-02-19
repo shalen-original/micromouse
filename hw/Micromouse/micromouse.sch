@@ -8,34 +8,34 @@
 </settings>
 <grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
-<layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
-<layer number="2" name="Route2" color="16" fill="1" visible="no" active="no"/>
-<layer number="3" name="Route3" color="17" fill="1" visible="no" active="no"/>
-<layer number="4" name="Route4" color="18" fill="1" visible="no" active="no"/>
-<layer number="5" name="Route5" color="19" fill="1" visible="no" active="no"/>
-<layer number="6" name="Route6" color="25" fill="1" visible="no" active="no"/>
-<layer number="7" name="Route7" color="26" fill="1" visible="no" active="no"/>
-<layer number="8" name="Route8" color="27" fill="1" visible="no" active="no"/>
-<layer number="9" name="Route9" color="28" fill="1" visible="no" active="no"/>
-<layer number="10" name="Route10" color="29" fill="1" visible="no" active="no"/>
-<layer number="11" name="Route11" color="30" fill="1" visible="no" active="no"/>
-<layer number="12" name="Route12" color="20" fill="1" visible="no" active="no"/>
-<layer number="13" name="Route13" color="21" fill="1" visible="no" active="no"/>
-<layer number="14" name="Route14" color="22" fill="1" visible="no" active="no"/>
-<layer number="15" name="Route15" color="23" fill="1" visible="no" active="no"/>
-<layer number="16" name="Bottom" color="1" fill="1" visible="no" active="no"/>
-<layer number="17" name="Pads" color="2" fill="1" visible="no" active="no"/>
-<layer number="18" name="Vias" color="2" fill="1" visible="no" active="no"/>
-<layer number="19" name="Unrouted" color="6" fill="1" visible="no" active="no"/>
-<layer number="20" name="Dimension" color="24" fill="1" visible="no" active="no"/>
-<layer number="21" name="tPlace" color="7" fill="1" visible="no" active="no"/>
-<layer number="22" name="bPlace" color="7" fill="1" visible="no" active="no"/>
-<layer number="23" name="tOrigins" color="15" fill="1" visible="no" active="no"/>
-<layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="no"/>
-<layer number="25" name="tNames" color="7" fill="1" visible="no" active="no"/>
-<layer number="26" name="bNames" color="7" fill="1" visible="no" active="no"/>
-<layer number="27" name="tValues" color="7" fill="1" visible="no" active="no"/>
-<layer number="28" name="bValues" color="7" fill="1" visible="no" active="no"/>
+<layer number="1" name="Top" color="4" fill="1" visible="yes" active="no"/>
+<layer number="2" name="Route2" color="16" fill="1" visible="yes" active="no"/>
+<layer number="3" name="Route3" color="17" fill="1" visible="yes" active="no"/>
+<layer number="4" name="Route4" color="18" fill="1" visible="yes" active="no"/>
+<layer number="5" name="Route5" color="19" fill="1" visible="yes" active="no"/>
+<layer number="6" name="Route6" color="25" fill="1" visible="yes" active="no"/>
+<layer number="7" name="Route7" color="26" fill="1" visible="yes" active="no"/>
+<layer number="8" name="Route8" color="27" fill="1" visible="yes" active="no"/>
+<layer number="9" name="Route9" color="28" fill="1" visible="yes" active="no"/>
+<layer number="10" name="Route10" color="29" fill="1" visible="yes" active="no"/>
+<layer number="11" name="Route11" color="30" fill="1" visible="yes" active="no"/>
+<layer number="12" name="Route12" color="20" fill="1" visible="yes" active="no"/>
+<layer number="13" name="Route13" color="21" fill="1" visible="yes" active="no"/>
+<layer number="14" name="Route14" color="22" fill="1" visible="yes" active="no"/>
+<layer number="15" name="Route15" color="23" fill="1" visible="yes" active="no"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="no"/>
+<layer number="17" name="Pads" color="2" fill="1" visible="yes" active="no"/>
+<layer number="18" name="Vias" color="2" fill="1" visible="yes" active="no"/>
+<layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="no"/>
+<layer number="20" name="Dimension" color="24" fill="1" visible="yes" active="no"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="no"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="no"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="no"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="no"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="no"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="no"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="no"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="no"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="no"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="no"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="no" active="no"/>
@@ -44,8 +44,8 @@
 <layer number="34" name="bFinish" color="6" fill="6" visible="no" active="no"/>
 <layer number="35" name="tGlue" color="7" fill="4" visible="no" active="no"/>
 <layer number="36" name="bGlue" color="7" fill="5" visible="no" active="no"/>
-<layer number="37" name="tTest" color="7" fill="1" visible="no" active="no"/>
-<layer number="38" name="bTest" color="7" fill="1" visible="no" active="no"/>
+<layer number="37" name="tTest" color="7" fill="1" visible="yes" active="no"/>
+<layer number="38" name="bTest" color="7" fill="1" visible="yes" active="no"/>
 <layer number="39" name="tKeepout" color="4" fill="11" visible="no" active="no"/>
 <layer number="40" name="bKeepout" color="1" fill="11" visible="no" active="no"/>
 <layer number="41" name="tRestrict" color="4" fill="10" visible="no" active="no"/>
@@ -53,19 +53,19 @@
 <layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="no"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="no"/>
 <layer number="45" name="Holes" color="7" fill="1" visible="no" active="no"/>
-<layer number="46" name="Milling" color="3" fill="1" visible="no" active="no"/>
-<layer number="47" name="Measures" color="7" fill="1" visible="no" active="no"/>
-<layer number="48" name="Document" color="7" fill="1" visible="no" active="no"/>
-<layer number="49" name="Reference" color="7" fill="1" visible="no" active="no"/>
-<layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
-<layer number="51" name="tDocu" color="7" fill="1" visible="no" active="no"/>
-<layer number="52" name="bDocu" color="7" fill="1" visible="no" active="no"/>
-<layer number="53" name="tGND_GNDA" color="7" fill="9" visible="no" active="no"/>
-<layer number="54" name="bGND_GNDA" color="1" fill="9" visible="no" active="no"/>
-<layer number="56" name="wert" color="7" fill="1" visible="no" active="no"/>
-<layer number="57" name="tCAD" color="7" fill="1" visible="no" active="no"/>
-<layer number="59" name="tCarbon" color="7" fill="1" visible="no" active="no"/>
-<layer number="60" name="bCarbon" color="7" fill="1" visible="no" active="no"/>
+<layer number="46" name="Milling" color="3" fill="1" visible="yes" active="no"/>
+<layer number="47" name="Measures" color="7" fill="1" visible="yes" active="no"/>
+<layer number="48" name="Document" color="7" fill="1" visible="yes" active="no"/>
+<layer number="49" name="Reference" color="7" fill="1" visible="yes" active="no"/>
+<layer number="50" name="dxf" color="7" fill="1" visible="yes" active="no"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="no"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="no"/>
+<layer number="53" name="tGND_GNDA" color="7" fill="9" visible="yes" active="no"/>
+<layer number="54" name="bGND_GNDA" color="1" fill="9" visible="yes" active="no"/>
+<layer number="56" name="wert" color="7" fill="1" visible="yes" active="no"/>
+<layer number="57" name="tCAD" color="7" fill="1" visible="yes" active="no"/>
+<layer number="59" name="tCarbon" color="7" fill="1" visible="yes" active="no"/>
+<layer number="60" name="bCarbon" color="7" fill="1" visible="yes" active="no"/>
 <layer number="88" name="SimResults" color="9" fill="1" visible="yes" active="yes"/>
 <layer number="89" name="SimProbes" color="9" fill="1" visible="yes" active="yes"/>
 <layer number="90" name="Modules" color="5" fill="1" visible="yes" active="yes"/>
@@ -674,94 +674,6 @@ In this library the device names are the same as the pin names of the symbols, t
 <device name="">
 <technologies>
 <technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
-<library name="battery" urn="urn:adsk.eagle:library:109">
-<description>&lt;b&gt;Lithium Batteries and NC Accus&lt;/b&gt;&lt;p&gt;
-&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
-<packages>
-<package name="AB9V" urn="urn:adsk.eagle:footprint:4514/1" library_version="3">
-<description>&lt;B&gt;9-V BATTERY CLIP&lt;/B&gt;</description>
-<wire x1="-2.54" y1="-3.175" x2="-2.54" y2="-1.905" width="0.254" layer="21"/>
-<wire x1="-2.54" y1="1.905" x2="-2.54" y2="3.175" width="0.254" layer="21"/>
-<wire x1="-1.905" y1="2.54" x2="-3.175" y2="2.54" width="0.254" layer="21"/>
-<wire x1="-2.54" y1="4.318" x2="-1.778" y2="5.08" width="0.1524" layer="21"/>
-<wire x1="-1.778" y1="5.08" x2="1.778" y2="5.08" width="0.1524" layer="21"/>
-<wire x1="2.54" y1="4.318" x2="1.778" y2="5.08" width="0.1524" layer="21"/>
-<wire x1="2.54" y1="4.318" x2="2.54" y2="-4.318" width="0.1524" layer="21"/>
-<wire x1="1.778" y1="-5.08" x2="2.54" y2="-4.318" width="0.1524" layer="21"/>
-<wire x1="1.778" y1="-5.08" x2="-1.778" y2="-5.08" width="0.1524" layer="21"/>
-<wire x1="-2.54" y1="-4.318" x2="-1.778" y2="-5.08" width="0.1524" layer="21"/>
-<circle x="0" y="2.54" radius="1.27" width="0.1524" layer="51"/>
-<circle x="0" y="-2.54" radius="1.27" width="0.1524" layer="51"/>
-<pad name="-" x="0" y="-2.54" drill="1.1176" diameter="3.1496" shape="octagon"/>
-<pad name="+" x="0" y="2.54" drill="1.1176" diameter="3.1496" shape="octagon"/>
-<text x="-1.905" y="-1.143" size="1.27" layer="21" ratio="16" rot="R90">9V</text>
-<text x="-3.81" y="-2.54" size="1.27" layer="25" ratio="10" rot="R90">&gt;NAME</text>
-<text x="4.445" y="-2.54" size="1.27" layer="27" ratio="10" rot="R90">&gt;VALUE</text>
-</package>
-</packages>
-<packages3d>
-<package3d name="AB9V" urn="urn:adsk.eagle:package:4600/1" type="box" library_version="3">
-<description>9-V BATTERY CLIP</description>
-<packageinstances>
-<packageinstance name="AB9V"/>
-</packageinstances>
-</package3d>
-</packages3d>
-<symbols>
-<symbol name="9V0-BL" urn="urn:adsk.eagle:symbol:4513/1" library_version="3">
-<wire x1="-6.985" y1="0.635" x2="-6.985" y2="0" width="0.4064" layer="94"/>
-<wire x1="-8.89" y1="0" x2="-6.985" y2="0" width="0.1524" layer="94"/>
-<wire x1="-6.985" y1="0" x2="-6.985" y2="-0.635" width="0.4064" layer="94"/>
-<wire x1="-5.715" y1="2.54" x2="-5.715" y2="-2.54" width="0.4064" layer="94"/>
-<wire x1="-4.445" y1="0.635" x2="-4.445" y2="-0.635" width="0.4064" layer="94"/>
-<wire x1="6.985" y1="2.54" x2="6.985" y2="0" width="0.4064" layer="94"/>
-<wire x1="6.985" y1="0" x2="8.255" y2="0" width="0.1524" layer="94"/>
-<wire x1="6.985" y1="0" x2="6.985" y2="-2.54" width="0.4064" layer="94"/>
-<wire x1="-3.175" y1="2.54" x2="-3.175" y2="-2.54" width="0.4064" layer="94"/>
-<wire x1="-1.905" y1="0.635" x2="-1.905" y2="-0.635" width="0.4064" layer="94"/>
-<wire x1="-0.635" y1="2.54" x2="-0.635" y2="-2.54" width="0.4064" layer="94"/>
-<wire x1="0.635" y1="0.635" x2="0.635" y2="-0.635" width="0.4064" layer="94"/>
-<wire x1="1.905" y1="2.54" x2="1.905" y2="-2.54" width="0.4064" layer="94"/>
-<wire x1="3.175" y1="0.635" x2="3.175" y2="-0.635" width="0.4064" layer="94"/>
-<wire x1="4.445" y1="2.54" x2="4.445" y2="-2.54" width="0.4064" layer="94"/>
-<wire x1="5.715" y1="0.635" x2="5.715" y2="-0.635" width="0.4064" layer="94"/>
-<wire x1="9.525" y1="0.635" x2="9.525" y2="-0.635" width="0.254" layer="94" curve="-180" cap="flat"/>
-<wire x1="-9.525" y1="0.635" x2="-9.525" y2="-0.635" width="0.254" layer="94" curve="-180" cap="flat"/>
-<wire x1="8.255" y1="0" x2="8.89" y2="0" width="0.6096" layer="94"/>
-<wire x1="-10.16" y1="0" x2="-10.795" y2="0" width="0.6096" layer="94"/>
-<text x="-5.715" y="3.175" size="1.778" layer="95">&gt;NAME</text>
-<text x="-5.715" y="-5.08" size="1.778" layer="96">&gt;VALUE</text>
-<text x="7.62" y="0.635" size="1.524" layer="94">+</text>
-<text x="-8.255" y="0.635" size="1.524" layer="94">-</text>
-<pin name="+" x="12.7" y="0" visible="pad" length="short" direction="pas" rot="R180"/>
-<pin name="-" x="-12.7" y="0" visible="pad" length="short" direction="pas"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="AB9V" urn="urn:adsk.eagle:component:4654/2" prefix="G" library_version="3">
-<description>&lt;B&gt;9-V BATTERY CLIP&lt;/B&gt;</description>
-<gates>
-<gate name="G$1" symbol="9V0-BL" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="AB9V">
-<connects>
-<connect gate="G$1" pin="+" pad="+"/>
-<connect gate="G$1" pin="-" pad="-"/>
-</connects>
-<package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:4600/1"/>
-</package3dinstances>
-<technologies>
-<technology name="">
-<attribute name="POPULARITY" value="32" constant="no"/>
-</technology>
 </technologies>
 </device>
 </devices>
@@ -2701,6 +2613,25 @@ Source: http://www.osram.convergy.de/</description>
 <text x="-2.54" y="1.27" size="1.27" layer="21">&gt;NAME</text>
 <text x="-2.54" y="-2.54" size="1.27" layer="21">&gt;VALUE</text>
 </package>
+<package name="PROBEPOINT_THT" urn="urn:adsk.eagle:footprint:26984477/1" library_version="25">
+<pad name="P$1" x="0" y="0" drill="1.32" shape="octagon"/>
+<text x="-1.5" y="1.5" size="0.6096" layer="25">&gt;NAME</text>
+<text x="-1.5" y="-2" size="0.6096" layer="25">&gt;VALUE</text>
+</package>
+<package name="PROBEPOINT_SMD" urn="urn:adsk.eagle:footprint:26984478/2" library_version="26">
+<smd name="P$1" x="0" y="0" dx="3" dy="3" layer="1"/>
+<text x="-3" y="1.73" size="1.27" layer="25">&gt;NAME</text>
+<text x="-3" y="-3.23" size="1.27" layer="27">&gt;VALUE</text>
+</package>
+<package name="AB9V" urn="urn:adsk.eagle:footprint:26986041/1" library_version="28">
+<description>&lt;B&gt;9-V BATTERY CLIP&lt;/B&gt;</description>
+<circle x="0" y="2.54" radius="1.27" width="0.1524" layer="51"/>
+<circle x="0" y="-2.54" radius="1.27" width="0.1524" layer="51"/>
+<pad name="-" x="0" y="-2.54" drill="1.1176" diameter="3.1496" shape="octagon"/>
+<pad name="+" x="0" y="2.54" drill="1.1176" diameter="3.1496" shape="octagon"/>
+<text x="-2.54" y="-2.54" size="1.27" layer="25" ratio="10" rot="R90">&gt;NAME</text>
+<text x="3.175" y="-2.54" size="1.27" layer="27" ratio="10" rot="R90">&gt;VALUE</text>
+</package>
 </packages>
 <packages3d>
 <package3d name="B3F-1000" urn="urn:adsk.eagle:package:10899221/2" type="model">
@@ -2767,6 +2698,22 @@ Source: http://www.osram.convergy.de/</description>
 <package3d name="SMD_LED_0805" urn="urn:adsk.eagle:package:26745292/1" type="box" library_version="21">
 <packageinstances>
 <packageinstance name="SMD_LED_0805"/>
+</packageinstances>
+</package3d>
+<package3d name="PROBEPOINT_THT" urn="urn:adsk.eagle:package:26984480/1" type="box" library_version="25">
+<packageinstances>
+<packageinstance name="PROBEPOINT_THT"/>
+</packageinstances>
+</package3d>
+<package3d name="PROBEPOINT_SMD" urn="urn:adsk.eagle:package:26984479/2" type="box" library_version="26">
+<packageinstances>
+<packageinstance name="PROBEPOINT_SMD"/>
+</packageinstances>
+</package3d>
+<package3d name="AB9V" urn="urn:adsk.eagle:package:26986042/1" type="box" library_version="28">
+<description>&lt;B&gt;9-V BATTERY CLIP&lt;/B&gt;</description>
+<packageinstances>
+<packageinstance name="AB9V"/>
 </packageinstances>
 </package3d>
 </packages3d>
@@ -2936,6 +2883,43 @@ Source: http://www.osram.convergy.de/</description>
 <vertex x="-2.794" y="-3.048"/>
 <vertex x="-2.032" y="-2.794"/>
 </polygon>
+</symbol>
+<symbol name="PROBEPOINT" urn="urn:adsk.eagle:symbol:26984476/3" library_version="28">
+<wire x1="0" y1="0" x2="-2.54" y2="2.54" width="0.254" layer="94" style="longdash"/>
+<wire x1="-2.54" y1="2.54" x2="0" y2="5.08" width="0.254" layer="94" style="longdash"/>
+<wire x1="0" y1="5.08" x2="2.54" y2="2.54" width="0.254" layer="94" style="longdash"/>
+<wire x1="2.54" y1="2.54" x2="0" y2="0" width="0.254" layer="94" style="longdash"/>
+<pin name="P$1" x="0" y="-5.08" visible="off" length="middle" rot="R90"/>
+<text x="2.54" y="0" size="1.4224" layer="95">&gt;NAME</text>
+<text x="2.54" y="-5.08" size="1.4224" layer="96">&gt;VALUE</text>
+</symbol>
+<symbol name="9V0-BL" urn="urn:adsk.eagle:symbol:26986040/1" library_version="28">
+<wire x1="-6.985" y1="0.635" x2="-6.985" y2="0" width="0.4064" layer="94"/>
+<wire x1="-8.89" y1="0" x2="-6.985" y2="0" width="0.1524" layer="94"/>
+<wire x1="-6.985" y1="0" x2="-6.985" y2="-0.635" width="0.4064" layer="94"/>
+<wire x1="-5.715" y1="2.54" x2="-5.715" y2="-2.54" width="0.4064" layer="94"/>
+<wire x1="-4.445" y1="0.635" x2="-4.445" y2="-0.635" width="0.4064" layer="94"/>
+<wire x1="6.985" y1="2.54" x2="6.985" y2="0" width="0.4064" layer="94"/>
+<wire x1="6.985" y1="0" x2="8.255" y2="0" width="0.1524" layer="94"/>
+<wire x1="6.985" y1="0" x2="6.985" y2="-2.54" width="0.4064" layer="94"/>
+<wire x1="-3.175" y1="2.54" x2="-3.175" y2="-2.54" width="0.4064" layer="94"/>
+<wire x1="-1.905" y1="0.635" x2="-1.905" y2="-0.635" width="0.4064" layer="94"/>
+<wire x1="-0.635" y1="2.54" x2="-0.635" y2="-2.54" width="0.4064" layer="94"/>
+<wire x1="0.635" y1="0.635" x2="0.635" y2="-0.635" width="0.4064" layer="94"/>
+<wire x1="1.905" y1="2.54" x2="1.905" y2="-2.54" width="0.4064" layer="94"/>
+<wire x1="3.175" y1="0.635" x2="3.175" y2="-0.635" width="0.4064" layer="94"/>
+<wire x1="4.445" y1="2.54" x2="4.445" y2="-2.54" width="0.4064" layer="94"/>
+<wire x1="5.715" y1="0.635" x2="5.715" y2="-0.635" width="0.4064" layer="94"/>
+<wire x1="9.525" y1="0.635" x2="9.525" y2="-0.635" width="0.254" layer="94" curve="-180" cap="flat"/>
+<wire x1="-9.525" y1="0.635" x2="-9.525" y2="-0.635" width="0.254" layer="94" curve="-180" cap="flat"/>
+<wire x1="8.255" y1="0" x2="8.89" y2="0" width="0.6096" layer="94"/>
+<wire x1="-10.16" y1="0" x2="-10.795" y2="0" width="0.6096" layer="94"/>
+<text x="-5.715" y="3.175" size="1.778" layer="95">&gt;NAME</text>
+<text x="-5.715" y="-5.08" size="1.778" layer="96">&gt;VALUE</text>
+<text x="7.62" y="0.635" size="1.524" layer="94">+</text>
+<text x="-8.255" y="0.635" size="1.524" layer="94">-</text>
+<pin name="+" x="12.7" y="0" visible="pad" length="short" direction="pas" rot="R180"/>
+<pin name="-" x="-12.7" y="0" visible="pad" length="short" direction="pas"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -3193,6 +3177,57 @@ Source: http://www.osram.convergy.de/</description>
 </package3dinstances>
 <technologies>
 <technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="PROBE_POINT" urn="urn:adsk.eagle:component:26984482/5" prefix="P" uservalue="yes" library_version="28">
+<gates>
+<gate name="G$1" symbol="PROBEPOINT" x="0" y="0"/>
+</gates>
+<devices>
+<device name="THT" package="PROBEPOINT_THT">
+<connects>
+<connect gate="G$1" pin="P$1" pad="P$1"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:26984480/1"/>
+</package3dinstances>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="SMD" package="PROBEPOINT_SMD">
+<connects>
+<connect gate="G$1" pin="P$1" pad="P$1"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:26984479/2"/>
+</package3dinstances>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="AB9V" urn="urn:adsk.eagle:component:26986043/1" prefix="G" library_version="28">
+<description>&lt;B&gt;9-V BATTERY CLIP&lt;/B&gt;</description>
+<gates>
+<gate name="G$1" symbol="9V0-BL" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="AB9V">
+<connects>
+<connect gate="G$1" pin="+" pad="+"/>
+<connect gate="G$1" pin="-" pad="-"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:26986042/1"/>
+</package3dinstances>
+<technologies>
+<technology name="">
+<attribute name="POPULARITY" value="32" constant="no"/>
+</technology>
 </technologies>
 </device>
 </devices>
@@ -3876,7 +3911,7 @@ Example: SX-32S</description>
 <part name="IC1" library="microchip-dspic33fjxxmc" deviceset="DSPIC33FJ64MC804" device="-PT"/>
 <part name="IC2" library="SamacSys_Parts" deviceset="DRV8833PWR" device=""/>
 <part name="SUPPLY1" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="G1" library="battery" library_urn="urn:adsk.eagle:library:109" deviceset="AB9V" device="" package3d_urn="urn:adsk.eagle:package:4600/1"/>
+<part name="G1" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="AB9V" device="" package3d_urn="urn:adsk.eagle:package:26986042/1"/>
 <part name="LED1" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="LED" device="5MM" package3d_urn="urn:adsk.eagle:package:6240538/1"/>
 <part name="SUPPLY2" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="P+1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
@@ -3954,6 +3989,13 @@ Example: SX-32S</description>
 <part name="C15" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="CPOL_0805" device="" package3d_urn="urn:adsk.eagle:package:26475189/7"/>
 <part name="C16" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="CPOL_0805" device="" package3d_urn="urn:adsk.eagle:package:26475189/7"/>
 <part name="C17" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="CPOL_0805" device="" package3d_urn="urn:adsk.eagle:package:26475189/7"/>
+<part name="P_S1" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="PROBE_POINT" device="SMD" package3d_urn="urn:adsk.eagle:package:26984479/2"/>
+<part name="P_S2" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="PROBE_POINT" device="SMD" package3d_urn="urn:adsk.eagle:package:26984479/2"/>
+<part name="P_S3" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="PROBE_POINT" device="SMD" package3d_urn="urn:adsk.eagle:package:26984479/2"/>
+<part name="P_E1A" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="PROBE_POINT" device="SMD" package3d_urn="urn:adsk.eagle:package:26984479/2"/>
+<part name="P_E1B" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="PROBE_POINT" device="SMD" package3d_urn="urn:adsk.eagle:package:26984479/2"/>
+<part name="P_E2A" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="PROBE_POINT" device="SMD" package3d_urn="urn:adsk.eagle:package:26984479/2"/>
+<part name="P_E2B" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="PROBE_POINT" device="SMD" package3d_urn="urn:adsk.eagle:package:26984479/2"/>
 </parts>
 <sheets>
 <sheet>
@@ -4020,6 +4062,10 @@ RX and TX for the controller</text>
 <wire x1="-25.4" y1="-17.78" x2="147.32" y2="-17.78" width="0.1524" layer="97"/>
 <wire x1="147.32" y1="-17.78" x2="147.32" y2="55.88" width="0.1524" layer="97"/>
 <wire x1="147.32" y1="55.88" x2="-25.4" y2="55.88" width="0.1524" layer="97"/>
+<wire x1="-43.18" y1="-22.86" x2="-43.18" y2="-45.72" width="0.1524" layer="97"/>
+<wire x1="-43.18" y1="-45.72" x2="33.02" y2="-45.72" width="0.1524" layer="97"/>
+<wire x1="33.02" y1="-45.72" x2="33.02" y2="-22.86" width="0.1524" layer="97"/>
+<wire x1="33.02" y1="-22.86" x2="-43.18" y2="-22.86" width="0.1524" layer="97"/>
 </plain>
 <instances>
 <instance part="IC1" gate="G$1" x="63.5" y="20.32" smashed="yes">
@@ -4311,6 +4357,34 @@ RX and TX for the controller</text>
 <instance part="C17" gate="C$1" x="-114.3" y="-5.08" smashed="yes" rot="R180">
 <attribute name="NAME" x="-107.823" y="-5.5626" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="-115.443" y="-0.4826" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="P_S1" gate="G$1" x="-38.1" y="-30.48" smashed="yes">
+<attribute name="NAME" x="-35.56" y="-30.48" size="1.4224" layer="95"/>
+<attribute name="VALUE" x="-35.56" y="-35.56" size="1.4224" layer="96"/>
+</instance>
+<instance part="P_S2" gate="G$1" x="-27.94" y="-30.48" smashed="yes">
+<attribute name="NAME" x="-25.4" y="-30.48" size="1.4224" layer="95"/>
+<attribute name="VALUE" x="-25.4" y="-35.56" size="1.4224" layer="96"/>
+</instance>
+<instance part="P_S3" gate="G$1" x="-17.78" y="-30.48" smashed="yes">
+<attribute name="NAME" x="-15.24" y="-30.48" size="1.4224" layer="95"/>
+<attribute name="VALUE" x="-15.24" y="-35.56" size="1.4224" layer="96"/>
+</instance>
+<instance part="P_E1A" gate="G$1" x="-7.62" y="-30.48" smashed="yes">
+<attribute name="NAME" x="-5.08" y="-30.48" size="1.4224" layer="95"/>
+<attribute name="VALUE" x="-5.08" y="-35.56" size="1.4224" layer="96"/>
+</instance>
+<instance part="P_E1B" gate="G$1" x="2.54" y="-30.48" smashed="yes">
+<attribute name="NAME" x="5.08" y="-30.48" size="1.4224" layer="95"/>
+<attribute name="VALUE" x="5.08" y="-35.56" size="1.4224" layer="96"/>
+</instance>
+<instance part="P_E2A" gate="G$1" x="12.7" y="-30.48" smashed="yes">
+<attribute name="NAME" x="15.24" y="-30.48" size="1.4224" layer="95"/>
+<attribute name="VALUE" x="15.24" y="-35.56" size="1.4224" layer="96"/>
+</instance>
+<instance part="P_E2B" gate="G$1" x="22.86" y="-30.48" smashed="yes">
+<attribute name="NAME" x="25.4" y="-30.48" size="1.4224" layer="95"/>
+<attribute name="VALUE" x="25.4" y="-35.56" size="1.4224" layer="96"/>
 </instance>
 </instances>
 <busses>
@@ -4784,6 +4858,11 @@ RX and TX for the controller</text>
 <wire x1="12.7" y1="20.32" x2="10.16" y2="20.32" width="0.1524" layer="91"/>
 <label x="10.16" y="20.32" size="0.8128" layer="95" rot="R180" xref="yes"/>
 </segment>
+<segment>
+<pinref part="P_E1B" gate="G$1" pin="P$1"/>
+<wire x1="2.54" y1="-35.56" x2="2.54" y2="-38.1" width="0.1524" layer="91"/>
+<label x="2.54" y="-38.1" size="0.8128" layer="95" rot="R270" xref="yes"/>
+</segment>
 </net>
 <net name="M1_CHA" class="0">
 <segment>
@@ -4795,6 +4874,11 @@ RX and TX for the controller</text>
 <pinref part="IC1" gate="G$1" pin="PWM1H2/DAC1RP/RP12/CN14/PMD0/RB12"/>
 <wire x1="12.7" y1="22.86" x2="10.16" y2="22.86" width="0.1524" layer="91"/>
 <label x="10.16" y="22.86" size="0.8128" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="P_E1A" gate="G$1" pin="P$1"/>
+<wire x1="-7.62" y1="-35.56" x2="-7.62" y2="-38.1" width="0.1524" layer="91"/>
+<label x="-7.62" y="-38.1" size="0.8128" layer="95" rot="R270" xref="yes"/>
 </segment>
 </net>
 <net name="M2-" class="0">
@@ -4833,6 +4917,11 @@ RX and TX for the controller</text>
 <wire x1="12.7" y1="43.18" x2="10.16" y2="43.18" width="0.1524" layer="91"/>
 <label x="10.16" y="43.18" size="0.8128" layer="95" rot="R180" xref="yes"/>
 </segment>
+<segment>
+<pinref part="P_E2B" gate="G$1" pin="P$1"/>
+<wire x1="22.86" y1="-35.56" x2="22.86" y2="-38.1" width="0.1524" layer="91"/>
+<label x="22.86" y="-38.1" size="0.8128" layer="95" rot="R270" xref="yes"/>
+</segment>
 </net>
 <net name="M2_CHA" class="0">
 <segment>
@@ -4844,6 +4933,11 @@ RX and TX for the controller</text>
 <pinref part="IC1" gate="G$1" pin="SDA1/RP9/CN21/PMD3/RB9"/>
 <wire x1="12.7" y1="45.72" x2="10.16" y2="45.72" width="0.1524" layer="91"/>
 <label x="10.16" y="45.72" size="0.8128" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="P_E2A" gate="G$1" pin="P$1"/>
+<wire x1="12.7" y1="-35.56" x2="12.7" y2="-38.1" width="0.1524" layer="91"/>
+<label x="12.7" y="-38.1" size="0.8128" layer="95" rot="R270" xref="yes"/>
 </segment>
 </net>
 <net name="N$3" class="0">
@@ -4931,6 +5025,11 @@ RX and TX for the controller</text>
 <wire x1="12.7" y1="-7.62" x2="10.16" y2="-7.62" width="0.1524" layer="91"/>
 <pinref part="IC1" gate="G$1" pin="PGEC1/AN3/C2IN+/RP1/CN5/RB1"/>
 </segment>
+<segment>
+<pinref part="P_S1" gate="G$1" pin="P$1"/>
+<wire x1="-38.1" y1="-35.56" x2="-38.1" y2="-38.1" width="0.1524" layer="91"/>
+<label x="-38.1" y="-38.1" size="0.8128" layer="95" rot="R270" xref="yes"/>
+</segment>
 </net>
 <net name="S2_OUT" class="0">
 <segment>
@@ -4943,6 +5042,11 @@ RX and TX for the controller</text>
 <label x="10.16" y="-5.08" size="0.8128" layer="95" rot="R180" xref="yes"/>
 <pinref part="IC1" gate="G$1" pin="PGED1/AN2/C2IN-/RP0/CN4/RB0"/>
 </segment>
+<segment>
+<pinref part="P_S2" gate="G$1" pin="P$1"/>
+<wire x1="-27.94" y1="-35.56" x2="-27.94" y2="-38.1" width="0.1524" layer="91"/>
+<label x="-27.94" y="-38.1" size="0.8128" layer="95" rot="R270" xref="yes"/>
+</segment>
 </net>
 <net name="S3_OUT" class="0">
 <segment>
@@ -4954,6 +5058,11 @@ RX and TX for the controller</text>
 <pinref part="IC1" gate="G$1" pin="AN1/VREF-/CN3/RA1"/>
 <wire x1="12.7" y1="-2.54" x2="10.16" y2="-2.54" width="0.1524" layer="91"/>
 <label x="10.16" y="-2.54" size="0.8128" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="P_S3" gate="G$1" pin="P$1"/>
+<wire x1="-17.78" y1="-35.56" x2="-17.78" y2="-38.1" width="0.1524" layer="91"/>
+<label x="-17.78" y="-38.1" size="0.8128" layer="95" rot="R270" xref="yes"/>
 </segment>
 </net>
 <net name="N$7" class="0">
