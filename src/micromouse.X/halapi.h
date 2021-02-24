@@ -25,5 +25,31 @@ float getDistanceRight_mm();
  */
 float getDistanceFront_mm();
 
+/**
+ * The left motor moves forward modulated by `intensity`.
+ * @param intensity Between 0 (motor does not drive) and 1 (motor drives at full speed)
+ * @return ERR_OK if the operation was successful, an error code otherwise
+ */
+int setMotorLeftForward(float intensity);
+
+/**
+ * The left motor moves backward modulated by `intensity`.
+ * @param intensity Between 0 (motor does not drive) and 1 (motor drives at full speed)
+ * @return ERR_OK if the operation was successful, an error code otherwise
+ */
+int setMotorLeftBackward(float intensity);
+
+/**
+ * Makes the left motor coast (left free to spin). Overrides any other previous
+ * motor setting.
+ */
+void motorLeftCoast();
+
+/**
+ * Makes the left motor brake (activeley braking). Overrides any other previous
+ * motor setting.
+ */
+void motorLeftBrake();
+
 #endif
 
