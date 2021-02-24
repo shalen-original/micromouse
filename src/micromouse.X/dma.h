@@ -1,18 +1,15 @@
-// guard condition
 #ifndef DMA_H
 #define	DMA_H
 
 #include <xc.h>
 
-// CHANGE THIS (3 sensors, front and sides)
-#define SENSOR_FRONT adcData[0] //AN0
-#define SENSOR_LEFT adcData[1]  //AN5
-#define SENSOR_RIGHT adcData[2]  //TBD
+#define RAW_SENSOR_RIGHT adcData[2]  // S1_OUT/AN3
+#define RAW_SENSOR_FRONT adcData[1]  // S2_OUT/AN2
+#define RAW_SENSOR_LEFT  adcData[0]  // S3_OUT/AN1
 
 extern unsigned int adcData[32]__attribute__((space(dma)));
 
-// configures the DMA channel 4
-void initDmaChannel4(void);
+void initDMAChannel4(void);
 
-#endif	/* DMA_H */
+#endif
 

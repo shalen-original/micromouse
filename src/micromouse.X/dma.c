@@ -1,38 +1,40 @@
 #include "dma.h"
-#include "IOconfig.h"
 
 unsigned int adcData[32]__attribute__((space(dma)));
 
-void initDmaChannel4(void)
+void initDMAChannel4(void)
 {
-	//DMA4CON		= 0x;
-	DMA4CONbits.CHEN 	= 0;	// Disable channel
-	DMA4CONbits.SIZE 	= 0;	// Data transfer size (1=byte,0=word)
-	DMA4CONbits.DIR		= 0;	// Transfer direction (1=read RAM,write to Periph. 0= read from periph, write to RAM)
-	DMA4CONbits.HALF	= 0;	// Early block transfer complete interrupt (1=interrupt on half block transfer,0=int on full block transfer)
-	DMA4CONbits.NULLW	= 1;	// Null Data write to peripheral mode (Null data write to peripheral as well as write ro RAM, 0=normal)
-	DMA4CONbits.AMODE 	= 0b10;	// DMA channel operating mode	2,3=Peripheral Indirect Addressing mode, 1=Register Indirect without Post-Increment mode, 0=Register Indirect with Post-Increment mode
-	DMA4CONbits.MODE	= 0;	// DMA channel opering mode select 0=Continuous, Ping-Pong modes disabled, 2=continuous, ping-pong
+	DMA4CONbits.CHEN = 0; // Disable channel
+	DMA4CONbits.SIZE = 0; // Transfer words (1 word = 2 bytes)
+	DMA4CONbits.DIR = 0; // Read from peripheral, store to RAM
+	DMA4CONbits.HALF = 0; // Interrupt on full block transfer (not half)
+	DMA4CONbits.NULLW = 1; // Enable null data write to peripheral
+	DMA4CONbits.AMODE = 0b10; // Channel operating mode	is Peripheral Indirect Addressing
+	DMA4CONbits.MODE = 0; // Continuous transfer, ping-pong disabled
 
-	DMA4REQbits.FORCE	= 0;	// Force DMA Transfer (1=single DMA transfer,0=automatic initiated by DMA request)
-	DMA4REQbits.IRQSEL	= 13;	// DMA Peripheral IRQ number select (ADC1)
+    // When this interrupt is generated, a DMA transfer will be triggered.
+	DMA4REQbits.IRQSEL = 0b0001101; // Select 'ADC1 Converter Done' IRQ number (Table 8-1)
 
-	DMA4STA 	        = (__builtin_dmaoffset(&(adcData[0]))); // start address of DMA RAM
-	DMA4PAD 		= (volatile unsigned int) &ADC1BUF0;			// address of peripheral sfr (0x0300)
-	DMA4CNT			 = 1;//0;	// we have 2 a2d  s/h channels for  measurement !!!CHANGE HERE!!!
+	DMA4STA = __builtin_dmaoffset(adcData); // start address of DMA RAM
+	DMA4PAD = (volatile unsigned int) &ADC1BUF0; // Address from which DMA will read
+    
+    // The DMA channel will perform N+1 transfers before considering
+    // the block transfer complete (and restarting, since we're in
+    // continuous mode). We need to set DMAxCNT = N.
+	DMA4CNT = 2; /* CHANGE HERE */
 
-    // Interrupt settings
-	IFS2bits.DMA4IF 	= 0;	// Clear DMA interrupt
-	IEC2bits.DMA4IE 	= 0;	// disable interrupt
-	IPC11bits.DMA4IP 	= 5;	// set priority of interrupt
+	IFS2bits.DMA4IF = 0; // Clear DMA ch 4 interrupt flag
+	IEC2bits.DMA4IE = 0; // Disable DMA ch 4 interrupt
+	IPC11bits.DMA4IP = 5; // Set priority of DMA ch 4 interrupt
 
-	DMA4CONbits.CHEN 	= 1;	// enable channel
+	DMA4CONbits.CHEN = 1; // Enable DMA ch 4
 
 }
 
 void __attribute__((interrupt, auto_psv)) _DMA4Interrupt(void)
 {
-	IFS2bits.DMA4IF 		= 0;	// Clear DMA interrupt
+    // This interrupt is invoked after a 'full block transfer',
+    // meaning that all three sensor values have been sampled and updated
+    
+	IFS2bits.DMA4IF = 0; // Clear DMA interrupt
 };
-
-

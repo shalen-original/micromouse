@@ -5,9 +5,9 @@
 #include "serialComms.h"
 #include <stdio.h>
 #include <math.h>
-#include "dma.h"
 #include "robotControl.h"
 #include "controller.h"
+#include "dma.h"
 
 char sendData[100]; // buffer to send data
 unsigned int timerInterruptFrequency = 1; // timer interrupt call frequency in ms
@@ -61,10 +61,10 @@ void __attribute__((__interrupt__, auto_psv)) _T1Interrupt(void)
    time += ((float)timerInterruptFrequency / 1000);
    LED4=~LED4;
    
-   sprintf(sendData, "%f, %d, %d, %d\n", (double) time, SENSOR_FRONT, SENSOR_LEFT, SENSOR_RIGHT);
+   sprintf(sendData, "%f, %d, %d, %d\n", (double) time, RAW_SENSOR_FRONT, RAW_SENSOR_LEFT, RAW_SENSOR_RIGHT);
    putsUART1(sendData);
    
-   onSensorUpdate(timerInterruptFrequency, SENSOR_FRONT, SENSOR_LEFT, SENSOR_RIGHT);
+   onSensorUpdate(timerInterruptFrequency, RAW_SENSOR_FRONT, RAW_SENSOR_LEFT, RAW_SENSOR_RIGHT);
    
    /* ------------------------------------------------------------------------
     * (Checked) Data wired
@@ -72,9 +72,9 @@ void __attribute__((__interrupt__, auto_psv)) _T1Interrupt(void)
     * Right sensor value: sensorR (cm)
     * Left sensor value: sensorL (cm)
     */
-   float sensorF = SENSOR_FRONT; // variables to receive values from sensors
-   float sensorR = SENSOR_LEFT;
-   float sensorL = SENSOR_RIGHT;
+   float sensorF = RAW_SENSOR_FRONT; // variables to receive values from sensors
+   float sensorR = RAW_SENSOR_LEFT;
+   float sensorL = RAW_SENSOR_RIGHT;
    
    /* 1. Corridor scenario: achieve same distances to left and right walls
     * 2. One side opening scenario: achieve constant distance to one wall

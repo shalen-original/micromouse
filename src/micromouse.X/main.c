@@ -43,12 +43,12 @@
 #include "timer2.h"
 #include "PWMfunction.h"
 #include "serialComms.h"
-#include "dma.h"
-#include "adc.h"
 #include "utils.h"
 #include "maze.h"
 #include "robotControl.h"
 #include "controller.h"
+
+#include "halapi.h"
 
 /// Defines----------------------------
 #define SEVEN_MEG_OSC 1//set to 1 if we use slow (7.3728 MHz) oscillator and not 16 MHz
@@ -108,9 +108,9 @@ int main()
     initIO();
     initPWM(1);
     initUART1();
-    initDmaChannel4();
-    initADC1();
-    startADC1();
+    
+    initHAL();
+    getDistanceLeft_mm();
     
     initMaze(16, 16);
     initRobot();

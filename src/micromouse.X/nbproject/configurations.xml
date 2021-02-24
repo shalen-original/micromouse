@@ -4,13 +4,17 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <logicalFolder name="f1" displayName="hal" projectFiles="true">
+        <itemPath>dma.h</itemPath>
+        <itemPath>adc.h</itemPath>
+        <itemPath>halapi.h</itemPath>
+        <itemPath>sensorConversion.h</itemPath>
+      </logicalFolder>
       <itemPath>IOconfig.h</itemPath>
       <itemPath>timer1.h</itemPath>
       <itemPath>PWMfunction.h</itemPath>
       <itemPath>motorEncoder.h</itemPath>
       <itemPath>serialComms.h</itemPath>
-      <itemPath>dma.h</itemPath>
-      <itemPath>adc.h</itemPath>
       <itemPath>robotControl.h</itemPath>
       <itemPath>maze.h</itemPath>
       <itemPath>utils.h</itemPath>
@@ -27,14 +31,17 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <logicalFolder name="f1" displayName="hal" projectFiles="true">
+        <itemPath>adc.c</itemPath>
+        <itemPath>dma.c</itemPath>
+        <itemPath>halapi.c</itemPath>
+      </logicalFolder>
       <itemPath>IOconfig.c</itemPath>
       <itemPath>main.c</itemPath>
       <itemPath>timer1.c</itemPath>
       <itemPath>PWMfunction.c</itemPath>
       <itemPath>motorEncoder.c</itemPath>
       <itemPath>serialComms.c</itemPath>
-      <itemPath>dma.c</itemPath>
-      <itemPath>adc.c</itemPath>
       <itemPath>robotControl.c</itemPath>
       <itemPath>maze.c</itemPath>
       <itemPath>position.c</itemPath>
@@ -57,10 +64,10 @@
         <targetDevice>dsPIC33FJ128MC802</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>pk4hybrid</platformTool>
+        <platformTool>noID</platformTool>
         <languageToolchain>XC16</languageToolchain>
         <languageToolchainVersion>1.60</languageToolchainVersion>
-        <platform>3</platform>
+        <platform>2</platform>
       </toolsSet>
       <packs>
         <pack name="dsPIC33F-GP-MC_DFP" vendor="Microchip" version="1.3.64"/>
@@ -742,8 +749,6 @@
         <property key="memories.programmemory.ranges" value="0-157ff"/>
         <property key="memories.rww" value="true"/>
         <property key="poweroptions.powerenable" value="false"/>
-        <property key="programmerToGoFilePath"
-                  value="D:/Program Files (x86)/Repositories/micromouse/src/micromouse.X/debug/default/firstBoardExampleCode_ptg"/>
         <property key="programmerToGoImageName" value="firstBoardExampleCode_ptg"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
@@ -783,7 +788,7 @@
         <platformTool>Simulator</platformTool>
         <languageToolchain>XC16</languageToolchain>
         <languageToolchainVersion>1.60</languageToolchainVersion>
-        <platform>3</platform>
+        <platform>2</platform>
       </toolsSet>
       <packs>
         <pack name="dsPIC33F-GP-MC_DFP" vendor="Microchip" version="1.3.64"/>
