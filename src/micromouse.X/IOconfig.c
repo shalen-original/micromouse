@@ -3,8 +3,18 @@
 
 void initIO()
 {
-    int i;
-    AD1PCFGL = 0b1111111111011110; //AN0 and AN5 is only input and analogue, not digital
+    AD1PCFGL=0xFFFF; // Configure all pins to be digital
+    
+    // Configure the sensor pins to be analogue
+    AD1PCFGLbits.PCFG1 = 0b0; // S3_OUT/AN1/RA1 is analougue
+    AD1PCFGLbits.PCFG2 = 0b0; // S2_OUT/AN2/RB0 is analougue
+    AD1PCFGLbits.PCFG3 = 0b0; // S1_OUT/AN3/RB1 is analougue
+    
+    // Configure the sensor pins to be input
+    TRISAbits.TRISA1 = 0b1; // S3_OUT/AN1/RA1 is input
+    TRISBbits.TRISB0 = 0b1; // S2_OUT/AN2/RB0 is input
+    TRISBbits.TRISB1 = 0b1; // S1_OUT/AN3/RB1 is input
+
     
     // set LEDs as output
     TRISBbits.TRISB15 = 0;
