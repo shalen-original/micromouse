@@ -47,8 +47,8 @@ float _interpolateCurve(const SensorCurvePoint *curve, int length, float value) 
     if (value < minVoltage || value > maxVoltage)
         return -1;
               
-    int pointIndex;
-    for (int i = 0; i < length - 2; i++) {
+    int pointIndex, i;
+    for (i = 0; i < length - 2; i++) {
         if (curve[i].voltage_v <= value && curve[i + 1].voltage_v > value){
             pointIndex = i;
             break;

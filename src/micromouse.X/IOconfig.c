@@ -44,5 +44,6 @@ void initIO()
     //after mapping we lock again
      __builtin_write_OSCCONL(OSCCON | 0x40); // Lock PPS registers (lock again!)
      
+    int i;
     for (i = 0; i < 30000; i++); // short dirty delay for changes to take effect
 }
