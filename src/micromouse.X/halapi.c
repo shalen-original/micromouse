@@ -2,6 +2,7 @@
 
 #include "dma.h"
 #include "adc.h"
+#include "errors.h"
 
 void initHAL() {
     initDMAChannel4();
@@ -45,7 +46,7 @@ float _interpolateCurve(const SensorCurvePoint *curve, int length, float value) 
     float maxVoltage = curve[length - 1].voltage_v;
     
     if (value < minVoltage || value > maxVoltage)
-        return -1;
+        return ERR_WALL_DISTANCE_NO_AVAIL;
               
     int pointIndex, i;
     for (i = 0; i < length - 2; i++) {

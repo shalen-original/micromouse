@@ -8,11 +8,10 @@
         <itemPath>dma.h</itemPath>
         <itemPath>adc.h</itemPath>
         <itemPath>halapi.h</itemPath>
-        <itemPath>sensorConversion.h</itemPath>
+        <itemPath>PWMfunction.h</itemPath>
       </logicalFolder>
       <itemPath>IOconfig.h</itemPath>
       <itemPath>timer1.h</itemPath>
-      <itemPath>PWMfunction.h</itemPath>
       <itemPath>motorEncoder.h</itemPath>
       <itemPath>serialComms.h</itemPath>
       <itemPath>robotControl.h</itemPath>
@@ -23,6 +22,7 @@
       <itemPath>controller.h</itemPath>
       <itemPath>motionControl.h</itemPath>
       <itemPath>direction.h</itemPath>
+      <itemPath>errors.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
