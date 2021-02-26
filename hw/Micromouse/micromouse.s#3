@@ -2463,15 +2463,15 @@ Source: http://www.osram.convergy.de/</description>
 <rectangle x1="9.8552" y1="-0.3048" x2="10.4648" y2="0.3048" layer="51"/>
 <wire x1="-3.81" y1="1.27" x2="-3.81" y2="-1.27" width="0.127" layer="21" style="dashdot"/>
 </package>
-<package name="B3B-PH-K-S" urn="urn:adsk.eagle:footprint:26495693/1" library_version="13">
+<package name="B3B-PH-K-S" urn="urn:adsk.eagle:footprint:26495693/3" library_version="31">
 <description>
 
 &lt;b&gt;JST PH series header&lt;/b&gt; 2.00mm pitch disconnectable crimp style connectors, through-hole vertical (top entry type), 3 pins&lt;p&gt;
 
 </description>
-<pad name="1" x="2" y="0" drill="0.7" diameter="1.3" shape="square"/>
+<pad name="1" x="2" y="0" drill="0.7" diameter="1.3" shape="long" rot="R90"/>
 <pad name="2" x="0" y="0" drill="0.7" diameter="1.3" shape="octagon"/>
-<pad name="3" x="-2" y="0" drill="0.7" diameter="1.3" shape="octagon"/>
+<pad name="3" x="-2" y="0" drill="0.7" diameter="1.3" shape="octagon" rot="R90"/>
 <text x="4.54" y="0" size="1.016" layer="25" rot="R270" align="bottom-center">&gt;NAME</text>
 <text x="2" y="1.27" size="1.016" layer="27" align="bottom-right">&gt;VALUE</text>
 <wire x1="-3.95" y1="2.8" x2="3.95" y2="2.8" width="0.1524" layer="21"/>
@@ -2500,10 +2500,10 @@ Source: http://www.osram.convergy.de/</description>
 <vertex x="2.3" y="-1.15"/>
 </polygon>
 </package>
-<package name="B3B-ZR(LF)(SN)" urn="urn:adsk.eagle:footprint:19181344/2" library_version="15">
-<pad name="3" x="-1.5" y="0" drill="0.7"/>
+<package name="B3B-ZR(LF)(SN)" urn="urn:adsk.eagle:footprint:27122139/2" library_version="31">
+<pad name="3" x="-1.5" y="0" drill="0.7" shape="long" rot="R90"/>
 <pad name="2" x="0" y="0" drill="0.7"/>
-<pad name="1" x="1.5" y="0" drill="0.7" shape="square"/>
+<pad name="1" x="1.5" y="0" drill="0.7" shape="square" rot="R90"/>
 <wire x1="-3" y1="2.2" x2="3" y2="2.2" width="0.127" layer="51"/>
 <wire x1="3" y1="2.2" x2="3" y2="-1.3" width="0.127" layer="51"/>
 <wire x1="3" y1="-1.3" x2="-3" y2="-1.3" width="0.127" layer="51"/>
@@ -2669,7 +2669,7 @@ Source: http://www.osram.convergy.de/</description>
 <packageinstance name="JP3Q"/>
 </packageinstances>
 </package3d>
-<package3d name="B3B-PH-K-S" urn="urn:adsk.eagle:package:26495696/2" type="model" library_version="13">
+<package3d name="B3B-PH-K-S" urn="urn:adsk.eagle:package:26495696/4" type="model" library_version="31">
 <description>
 &lt;b&gt;JST PH series header&lt;/b&gt; 2.00mm pitch disconnectable crimp style connectors, through-hole vertical (top entry type), 3 pins&lt;p&gt;
 
@@ -2678,7 +2678,7 @@ Source: http://www.osram.convergy.de/</description>
 <packageinstance name="B3B-PH-K-S"/>
 </packageinstances>
 </package3d>
-<package3d name="B3B-ZR(LF)(SN)" urn="urn:adsk.eagle:package:26495820/2" type="model" library_version="15">
+<package3d name="B3B-ZR(LF)(SN)" urn="urn:adsk.eagle:package:26495820/4" type="model" library_version="31">
 <packageinstances>
 <packageinstance name="B3B-ZR(LF)(SN)"/>
 </packageinstances>
@@ -3076,7 +3076,7 @@ Source: http://www.osram.convergy.de/</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="B3B-PH" urn="urn:adsk.eagle:component:26495697/3" prefix="J" uservalue="yes" library_version="13">
+<deviceset name="B3B-PH" urn="urn:adsk.eagle:component:26495697/5" prefix="J" uservalue="yes" library_version="31">
 <description>
 &lt;b&gt;JST PH series header&lt;/b&gt; 2.00mm pitch disconnectable crimp style connectors, vertical (side entry type), 3 pins&lt;p&gt;
 </description>
@@ -3091,7 +3091,7 @@ Source: http://www.osram.convergy.de/</description>
 <connect gate="G$1" pin="3" pad="3"/>
 </connects>
 <package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:26495696/2"/>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:26495696/4"/>
 </package3dinstances>
 <technologies>
 <technology name=""/>
@@ -3099,7 +3099,7 @@ Source: http://www.osram.convergy.de/</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="B3B-ZR" urn="urn:adsk.eagle:component:26495821/2" prefix="J" uservalue="yes" library_version="15">
+<deviceset name="B3B-ZR" urn="urn:adsk.eagle:component:26495821/4" prefix="J" uservalue="yes" library_version="31">
 <gates>
 <gate name="G$1" symbol="M_1R03" x="0" y="0"/>
 </gates>
@@ -3111,7 +3111,7 @@ Source: http://www.osram.convergy.de/</description>
 <connect gate="G$1" pin="3" pad="3"/>
 </connects>
 <package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:26495820/2"/>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:26495820/4"/>
 </package3dinstances>
 <technologies>
 <technology name=""/>
@@ -3966,9 +3966,9 @@ Example: SX-32S</description>
 <part name="SUPPLY18" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="+3V9" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
 <part name="SUPPLY20" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="J3" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="B3B-PH" device="-K-S" package3d_urn="urn:adsk.eagle:package:26495696/2" value="GP2Y0A41SK0F"/>
-<part name="J1" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="B3B-ZR" device="" package3d_urn="urn:adsk.eagle:package:26495820/2" value="GP2Y0A51SK0F"/>
-<part name="J2" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="B3B-ZR" device="" package3d_urn="urn:adsk.eagle:package:26495820/2" value="GP2Y0A51SK0F"/>
+<part name="J3" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="B3B-PH" device="-K-S" package3d_urn="urn:adsk.eagle:package:26495696/4" value="GP2Y0A41SK0F"/>
+<part name="J1" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="B3B-ZR" device="" package3d_urn="urn:adsk.eagle:package:26495820/4" value="GP2Y0A51SK0F"/>
+<part name="J2" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="B3B-ZR" device="" package3d_urn="urn:adsk.eagle:package:26495820/4" value="GP2Y0A51SK0F"/>
 <part name="R12" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="R_0805" device="" package3d_urn="urn:adsk.eagle:package:26475190/6" value="200m"/>
 <part name="SUPPLY21" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="C11" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="C_0805" device="" package3d_urn="urn:adsk.eagle:package:26475190/6" value="100n"/>
@@ -4031,8 +4031,8 @@ to dsPic starter kit</text>
 <wire x1="-96.52" y1="45.72" x2="-144.78" y2="45.72" width="0.1524" layer="97"/>
 <wire x1="-144.78" y1="45.72" x2="-144.78" y2="-20.32" width="0.1524" layer="97"/>
 <text x="-128.27" y="44.45" size="1.4224" layer="97" align="top-left">J1 = Right (2-15cm)
-J2 = Mid (4-30cm)
-J3 = Left (2-15cm)</text>
+J2 = Left (2-15cm)
+J3 = Mid (4-30cm)</text>
 <wire x1="-144.78" y1="101.6" x2="-144.78" y2="48.26" width="0.1524" layer="97"/>
 <wire x1="-144.78" y1="48.26" x2="-27.94" y2="48.26" width="0.1524" layer="97"/>
 <wire x1="-27.94" y1="48.26" x2="-27.94" y2="101.6" width="0.1524" layer="97"/>

@@ -4031,8 +4031,8 @@ to dsPic starter kit</text>
 <wire x1="-96.52" y1="45.72" x2="-144.78" y2="45.72" width="0.1524" layer="97"/>
 <wire x1="-144.78" y1="45.72" x2="-144.78" y2="-20.32" width="0.1524" layer="97"/>
 <text x="-128.27" y="44.45" size="1.4224" layer="97" align="top-left">J1 = Right (2-15cm)
-J2 = Mid (4-30cm)
-J3 = Left (2-15cm)</text>
+J2 = Left (2-15cm)
+J3 = Mid (4-30cm)</text>
 <wire x1="-144.78" y1="101.6" x2="-144.78" y2="48.26" width="0.1524" layer="97"/>
 <wire x1="-144.78" y1="48.26" x2="-27.94" y2="48.26" width="0.1524" layer="97"/>
 <wire x1="-27.94" y1="48.26" x2="-27.94" y2="101.6" width="0.1524" layer="97"/>
@@ -4078,7 +4078,6 @@ be low ESR ceramic</text>
 R = 68 Ohm
 
 I per LED = 16.18 mA</text>
-<text x="-34.036" y="16.764" size="1.4224" layer="97" rot="R90" align="bottom-right">Check current capa of uc</text>
 </plain>
 <instances>
 <instance part="IC1" gate="G$1" x="63.5" y="20.32" smashed="yes">

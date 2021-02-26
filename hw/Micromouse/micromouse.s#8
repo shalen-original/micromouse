@@ -4065,9 +4065,9 @@ RX and TX for the controller</text>
 <wire x1="147.32" y1="-17.78" x2="147.32" y2="55.88" width="0.1524" layer="97"/>
 <wire x1="147.32" y1="55.88" x2="-25.4" y2="55.88" width="0.1524" layer="97"/>
 <wire x1="-43.18" y1="-22.86" x2="-43.18" y2="-45.72" width="0.1524" layer="97"/>
-<wire x1="-43.18" y1="-45.72" x2="55.88" y2="-45.72" width="0.1524" layer="97"/>
-<wire x1="55.88" y1="-45.72" x2="55.88" y2="-22.86" width="0.1524" layer="97"/>
-<wire x1="55.88" y1="-22.86" x2="-43.18" y2="-22.86" width="0.1524" layer="97"/>
+<wire x1="-43.18" y1="-45.72" x2="45.72" y2="-45.72" width="0.1524" layer="97"/>
+<wire x1="45.72" y1="-45.72" x2="45.72" y2="-22.86" width="0.1524" layer="97"/>
+<wire x1="45.72" y1="-22.86" x2="-43.18" y2="-22.86" width="0.1524" layer="97"/>
 <text x="-55.372" y="72.644" size="0.8128" layer="97" align="top-left">C9 and C8 need to
 be low ESR ceramic</text>
 <text x="-34.036" y="-19.304" size="1.4224" layer="97" align="bottom-right">Vdrop = 2.2 V

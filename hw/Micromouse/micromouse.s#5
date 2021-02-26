@@ -4078,7 +4078,6 @@ be low ESR ceramic</text>
 R = 68 Ohm
 
 I per LED = 16.18 mA</text>
-<text x="-34.036" y="16.764" size="1.4224" layer="97" rot="R90" align="bottom-right">Check current capa of uc</text>
 </plain>
 <instances>
 <instance part="IC1" gate="G$1" x="63.5" y="20.32" smashed="yes">
