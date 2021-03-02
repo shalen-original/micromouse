@@ -1,0 +1,15 @@
+(module AB9V (layer F.Cu) (tedit 0)
+  (descr "<B>9-V BATTERY CLIP</B>")
+  (fp_text reference G1 (at -2.54 2.54 90) (layer F.SilkS) hide
+    (effects (font (size 1.2065 1.2065) (thickness 0.127)) (justify left bottom))
+  )
+  (fp_text value AB9V (at 3.175 2.54 90) (layer F.Fab) hide
+    (effects (font (size 1.2065 1.2065) (thickness 0.127)) (justify left bottom))
+  )
+  (fp_circle (center 0 -2.54) (end 1.27 -2.54) (layer F.Fab) (width 0.1524))
+  (fp_circle (center 0 2.54) (end 1.27 2.54) (layer F.Fab) (width 0.1524))
+  (pad - thru_hole circle (at 0 2.54) (size 3.1496 3.1496) (drill 1.1176) (layers *.Cu *.Mask)
+    (solder_mask_margin 0.03))
+  (pad + thru_hole circle (at 0 -2.54) (size 3.1496 3.1496) (drill 1.1176) (layers *.Cu *.Mask)
+    (solder_mask_margin 0.03))
+)

@@ -3958,10 +3958,10 @@ Example: SX-32S</description>
 <part name="C12" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="C_0805" device="" package3d_urn="urn:adsk.eagle:package:26475190/6" value="100n"/>
 <part name="R4" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="R_0805" device="" package3d_urn="urn:adsk.eagle:package:26475190/6" value="10k"/>
 <part name="R5" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="R_0805" device="" package3d_urn="urn:adsk.eagle:package:26475190/6" value="1k"/>
-<part name="R6" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="R_0805" device="" package3d_urn="urn:adsk.eagle:package:26475190/6" value="68"/>
-<part name="R7" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="R_0805" device="" package3d_urn="urn:adsk.eagle:package:26475190/6" value="68"/>
-<part name="R8" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="R_0805" device="" package3d_urn="urn:adsk.eagle:package:26475190/6" value="68"/>
-<part name="R9" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="R_0805" device="" package3d_urn="urn:adsk.eagle:package:26475190/6" value="68"/>
+<part name="R6" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="R_0805" device="" package3d_urn="urn:adsk.eagle:package:26475190/6" value="820"/>
+<part name="R7" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="R_0805" device="" package3d_urn="urn:adsk.eagle:package:26475190/6" value="820"/>
+<part name="R8" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="R_0805" device="" package3d_urn="urn:adsk.eagle:package:26475190/6" value="820"/>
+<part name="R9" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="R_0805" device="" package3d_urn="urn:adsk.eagle:package:26475190/6" value="820"/>
 <part name="HDR1" library="micromouse" library_urn="urn:adsk.eagle:library:26475156" deviceset="PICKIT_CON" device="" package3d_urn="urn:adsk.eagle:package:26475179/2"/>
 <part name="SUPPLY18" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="+3V9" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
@@ -4071,10 +4071,10 @@ RX and TX for the controller</text>
 <wire x1="40.64" y1="-22.86" x2="-43.18" y2="-22.86" width="0.1524" layer="97"/>
 <text x="-55.372" y="72.644" size="0.8128" layer="97" align="top-left">C9 and C8 need to
 be low ESR ceramic</text>
-<text x="-34.036" y="-19.304" size="1.4224" layer="97" align="bottom-right">Vdrop = 2.2 V
-R = 68 Ohm
+<text x="-34.036" y="-19.304" size="1.4224" layer="97" align="bottom-right">Vdrop = 1.75 V
+R = 820 Ohm
 
-I per LED = 16.18 mA</text>
+I per LED = 1.89 mA</text>
 </plain>
 <instances>
 <instance part="IC1" gate="G$1" x="63.5" y="20.32" smashed="yes">
