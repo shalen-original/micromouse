@@ -10,13 +10,21 @@ typedef struct{
     int enable; // 1: enable controller , 0: disable controller
 } PI;
 
+typedef struct{
+    PI R; // Velocity controller Right motor
+    PI L; // Velocity controller Left motor
+} velocityControllers;
+
+typedef struct{
+    PI R; // Distance controller Right sensor
+    PI L; // Distance controller Left sensor
+    PI F; // Distance controller Front sensor
+} distanceControllers;
+
 // define a set to contain all controllers (VR,VL,DR,DL,DF)
 typedef struct{
-    PI VR; // Velocity controller Right motor
-    PI VL; // Velocity controller Left motor
-    PI DR; // Distance controller Right sensor
-    PI DL; // Distance controller Left sensor
-    PI DF; // Distance controller Front sensor
+    velocityControllers V;
+    distanceControllers D;
     float rawVelocityR;
     float rawVelocityL;
     float desiredVelocityR;

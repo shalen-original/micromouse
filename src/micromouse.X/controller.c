@@ -13,11 +13,11 @@ void initControllerset(Controllerset *cset){
     // below are default values for controllers 
     // !!! modify accordingly
     // (PI){kp, ki, e_sum, sp, enable}  
-    cset->DL = (PI){0.1, 0.1, 0, 0, 0};
-    cset->DR = (PI){0.1, 0.1, 0, 0, 0};
-    cset->DF = (PI){0.1, 0.1, 0, 0, 0};
-    cset->VL = (PI){0.1, 0.1, 0, 0, 0};
-    cset->VR = (PI){0.1, 0.1, 0, 0, 0};
+    cset->D.R = (PI){0.1, 0.1, 0, 0, 0};
+    cset->D.L = (PI){0.1, 0.1, 0, 0, 0};
+    cset->D.F = (PI){0.1, 0.1, 0, 0, 0};
+    cset->V.R = (PI){0.1, 0.1, 0, 0, 0};
+    cset->V.L = (PI){0.1, 0.1, 0, 0, 0};
     cset->rawVelocityL = 0;
     cset->rawVelocityR = 0;
     cset->desiredVelocityL = 0;
