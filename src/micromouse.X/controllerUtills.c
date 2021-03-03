@@ -1,11 +1,3 @@
-/*
- * File:   controller.c
- * Author: Congnan(Jonas)
- *
- * Created on January 26, 2021, 5:08 PM
- */
-
-
 #include "xc.h"
 #include "controllerUtils.h"
 
@@ -30,7 +22,7 @@ void _disablePI (PI *controller){
     controller->enable = 0;
 }
 
-float _stepPI(PI *controller, float pv){ 
+float _stepPI(PI *controller, float pv){ // pv stands for present value
     if (controller->enable == 1){
         float error = controller->sp - pv; // calculate current error of the system
         controller->e_sum = controller->e_sum + error; // update integral of error

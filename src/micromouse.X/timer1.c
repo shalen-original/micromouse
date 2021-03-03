@@ -8,6 +8,7 @@
 #include "robotControl.h"
 #include "controller.h"
 #include "dma.h"
+#include "halapi.h"
 
 char sendData[100]; // buffer to send data
 unsigned int timerInterruptFrequency = 1; // timer interrupt call frequency in ms
@@ -66,16 +67,15 @@ void __attribute__((__interrupt__, auto_psv)) _T1Interrupt(void)
    
    onSensorUpdate(timerInterruptFrequency, RAW_SENSOR_FRONT, RAW_SENSOR_LEFT, RAW_SENSOR_RIGHT);
    
-   /* ------------------------------------------------------------------------
-    * (Checked) Data wired
-    * Front sensor value: sensorF (cm)
-    * Right sensor value: sensorR (cm)
-    * Left sensor value: sensorL (cm)
-    * 
-    float sensorF = RAW_SENSOR_FRONT; // variables to receive values from sensors
-    float sensorR = RAW_SENSOR_LEFT;
-    float sensorL = RAW_SENSOR_RIGHT;
-    */
+   // ------------------------Control part begins-----------------------------
+    float sensorR = getDistanceRight_mm();
+    float sensorL = getDistanceLeft_mm();
+    float sensorF = getDistanceFront_mm();
+    
+    distanceControl(&controllerset, sensorR, sensorL, sensorF);
+   
+    // ------------------------Control part ends------------------------------
+  
 
    if (count >= maxCycleCount)
    {
