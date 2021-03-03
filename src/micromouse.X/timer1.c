@@ -71,50 +71,12 @@ void __attribute__((__interrupt__, auto_psv)) _T1Interrupt(void)
     * Front sensor value: sensorF (cm)
     * Right sensor value: sensorR (cm)
     * Left sensor value: sensorL (cm)
+    * 
+    float sensorF = RAW_SENSOR_FRONT; // variables to receive values from sensors
+    float sensorR = RAW_SENSOR_LEFT;
+    float sensorL = RAW_SENSOR_RIGHT;
     */
-   float sensorF = RAW_SENSOR_FRONT; // variables to receive values from sensors
-   float sensorR = RAW_SENSOR_LEFT;
-   float sensorL = RAW_SENSOR_RIGHT;
-   
-   /* 1. Corridor scenario: achieve same distances to left and right walls
-    * 2. One side opening scenario: achieve constant distance to one wall
-    * 3. Both side opening scenarios: achieve same speed on both wheels*/
-   int validF = sensorF > 4 && sensorF < 30; // check whether sensors have valid values
-   int validR = sensorR > 2 && sensorR < 15;
-   int validL = sensorL > 2 && sensorL < 15;
-   
-   if (validR && validL){ //scenario 1
-       float sp = 0.5 * (sensorR + sensorL);
-       setPI(&controllerset.DL,sp);
-       setPI(&controllerset.DR,sp);     
-   }
-   else if (validR && !validL){ //scenario 2 right wall
-       float sp = sensorR;
-       setPI(&controllerset.DR,sp);
-       disablePI(&controllerset.DL);
-   }
-   else if (validL && !validR){ //scenario 2 left wall
-       float sp = sensorL;
-       setPI(&controllerset.DL,sp);
-       disablePI(&controllerset.DR);
-   }
-   else if (!validL && !validR){ //scenario 3 
-       disablePI(&controllerset.DR);
-       disablePI(&controllerset.DL);
-   }
-   
-   if (validF){ // disable DF if front sensor value not valid
-       enablePI(&controllerset.DF);
-   }
-   else if (!validF) {
-       disablePI(&controllerset.DF);
-   }
-   
-   stepPI(&controllerset.DF, sensorF);
-   stepPI(&controllerset.DL, sensorL);
-   stepPI(&controllerset.DR, sensorR);
-   
-   
+
    if (count >= maxCycleCount)
    {
        cycleAction();

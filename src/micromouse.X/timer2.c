@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <math.h>
 #include "dma.h"
-#include "controller.h"
+#include "controllerUtils.h"
 
 unsigned int timer2InterruptFrequency = 1; // timer interrupt call frequency in ms
 unsigned int cycle2InMilliSeconds = 2000; // fixed cycle length in milliseconds
