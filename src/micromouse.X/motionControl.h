@@ -1,21 +1,23 @@
-// This is a guard condition so that contents of this file are not included
-// more than once.  
+#include "controllerUtils.h"
+
 #ifndef MOTION_CONTROL_H
 #define	MOTION_CONTROL_H
 
-#include <xc.h> // include processor files - each processor file is guarded.  
 
 // initializes the motion control module
-void initMotionControl(void);
+void initMotionControl(Controllerset *cset);
 
 // general move function (where both motor move have to turn with same speed)
-void move(float rawVelocity);
+void move(Controllerset *cset, float rawVelocity);
 
 // uses outer wheel to turn
-void turn(float rawVelocity);
+void turn(Controllerset *cset, float rawVelocity);
 
 // rotates while standing (both motors with same speed, but inversed to each other)
-void spin(float rawVelocity);
+void spin(Controllerset *cset, float rawVelocity);
+
+// update current information of the micromouse
+void update(void); //TODO
 
 #endif	/* MOTION_CONTROL_H */
 

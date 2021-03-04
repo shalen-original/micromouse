@@ -47,12 +47,19 @@
 #include "maze.h"
 #include "robotControl.h"
 #include "controller.h"
-
+#include "motionControl.h"
 #include "halapi.h"
 
 /// Defines----------------------------
 #define SEVEN_MEG_OSC 1//set to 1 if we use slow (7.3728 MHz) oscillator and not 16 MHz
+
+// ------------------------Control part begins-----------------------------
+
 Controllerset controllerset; // global controller set
+
+// ------------------------Control part ends------------------------------
+
+
 /*
  * 
  */
@@ -114,8 +121,12 @@ int main()
     
     initMaze(16, 16);
     initRobot();
+   // ------------------------Control part begins-----------------------------
     
-    initControllerset(&controllerset); // initialize controller
+    initMotionControl(&controllerset); // initialize controller
+  
+    // ------------------------Control part ends------------------------------
+
     
     initTimer1(100); //creates a 100ms timer interrupt
     startTimer1();

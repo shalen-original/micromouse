@@ -1,11 +1,11 @@
 #include "xc.h"
 #include "controllerUtils.h"
 
-void _setrawVelocityL(Controllerset *cset, float speed){
+void _setRawVelocityL(Controllerset *cset, float speed){
     cset->rawVelocityL = speed;
 }
 
-void _setrawVelocityR(Controllerset *cset, float speed){
+void _setRawVelocityR(Controllerset *cset, float speed){
     cset->rawVelocityR = speed;
 }
 
