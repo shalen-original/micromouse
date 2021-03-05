@@ -21,5 +21,7 @@ dir getCounterClockwise(dir direction);
 position getPositionChange(dir direction);
 dir getDirectionFromPos(position positionChange);
 
+position getPosInDir(position pos, dir direction);
+
 #endif	/* DIRECTION_H */
 

@@ -108,7 +108,7 @@ cell* getCellAt(position pos)
 
 BOOL isMazeWallAt(position pos, dir direction)
 {
-    if (((*getCellAt(pos)).wall & direction) == 1)
+    if (((*getCellAt(pos)).wall & direction) == direction)
     {
         return TRUE;
     } else {
@@ -116,7 +116,8 @@ BOOL isMazeWallAt(position pos, dir direction)
     }
 }
 
-void floodFillAlgorithm(position startPos, position goalPos)
+BOOL isExploredCell(position pos)
 {
-    return; // TODO
+    assert(pos.x < mazeWidth && pos.x >= 0 && pos.y < mazeHeight && pos.y >= 0);
+    return maze[pos.x][pos.y].visited;
 }

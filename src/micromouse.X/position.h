@@ -4,6 +4,7 @@
 #define	POSITION_H
 
 #include <xc.h> // include processor files - each processor file is guarded.  
+#include "boolean.h"
 
 typedef struct { // general 2D maze cell position
     int x;
@@ -14,6 +15,10 @@ typedef struct { // general 2D maze cell position
 unsigned int distL1(position pos1, position pos2);
 // returns the absolute l2 distance from pos1 to pos2
 float distL2(position pos1, position pos2);
+// == compare between positions
+BOOL equalsPos(position pos1, position pos2);
+// is neighbor of
+BOOL isAdjacentToEachOther(position pos1, position pos2);
 
 #endif	/* POSITION_H */
 

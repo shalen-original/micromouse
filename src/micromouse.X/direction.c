@@ -105,3 +105,24 @@ dir getDirectionFromPos(position positionChange)
     }
     return direction;
 }
+
+position getPosInDir(position pos, dir direction)
+{
+    position neighborPos = pos;
+    switch (direction)
+    {
+        case NORTH:
+            neighborPos.y ++;
+            break;
+        case SOUTH:
+            neighborPos.y --;
+            break;
+        case EAST:
+            neighborPos.x ++;
+            break;
+        case WEST:
+            neighborPos.x --;
+            break;
+    }
+    return neighborPos;
+}

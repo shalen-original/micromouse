@@ -25,9 +25,8 @@ void addMazeWall(position pos, dir direction);
 void removeMazeWall(position pos, dir direction);
 // checks if wall at specified pos and dir exists
 BOOL isMazeWallAt(position pos, dir direction);
-
-// NOT YET IMPLEMENTED, path algorithm to find fastest route from start to goal (a* maybe better?)
-void floodFillAlgorithm(position startPos, position goalPos);
+//
+BOOL isExploredCell(position pos);
 
 #endif	/* MAZE_H */
 
