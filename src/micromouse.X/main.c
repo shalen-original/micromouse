@@ -46,6 +46,7 @@
 #include "controller.h"
 #include "motionControl.h"
 #include "halapi.h"
+#include "boolean.h"
 
 /// Defines----------------------------
 #define SEVEN_MEG_OSC 1//set to 1 if we use slow (7.3728 MHz) oscillator and not 16 MHz
@@ -138,4 +139,12 @@ void onTimer1Tick() {
 
 void onTimer2Tick() {
     
+}
+
+void onButtonChanged(BOOL isCurrentlyPressed) {
+    
+}
+
+void onButtonClicked() {
+
 }

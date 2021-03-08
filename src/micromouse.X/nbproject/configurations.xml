@@ -11,6 +11,7 @@
         <itemPath>pwm.h</itemPath>
         <itemPath>qei.h</itemPath>
         <itemPath>timers.h</itemPath>
+        <itemPath>buttons.h</itemPath>
       </logicalFolder>
       <itemPath>IOconfig.h</itemPath>
       <itemPath>serialComms.h</itemPath>
@@ -40,6 +41,7 @@
         <itemPath>pwm.c</itemPath>
         <itemPath>qei.c</itemPath>
         <itemPath>timers.c</itemPath>
+        <itemPath>buttons.c</itemPath>
       </logicalFolder>
       <itemPath>IOconfig.c</itemPath>
       <itemPath>main.c</itemPath>

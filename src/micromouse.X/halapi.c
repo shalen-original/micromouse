@@ -7,12 +7,15 @@
 #include "pwm.h"
 #include "qei.h"
 #include "timers.h"
+#include "buttons.h"
 
 #include <assert.h>
 
 void initHAL() {
     initTimer1(10 /* ms */);
     initTimer2(100 /* ms */);
+    
+    initButtons();
     
     initDMAChannel4();
     initADC1();
