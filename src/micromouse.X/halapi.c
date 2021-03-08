@@ -6,15 +6,21 @@
 #include "adc.h"
 #include "pwm.h"
 #include "qei.h"
+#include "timers.h"
 
 #include <assert.h>
 
 void initHAL() {
+    initTimer1(10 /* ms */);
+    initTimer2(100 /* ms */);
+    
     initDMAChannel4();
     initADC1();
     initPWM1();
     initQEI();
     
+    startTimer1();
+    startTimer2();
     startADC1();
 }
 

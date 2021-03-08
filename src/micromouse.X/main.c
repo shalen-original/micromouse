@@ -39,9 +39,6 @@
 /// Include headers-------------------------------
 #include "xc.h"
 #include "IOconfig.h"
-#include "timer1.h"
-#include "timer2.h"
-#include "pwm.h"
 #include "serialComms.h"
 #include "utils.h"
 #include "maze.h"
@@ -126,19 +123,19 @@ int main()
   
     // ------------------------Control part ends------------------------------
 
-    
-    initTimer1(100); //creates a 100ms timer interrupt
-    startTimer1();
-    
-    initTimer2(10); //creates a 10ms timer interrupt (for reading encoder value)
-    startTimer2();
-    
-    // RUN_TIME LOOP --------------------------------
-    while(1)
-    {
+    while(1) { };
 
-    };
-    // END LOOP -------------------------------------
     return 0;
 }
 
+void onTimer1Tick() {
+    float sensorR = getDistanceRight_mm();
+    float sensorL = getDistanceLeft_mm();
+    float sensorF = getDistanceFront_mm();
+    
+    distanceControl(&controllerset, sensorR, sensorL, sensorF);
+}
+
+void onTimer2Tick() {
+    
+}
