@@ -7,13 +7,11 @@
 #define _SWITCH_RELEASED 1
 
 void initButtons() {
-    TRISCbits.TRISC3 = 0b1; // Pin RC3 is an input
     CNEN2bits.CN28IE = 0b1; // Enable change notification interrupt
     IEC1bits.CNIE = 0b1; // Enable change notification interrupts
 }
 
-void __attribute__((__interrupt__, auto_psv)) _CNInterrupt(void)
-{
+void __attribute__((__interrupt__, auto_psv)) _CNInterrupt(void) {
     IFS1bits.CNIF = 0;
     
     onButtonChanged(_SWITCH_1 == _SWITCH_PRESSED);

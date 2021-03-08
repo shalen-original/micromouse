@@ -1,6 +1,17 @@
 #ifndef HALAPI_H
 #define	HALAPI_H
 
+#include <xc.h>
+
+#define LED_1 LATBbits.LATB2
+#define LED_2 LATBbits.LATB3
+#define LED_3 LATCbits.LATC0
+#define LED_4 LATCbits.LATC1
+
+#define LED_ON 0
+#define LED_OFF 1
+
+
 /**
  * Initializes the HAL. To be called from main before using
  * any other HAL API.

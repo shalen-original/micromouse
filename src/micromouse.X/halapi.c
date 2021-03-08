@@ -25,6 +25,11 @@ void initHAL() {
     startTimer1();
     startTimer2();
     startADC1();
+    
+    LED_1 = LED_OFF;
+    LED_2 = LED_OFF;
+    LED_3 = LED_OFF;
+    LED_4 = LED_OFF;
 }
 
 typedef struct {

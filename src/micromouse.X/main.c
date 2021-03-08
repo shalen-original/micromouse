@@ -104,11 +104,6 @@ int main()
     // In reality, give some time to the PLL to lock
     while (OSCCONbits.LOCK != 1); //Wait for PPL to lock
     
-    LED4 = LEDOFF;
-    LED5 = LEDOFF;
-    LED6 = LEDOFF;
-    LED7 = LEDOFF;
-    
     // Initialzing and starting all modules
     initIO();
     initUART1();
@@ -138,7 +133,7 @@ void onTimer1Tick() {
 }
 
 void onTimer2Tick() {
-    
+    LED_1 = ~LED_1;
 }
 
 void onButtonChanged(BOOL isCurrentlyPressed) {
@@ -146,5 +141,5 @@ void onButtonChanged(BOOL isCurrentlyPressed) {
 }
 
 void onButtonClicked() {
-
+    LED_2 = ~LED_2;
 }

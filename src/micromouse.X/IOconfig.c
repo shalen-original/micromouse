@@ -30,14 +30,17 @@ void initIO()
     // QEI2 A -> M2_CHA
     // QEI2 B -> M2_CHB
     
+    // Configure LEDs to be outputs
+    LATBbits.LATB2 = 0b0;
+    LATBbits.LATB3 = 0b0;
+    LATCbits.LATC0 = 0b0;
+    LATCbits.LATC1 = 0b0;
+    
+    // Configure buttons to be inputs
+    TRISCbits.TRISC3 = 0b1;
+    
     
     // TODO:
-    
-    // set LEDs as output
-    TRISBbits.TRISB15 = 0;
-    TRISBbits.TRISB14 = 0;
-    TRISBbits.TRISB13 = 0;
-    TRISBbits.TRISB12 = 0;
     
     TRISBbits.TRISB2 = 0;// UART1 TX (newer)
     //TRISBbits.TRISB8 = 0;// UART1 TX
