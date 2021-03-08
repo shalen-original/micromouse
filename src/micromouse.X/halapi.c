@@ -3,10 +3,15 @@
 #include "dma.h"
 #include "adc.h"
 #include "errors.h"
+#include "pwm.h"
+#include "utils.h"
+
+#include <assert.h>
 
 void initHAL() {
     initDMAChannel4();
     initADC1();
+    initPWM1();
     
     startADC1();
 }
@@ -60,7 +65,7 @@ float _interpolateCurve(const SensorCurvePoint *curve, int length, float value) 
     SensorCurvePoint b = curve[pointIndex + 1];
     
     float t = (value - a.voltage_v) / (b.voltage_v - a.voltage_v);
-    return a.distance_mm + t * (b.distance_mm - a.distance_mm);
+    return lerp(t, a.distance_mm, b.distance_mm);
 }
 
 float getDistanceLeft_mm() {
@@ -82,4 +87,48 @@ float getDistanceFront_mm() {
             conversionCurve_4to30, N_POINTS_4TO30, 
             RAW_SENSOR_FRONT
     ); 
+}
+
+int setMotorLeftForward(float intensity) {
+    setPWM1Pair1DutyCycle(intensity);
+    disableOverridePWM1H1();
+    overridePWM1L1_LOW();
+}
+
+int setMotorLeftBackward(float intensity) {
+    setPWM1Pair1DutyCycle(intensity);
+    disableOverridePWM1L1();
+    overridePWM1H1_LOW();
+}
+
+void motorLeftCoast() {
+    overridePWM1H1_LOW();
+    overridePWM1L1_LOW();
+}
+
+void motorLeftBrake() {
+    overridePWM1H1_HIGH();
+    overridePWM1L1_HIGH();
+}
+
+int setMotorRightForward(float intensity) {
+    setPWM1Pair2DutyCycle(intensity);
+    disableOverridePWM1H2();
+    overridePWM1L2_LOW();
+}
+
+int setMotorRightBackward(float intensity) {
+    setPWM1Pair2DutyCycle(intensity);
+    disableOverridePWM1L2();
+    overridePWM1H2_LOW();
+}
+
+void motorRightCoast() {
+    overridePWM1H2_LOW();
+    overridePWM1L2_LOW();
+}
+
+void motorRightBrake() {
+    overridePWM1H2_HIGH();
+    overridePWM1L2_HIGH();
 }

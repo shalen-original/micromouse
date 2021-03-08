@@ -1,7 +1,7 @@
 #include "xc.h"
 #include "timer2.h"
 #include "IOconfig.h"
-#include "PWMfunction.h"
+#include "pwm.h"
 #include "serialComms.h"
 #include <stdio.h>
 #include <math.h>

@@ -46,10 +46,36 @@ int setMotorLeftBackward(float intensity);
 void motorLeftCoast();
 
 /**
- * Makes the left motor brake (activeley braking). Overrides any other previous
+ * Makes the left motor brake (actively braking). Overrides any other previous
  * motor setting.
  */
 void motorLeftBrake();
+
+/**
+ * The right motor moves forward modulated by `intensity`.
+ * @param intensity Between 0 (motor does not drive) and 1 (motor drives at full speed)
+ * @return ERR_OK if the operation was successful, an error code otherwise
+ */
+int setMotorRightForward(float intensity);
+
+/**
+ * The right motor moves backward modulated by `intensity`.
+ * @param intensity Between 0 (motor does not drive) and 1 (motor drives at full speed)
+ * @return ERR_OK if the operation was successful, an error code otherwise
+ */
+int setMotorRightBackward(float intensity);
+
+/**
+ * Makes the right motor coast (left free to spin). Overrides any other previous
+ * motor setting.
+ */
+void motorRightCoast();
+
+/**
+ * Makes the right motor brake (actively braking). Overrides any other previous
+ * motor setting.
+ */
+void motorRightBrake();
 
 #endif
 

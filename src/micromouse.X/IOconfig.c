@@ -14,7 +14,16 @@ void initIO()
     TRISAbits.TRISA1 = 0b1; // S3_OUT/AN1/RA1 is input
     TRISBbits.TRISB0 = 0b1; // S2_OUT/AN2/RB0 is input
     TRISBbits.TRISB1 = 0b1; // S1_OUT/AN3/RB1 is input
+    
+    // PWM1 Pair 1 -> Left Motor (M1)
+    // PWM1H1 -> M1_IN1
+    // PWM1L1 -> M1_IN2
+    // PWM1 Pair 2 -> Right Motor (M2)
+    // PWM1H2 -> M2_IN1
+    // PWM1L2 -> M2_IN2
 
+    
+    // TODO:
     
     // set LEDs as output
     TRISBbits.TRISB15 = 0;

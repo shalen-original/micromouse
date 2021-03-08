@@ -1,7 +1,7 @@
 #include "xc.h"
 #include "serialComms.h"
 #include "IOconfig.h"
-#include "PWMfunction.h"
+#include "pwm.h"
 #include <stdio.h>
 #include <string.h>
 #include "utils.h"
@@ -91,7 +91,7 @@ void __attribute__((interrupt, no_auto_psv)) _U1RXInterrupt(void)
     else if (rxData >= '0' && rxData <= '9') // test to dim LED 5 (DELETE THIS)
     {
         float percent = (float)(rxData - 48) / 10;
-        setDC1percentage(percent);
+        //setDC1percentage(percent);
     }
     else
     {

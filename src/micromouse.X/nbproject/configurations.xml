@@ -8,7 +8,7 @@
         <itemPath>dma.h</itemPath>
         <itemPath>adc.h</itemPath>
         <itemPath>halapi.h</itemPath>
-        <itemPath>PWMfunction.h</itemPath>
+        <itemPath>pwm.h</itemPath>
       </logicalFolder>
       <itemPath>IOconfig.h</itemPath>
       <itemPath>timer1.h</itemPath>
@@ -38,11 +38,11 @@
         <itemPath>adc.c</itemPath>
         <itemPath>dma.c</itemPath>
         <itemPath>halapi.c</itemPath>
+        <itemPath>pwm.c</itemPath>
       </logicalFolder>
       <itemPath>IOconfig.c</itemPath>
       <itemPath>main.c</itemPath>
       <itemPath>timer1.c</itemPath>
-      <itemPath>PWMfunction.c</itemPath>
       <itemPath>motorEncoder.c</itemPath>
       <itemPath>serialComms.c</itemPath>
       <itemPath>robotControl.c</itemPath>

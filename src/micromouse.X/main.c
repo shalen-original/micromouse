@@ -41,7 +41,7 @@
 #include "IOconfig.h"
 #include "timer1.h"
 #include "timer2.h"
-#include "PWMfunction.h"
+#include "pwm.h"
 #include "serialComms.h"
 #include "utils.h"
 #include "maze.h"
@@ -113,7 +113,6 @@ int main()
     
     // Initialzing and starting all modules
     initIO();
-    initPWM(1);
     initUART1();
     
     initHAL();
