@@ -1,6 +1,8 @@
-#include "xc.h"
+#include <xc.h>
+
 #include "pwm.h"
 #include "errors.h"
+#include "utils.h"
 
 #define _PWM_MAX_SAFE_DUTY_CYCLE 0.66
 
@@ -37,7 +39,7 @@ void initPWM1()
 }
 
 int _computePwmDutyCycle(float dc) {
-    dc = lerp(dc, _PWM_MAX_SAFE_DUTY_CYCLE);
+    dc = lerp(dc, 0, _PWM_MAX_SAFE_DUTY_CYCLE);
     if (dc < 0 || dc > _PWM_MAX_SAFE_DUTY_CYCLE) {
         return ERR_DUTY_CYCLE_INVALID;
     }
@@ -57,6 +59,7 @@ int setPWM1Pair1DutyCycle(float dc) {
     
     if (ans >= 0) {
         P1DC1 = ans;
+        return ERR_OK;
     }
     
     return ans;
@@ -67,6 +70,7 @@ int setPWM1Pair2DutyCycle(float dc) {
     
     if (ans >= 0) {
         P1DC2 = ans;
+        return ERR_OK;
     }
     
     return ans;
@@ -88,6 +92,8 @@ void disableOverridePWM1H1() {
     P1OVDCONbits.POVD1H = 0b1;
 }
 
+
+
 void overridePWM1L1_HIGH() {
     P1OVDCONbits.POUT1L = 0b0;
     P1OVDCONbits.POVD1L = 0b0;
@@ -102,6 +108,8 @@ void disableOverridePWM1L1() {
     P1OVDCONbits.POVD1L = 0b1;
 }
 
+
+
 void overridePWM1H2_HIGH() {
     P1OVDCONbits.POUT2H = 0b0;
     P1OVDCONbits.POVD2H = 0b0;
@@ -115,6 +123,8 @@ void overridePWM1H2_LOW() {
 void disableOverridePWM1H2() {
     P1OVDCONbits.POVD2H = 0b1;
 }
+
+
 
 void overridePWM1L2_HIGH() {
     P1OVDCONbits.POUT2L = 0b0;

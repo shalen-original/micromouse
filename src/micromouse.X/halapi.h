@@ -77,5 +77,17 @@ void motorRightCoast();
  */
 void motorRightBrake();
 
+/**
+ * Returns the position of the left motor in encoder ticks. A positive value
+ * means forward motion, a negative value means backward motion.
+ */
+long getMotorLeftPosition_ticks();
+
+/**
+ * Returns the position of the right motor in encoder ticks. A positive value
+ * means forward motion, a negative value means backward motion.
+ */
+long getMotorRightPosition_ticks();
+
 #endif
 

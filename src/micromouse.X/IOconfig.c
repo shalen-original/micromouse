@@ -22,6 +22,14 @@ void initIO()
     // PWM1H2 -> M2_IN1
     // PWM1L2 -> M2_IN2
 
+    // QEI 1 -> Left Motor (M1)
+    // QEI1 A -> M1_CHA
+    // QEI1 B -> M1_CHB
+    
+    // QEI 2 -> Right Motor (M2)
+    // QEI2 A -> M2_CHA
+    // QEI2 B -> M2_CHB
+    
     
     // TODO:
     

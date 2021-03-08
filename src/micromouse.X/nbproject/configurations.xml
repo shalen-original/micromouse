@@ -9,10 +9,10 @@
         <itemPath>adc.h</itemPath>
         <itemPath>halapi.h</itemPath>
         <itemPath>pwm.h</itemPath>
+        <itemPath>qei.h</itemPath>
       </logicalFolder>
       <itemPath>IOconfig.h</itemPath>
       <itemPath>timer1.h</itemPath>
-      <itemPath>motorEncoder.h</itemPath>
       <itemPath>serialComms.h</itemPath>
       <itemPath>robotControl.h</itemPath>
       <itemPath>maze.h</itemPath>
@@ -39,11 +39,11 @@
         <itemPath>dma.c</itemPath>
         <itemPath>halapi.c</itemPath>
         <itemPath>pwm.c</itemPath>
+        <itemPath>qei.c</itemPath>
       </logicalFolder>
       <itemPath>IOconfig.c</itemPath>
       <itemPath>main.c</itemPath>
       <itemPath>timer1.c</itemPath>
-      <itemPath>motorEncoder.c</itemPath>
       <itemPath>serialComms.c</itemPath>
       <itemPath>robotControl.c</itemPath>
       <itemPath>maze.c</itemPath>
@@ -54,6 +54,7 @@
       <itemPath>controllerUtills.c</itemPath>
       <itemPath>controller.c</itemPath>
       <itemPath>mazeControl.c</itemPath>
+      <itemPath>utils.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

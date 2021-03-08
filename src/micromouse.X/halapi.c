@@ -1,10 +1,11 @@
 #include "halapi.h"
 
+#include "errors.h"
+#include "utils.h"
 #include "dma.h"
 #include "adc.h"
-#include "errors.h"
 #include "pwm.h"
-#include "utils.h"
+#include "qei.h"
 
 #include <assert.h>
 
@@ -12,6 +13,7 @@ void initHAL() {
     initDMAChannel4();
     initADC1();
     initPWM1();
+    initQEI();
     
     startADC1();
 }
@@ -90,15 +92,25 @@ float getDistanceFront_mm() {
 }
 
 int setMotorLeftForward(float intensity) {
-    setPWM1Pair1DutyCycle(intensity);
+    int ans = setPWM1Pair1DutyCycle(intensity);
+    if (ans != ERR_OK) {
+        return ERR_CANNOT_SET_MOTOR_SPEED;
+    }
+    
     disableOverridePWM1H1();
     overridePWM1L1_LOW();
+    return ERR_OK;
 }
 
 int setMotorLeftBackward(float intensity) {
-    setPWM1Pair1DutyCycle(intensity);
+    int ans = setPWM1Pair1DutyCycle(intensity);
+    if (ans != ERR_OK) {
+        return ERR_CANNOT_SET_MOTOR_SPEED;
+    }
+    
     disableOverridePWM1L1();
     overridePWM1H1_LOW();
+    return ERR_OK;
 }
 
 void motorLeftCoast() {
@@ -112,15 +124,25 @@ void motorLeftBrake() {
 }
 
 int setMotorRightForward(float intensity) {
-    setPWM1Pair2DutyCycle(intensity);
+    int ans = setPWM1Pair2DutyCycle(intensity);
+    if (ans != ERR_OK) {
+        return ERR_CANNOT_SET_MOTOR_SPEED;
+    }
+    
     disableOverridePWM1H2();
     overridePWM1L2_LOW();
+    return ERR_OK;
 }
 
 int setMotorRightBackward(float intensity) {
-    setPWM1Pair2DutyCycle(intensity);
+    int ans = setPWM1Pair2DutyCycle(intensity);
+    if (ans != ERR_OK) {
+        return ERR_CANNOT_SET_MOTOR_SPEED;
+    }
+    
     disableOverridePWM1L2();
     overridePWM1H2_LOW();
+    return ERR_OK;
 }
 
 void motorRightCoast() {
@@ -131,4 +153,12 @@ void motorRightCoast() {
 void motorRightBrake() {
     overridePWM1H2_HIGH();
     overridePWM1L2_HIGH();
+}
+
+long getMotorLeftPosition_ticks() {
+    return getQEI1Position();
+}
+
+long getMotorRightPosition_ticks() {
+    return getQEI2Position();
 }
