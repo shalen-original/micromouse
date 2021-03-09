@@ -13,8 +13,8 @@
         <itemPath>timers.h</itemPath>
         <itemPath>buttons.h</itemPath>
         <itemPath>ioconfig.h</itemPath>
+        <itemPath>uart.h</itemPath>
       </logicalFolder>
-      <itemPath>serialComms.h</itemPath>
       <itemPath>robotControl.h</itemPath>
       <itemPath>maze.h</itemPath>
       <itemPath>utils.h</itemPath>
@@ -43,9 +43,9 @@
         <itemPath>timers.c</itemPath>
         <itemPath>buttons.c</itemPath>
         <itemPath>ioconfig.c</itemPath>
+        <itemPath>uart.c</itemPath>
       </logicalFolder>
       <itemPath>main.c</itemPath>
-      <itemPath>serialComms.c</itemPath>
       <itemPath>robotControl.c</itemPath>
       <itemPath>maze.c</itemPath>
       <itemPath>position.c</itemPath>

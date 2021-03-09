@@ -9,6 +9,7 @@
 #include "timers.h"
 #include "buttons.h"
 #include "ioconfig.h"
+#include "uart.h"
 
 #include <assert.h>
 
@@ -24,6 +25,7 @@ void initHAL() {
     initADC1();
     initPWM1();
     initQEI();
+    initUART();
     
     startTimer1();
     startTimer2();

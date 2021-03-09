@@ -38,7 +38,6 @@
 
 /// Include headers-------------------------------
 #include "xc.h"
-#include "serialComms.h"
 #include "utils.h"
 #include "maze.h"
 #include "robotControl.h"
@@ -103,8 +102,6 @@ int main()
     // In reality, give some time to the PLL to lock
     while (OSCCONbits.LOCK != 1); //Wait for PPL to lock
     
-    initUART1();
-    
     initHAL();
     initMaze(16, 16);
     initRobot();
@@ -137,4 +134,11 @@ void onButtonChanged(BOOL isCurrentlyPressed) {
 
 void onButtonClicked() {
     LED_2 = ~LED_2;
+}
+
+void onCommandReceived(char* receivedCommand) {
+    if (!strcmp(receivedCommand, "LED"))
+    {
+        LED_3 = ~LED_3;
+    }
 }
