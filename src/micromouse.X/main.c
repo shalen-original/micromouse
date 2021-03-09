@@ -38,7 +38,6 @@
 
 /// Include headers-------------------------------
 #include "xc.h"
-#include "IOconfig.h"
 #include "serialComms.h"
 #include "utils.h"
 #include "maze.h"
@@ -104,13 +103,9 @@ int main()
     // In reality, give some time to the PLL to lock
     while (OSCCONbits.LOCK != 1); //Wait for PPL to lock
     
-    // Initialzing and starting all modules
-    initIO();
     initUART1();
     
     initHAL();
-    getDistanceLeft_mm();
-    
     initMaze(16, 16);
     initRobot();
    // ------------------------Control part begins-----------------------------

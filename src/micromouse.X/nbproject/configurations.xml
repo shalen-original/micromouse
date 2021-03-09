@@ -12,8 +12,8 @@
         <itemPath>qei.h</itemPath>
         <itemPath>timers.h</itemPath>
         <itemPath>buttons.h</itemPath>
+        <itemPath>ioconfig.h</itemPath>
       </logicalFolder>
-      <itemPath>IOconfig.h</itemPath>
       <itemPath>serialComms.h</itemPath>
       <itemPath>robotControl.h</itemPath>
       <itemPath>maze.h</itemPath>
@@ -42,8 +42,8 @@
         <itemPath>qei.c</itemPath>
         <itemPath>timers.c</itemPath>
         <itemPath>buttons.c</itemPath>
+        <itemPath>ioconfig.c</itemPath>
       </logicalFolder>
-      <itemPath>IOconfig.c</itemPath>
       <itemPath>main.c</itemPath>
       <itemPath>serialComms.c</itemPath>
       <itemPath>robotControl.c</itemPath>

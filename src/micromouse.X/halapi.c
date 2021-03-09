@@ -8,10 +8,13 @@
 #include "qei.h"
 #include "timers.h"
 #include "buttons.h"
+#include "ioconfig.h"
 
 #include <assert.h>
 
 void initHAL() {
+    initIO();
+    
     initTimer1(10 /* ms */);
     initTimer2(100 /* ms */);
     
@@ -30,6 +33,9 @@ void initHAL() {
     LED_2 = LED_OFF;
     LED_3 = LED_OFF;
     LED_4 = LED_OFF;
+    
+    int i;
+    for (i = 0; i < 3000; i++); // short dirty delay for changes to take effect
 }
 
 typedef struct {

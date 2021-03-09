@@ -1,6 +1,5 @@
 #include "xc.h"
 #include "serialComms.h"
-#include "IOconfig.h"
 #include "pwm.h"
 #include <stdio.h>
 #include <string.h>
@@ -103,7 +102,7 @@ void __attribute__((interrupt, no_auto_psv)) _U1RXInterrupt(void)
 void __attribute__((interrupt, no_auto_psv)) _U1TXInterrupt(void)
 {
     IFS0bits.U1TXIF = 0; // reset interrupt flag    
-    LED7 = ~LED7; // DELETE THIS
+    //LED7 = ~LED7; // DELETE THIS
 }
 
 void executeCommand(char* cmdString)
@@ -112,6 +111,6 @@ void executeCommand(char* cmdString)
     // simple command test, CHANGE THIS
     if (!strcmp(cmdString, "LED"))
     {
-        LED6 = ~LED6;
+        //LED6 = ~LED6;
     }
 }
