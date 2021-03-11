@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<dumps>
+  <platform name="win32A" char_bit="8" short_bit="16" int_bit="32" long_bit="32" long_long_bit="64" pointer_bit="32"/>
+  <rawtokens>
+    <file index="0" name="dma.h"/>
+    <tok fileIndex="0" linenr="1" column="1" str="#"/>
+    <tok fileIndex="0" linenr="1" column="2" str="ifndef"/>
+    <tok fileIndex="0" linenr="1" column="9" str="DMA_H"/>
+    <tok fileIndex="0" linenr="2" column="1" str="#"/>
+    <tok fileIndex="0" linenr="2" column="2" str="define"/>
+    <tok fileIndex="0" linenr="2" column="9" str="DMA_H"/>
+    <tok fileIndex="0" linenr="4" column="1" str="#"/>
+    <tok fileIndex="0" linenr="4" column="2" str="include"/>
+    <tok fileIndex="0" linenr="4" column="10" str="&lt;xc.h&gt;"/>
+    <tok fileIndex="0" linenr="6" column="1" str="#"/>
+    <tok fileIndex="0" linenr="6" column="2" str="define"/>
+    <tok fileIndex="0" linenr="6" column="9" str="RAW_SENSOR_RIGHT"/>
+    <tok fileIndex="0" linenr="6" column="26" str="adcData"/>
+    <tok fileIndex="0" linenr="6" column="33" str="["/>
+    <tok fileIndex="0" linenr="6" column="34" str="2"/>
+    <tok fileIndex="0" linenr="6" column="35" str="]"/>
+    <tok fileIndex="0" linenr="6" column="38" str="// S1_OUT/AN3/RB1"/>
+    <tok fileIndex="0" linenr="7" column="1" str="#"/>
+    <tok fileIndex="0" linenr="7" column="2" str="define"/>
+    <tok fileIndex="0" linenr="7" column="9" str="RAW_SENSOR_FRONT"/>
+    <tok fileIndex="0" linenr="7" column="26" str="adcData"/>
+    <tok fileIndex="0" linenr="7" column="33" str="["/>
+    <tok fileIndex="0" linenr="7" column="34" str="1"/>
+    <tok fileIndex="0" linenr="7" column="35" str="]"/>
+    <tok fileIndex="0" linenr="7" column="38" str="// S2_OUT/AN2/RB0"/>
+    <tok fileIndex="0" linenr="8" column="1" str="#"/>
+    <tok fileIndex="0" linenr="8" column="2" str="define"/>
+    <tok fileIndex="0" linenr="8" column="9" str="RAW_SENSOR_LEFT"/>
+    <tok fileIndex="0" linenr="8" column="26" str="adcData"/>
+    <tok fileIndex="0" linenr="8" column="33" str="["/>
+    <tok fileIndex="0" linenr="8" column="34" str="0"/>
+    <tok fileIndex="0" linenr="8" column="35" str="]"/>
+    <tok fileIndex="0" linenr="8" column="38" str="// S3_OUT/AN1/RA1"/>
+    <tok fileIndex="0" linenr="10" column="1" str="extern"/>
+    <tok fileIndex="0" linenr="10" column="8" str="unsigned"/>
+    <tok fileIndex="0" linenr="10" column="17" str="int"/>
+    <tok fileIndex="0" linenr="10" column="21" str="adcData"/>
+    <tok fileIndex="0" linenr="10" column="28" str="["/>
+    <tok fileIndex="0" linenr="10" column="29" str="32"/>
+    <tok fileIndex="0" linenr="10" column="31" str="]"/>
+    <tok fileIndex="0" linenr="10" column="32" str="__attribute__"/>
+    <tok fileIndex="0" linenr="10" column="45" str="("/>
+    <tok fileIndex="0" linenr="10" column="46" str="("/>
+    <tok fileIndex="0" linenr="10" column="47" str="space"/>
+    <tok fileIndex="0" linenr="10" column="52" str="("/>
+    <tok fileIndex="0" linenr="10" column="53" str="dma"/>
+    <tok fileIndex="0" linenr="10" column="56" str=")"/>
+    <tok fileIndex="0" linenr="10" column="57" str=")"/>
+    <tok fileIndex="0" linenr="10" column="58" str=")"/>
+    <tok fileIndex="0" linenr="10" column="59" str=";"/>
+    <tok fileIndex="0" linenr="12" column="1" str="void"/>
+    <tok fileIndex="0" linenr="12" column="6" str="initDMAChannel4"/>
+    <tok fileIndex="0" linenr="12" column="21" str="("/>
+    <tok fileIndex="0" linenr="12" column="22" str="void"/>
+    <tok fileIndex="0" linenr="12" column="26" str=")"/>
+    <tok fileIndex="0" linenr="12" column="27" str=";"/>
+    <tok fileIndex="0" linenr="14" column="1" str="#"/>
+    <tok fileIndex="0" linenr="14" column="2" str="endif"/>
+  </rawtokens>
+  <suppressions>
+  </suppressions>
+<dump cfg="">
+  <standards>
+    <c version="c11"/>
+    <cpp version="c++20"/>
+  </standards>
+  <directivelist>
+    <directive file="dma.h" linenr="1" str="#ifndef DMA_H"/>
+    <directive file="dma.h" linenr="2" str="#define DMA_H"/>
+    <directive file="dma.h" linenr="4" str="#include &lt;xc.h&gt;"/>
+    <directive file="dma.h" linenr="6" str="#define RAW_SENSOR_RIGHT adcData[2]"/>
+    <directive file="dma.h" linenr="7" str="#define RAW_SENSOR_FRONT adcData[1]"/>
+    <directive file="dma.h" linenr="8" str="#define RAW_SENSOR_LEFT adcData[0]"/>
+    <directive file="dma.h" linenr="14" str="#endif"/>
+  </directivelist>
+  <tokenlist>
+    <token id="00D1FA28" file="dma.h" linenr="10" column="1" str="extern" scope="00BF5EE8" type="name"/>
+    <token id="00D1FCA8" file="dma.h" linenr="10" column="17" str="int" scope="00BF5EE8" type="name" isUnsigned="true"/>
+    <token id="00D1F968" file="dma.h" linenr="10" column="21" str="adcData" scope="00BF5EE8" type="name" varId="1" variable="00D1F0F0" astParent="00D1F5A8" valueType-type="int" valueType-sign="unsigned" valueType-pointer="1"/>
+    <token id="00D1F5A8" file="dma.h" linenr="10" column="28" str="[" scope="00BF5EE8" link="00D1F1A8" astOperand1="00D1F968" astOperand2="00D1FC28" valueType-type="int" valueType-sign="unsigned" valueType-pointer="1"/>
+    <token id="00D1FC28" file="dma.h" linenr="10" column="29" str="32" scope="00BF5EE8" type="number" isInt="True" values="00B9BA28" astParent="00D1F5A8" valueType-type="int" valueType-sign="signed"/>
+    <token id="00D1F1A8" file="dma.h" linenr="10" column="31" str="]" scope="00BF5EE8" link="00D1F5A8"/>
+    <token id="00D1F9A8" file="dma.h" linenr="10" column="59" str=";" scope="00BF5EE8"/>
+    <token id="00D1FBE8" file="dma.h" linenr="12" column="1" str="void" scope="00BF5EE8" type="name"/>
+    <token id="00D1FC68" file="dma.h" linenr="12" column="6" str="initDMAChannel4" scope="00BF5EE8" type="name" function="02AB20C8" astParent="00D1F268"/>
+    <token id="00D1F268" file="dma.h" linenr="12" column="21" str="(" scope="00BF5EE8" link="00D1F428" astOperand1="00D1FC68" valueType-type="void"/>
+    <token id="00D1F428" file="dma.h" linenr="12" column="26" str=")" scope="00BF5EE8" link="00D1F268"/>
+    <token id="00D1F5E8" file="dma.h" linenr="12" column="27" str=";" scope="00BF5EE8"/>
+  </tokenlist>
+  <scopes>
+    <scope id="00BF5EE8" type="Global">
+      <functionList>
+        <function id="02AB20C8" tokenDef="00D1FC68" name="initDMAChannel4" type="Function"/>
+      </functionList>
+      <varlist>
+        <var id="00D1F0F0"/>
+      </varlist>
+    </scope>
+  </scopes>
+  <variables>
+    <var id="00D1F0F0" nameToken="00D1F968" typeStartToken="00D1FCA8" typeEndToken="00D1FCA8" access="Global" scope="00BF5EE8" constness="0" isArgument="false" isArray="true" isClass="false" isConst="false" isExtern="true" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+  </variables>
+  <valueflow>
+    <values id="00B9BA28">
+      <value intvalue="32" known="true"/>
+    </values>
+  </valueflow>
+</dump>
+</dumps>

@@ -4,7 +4,7 @@
 #define	MAZE_H
 
 #include <xc.h> // include processor files - each processor file is guarded.  
-#include "robotControl.h"
+#include "directionControl.h"
 #include "utils.h"
 
 typedef struct { // cell struct
@@ -19,6 +19,8 @@ cell* getCellAt(position pos);
 // get cell at (pos + moving once in direction)
 cell* getNeighborCellInDir(position pos, dir direction);
 
+// adds all walls encoded in int
+void onMazePosExplored(position pos, uint8_t walls);
 // adds a wall to maze pos and direction
 void addMazeWall(position pos, dir direction);
 // same for removal

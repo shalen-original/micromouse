@@ -40,7 +40,7 @@
 #include "xc.h"
 #include "utils.h"
 #include "maze.h"
-#include "robotControl.h"
+#include "directionControl.h"
 #include "controller.h"
 #include "motionControl.h"
 #include "halapi.h"

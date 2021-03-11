@@ -28,6 +28,30 @@ void initMaze(int width, int height)
     }
 }
 
+void onMazePosExplored(position pos, uint8_t walls)
+{
+    if (getCellAt(pos)->visited == FALSE)
+    {
+        getCellAt(pos)->visited = TRUE;
+        if ((walls & NORTH) > 0)
+        {
+            addMazeWall(pos, NORTH);
+        }
+        if ((walls & SOUTH) > 0)
+        {
+            addMazeWall(pos, SOUTH);
+        }
+        if ((walls & EAST) > 0)
+        {
+            addMazeWall(pos, EAST);
+        }
+        if ((walls & WEST) > 0)
+        {
+            addMazeWall(pos, WEST);
+        }
+    }
+}
+
 void addMazeWall(position pos, dir direction)
 {
     cell curCell = *getCellAt(pos);

@@ -20,5 +20,7 @@ void floodFillAlgorithm(position startPos, position goalPos[]);
 void floodFillStep(position pos);
 // returns the direction the robot should move next (based on floodfill values)
 dir getNewRaceDirection(position curPos);
+
+dir getNextDirection(position curPos);
 #endif	/* MAZE_CONTROL_H */
 

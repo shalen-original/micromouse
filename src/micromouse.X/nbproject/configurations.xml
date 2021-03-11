@@ -15,7 +15,6 @@
         <itemPath>ioconfig.h</itemPath>
         <itemPath>uart.h</itemPath>
       </logicalFolder>
-      <itemPath>robotControl.h</itemPath>
       <itemPath>maze.h</itemPath>
       <itemPath>utils.h</itemPath>
       <itemPath>position.h</itemPath>
@@ -26,6 +25,7 @@
       <itemPath>controller.h</itemPath>
       <itemPath>mazeControl.h</itemPath>
       <itemPath>boolean.h</itemPath>
+      <itemPath>directionControl.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -46,7 +46,6 @@
         <itemPath>uart.c</itemPath>
       </logicalFolder>
       <itemPath>main.c</itemPath>
-      <itemPath>robotControl.c</itemPath>
       <itemPath>maze.c</itemPath>
       <itemPath>position.c</itemPath>
       <itemPath>motionControl.c</itemPath>
@@ -55,6 +54,7 @@
       <itemPath>controller.c</itemPath>
       <itemPath>mazeControl.c</itemPath>
       <itemPath>utils.c</itemPath>
+      <itemPath>directionControl.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -73,7 +73,7 @@
         <platformTool>Simulator</platformTool>
         <languageToolchain>XC16</languageToolchain>
         <languageToolchainVersion>1.60</languageToolchainVersion>
-        <platform>2</platform>
+        <platform>3</platform>
       </toolsSet>
       <packs>
         <pack name="dsPIC33F-GP-MC_DFP" vendor="Microchip" version="1.3.64"/>
@@ -788,13 +788,13 @@
     <conf name="Simulator" type="2">
       <toolsSet>
         <developmentServer>localhost</developmentServer>
-        <targetDevice>dsPIC33FJ128MC802</targetDevice>
+        <targetDevice>dsPIC33FJ128MC804</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
         <platformTool>Simulator</platformTool>
         <languageToolchain>XC16</languageToolchain>
         <languageToolchainVersion>1.60</languageToolchainVersion>
-        <platform>2</platform>
+        <platform>3</platform>
       </toolsSet>
       <packs>
         <pack name="dsPIC33F-GP-MC_DFP" vendor="Microchip" version="1.3.64"/>

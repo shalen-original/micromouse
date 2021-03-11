@@ -105,3 +105,9 @@ dir getNewRaceDirection(position curPos)
     }
     return 0;
 }
+
+dir getNextDirection(position curPos)
+{
+    // TODO implement this (returns depend on explore or race mode)
+    return NORTH;
+}

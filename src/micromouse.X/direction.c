@@ -1,5 +1,6 @@
 #include "xc.h"
 #include "direction.h"
+#include <assert.h>
 
 dir getInverse(dir direction)
 {
@@ -125,4 +126,50 @@ position getPosInDir(position pos, dir direction)
             break;
     }
     return neighborPos;
+}
+
+float dirToFloat(dir direction)
+{
+    float angle = 0;
+    switch (direction)
+    {
+        case NORTH:
+            angle = 90;
+            break;
+        case SOUTH:
+            angle = 270;
+            break;
+        case EAST:
+            angle = 0;
+            break;
+        case WEST:
+            angle = 180;
+            break;
+    }
+    return angle;
+}
+
+dir floatToDir(float angle, int errorMargin)
+{
+    assert(errorMargin > 0 && errorMargin <= 40 && angle >= 0 && angle <= 360);
+    dir directions[4] = {NORTH, EAST, SOUTH, WEST};
+    int dirIndex = 0;
+    for (dirIndex = 0; dirIndex < 4; dirIndex ++)
+    {
+        float dirAngle = dirToFloat(directions[dirIndex]);
+        if (angle > dirAngle - errorMargin && angle < dirAngle + errorMargin)
+        {
+            return directions[dirIndex];
+        }
+    }
+    return 0; // should not happen and result in error
+}
+
+BOOL directionEqualsAngle(dir direction, float angle, int errorMargin)
+{
+    if (direction == floatToDir(angle, errorMargin))
+    {
+        return TRUE;
+    }
+    return FALSE;
 }

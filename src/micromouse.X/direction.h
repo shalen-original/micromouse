@@ -23,5 +23,9 @@ dir getDirectionFromPos(position positionChange);
 
 position getPosInDir(position pos, dir direction);
 
+float dirToFloat(dir direction);
+dir floatToDir(float angle, int errorMargin);
+BOOL directionEqualsAngle(dir direction, float angle, int errorMargin);
+
 #endif	/* DIRECTION_H */
 
