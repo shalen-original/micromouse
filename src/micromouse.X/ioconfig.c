@@ -27,14 +27,6 @@ void initIO()
     // Remap pins (see tables 11-1 and 11-2 on the datasheet)
     __builtin_write_OSCCONL(OSCCON & 0xbf);
     
-    // PWM1 Pair 1 -> Left Motor (M1)
-    //RPOR5bits.RP10R = 0b00011;   // PWM1H1 -> M1_IN1/RP23
-    //RPOR5bits.RP10R = 0b00011;   // PWM1L1 -> M1_IN2/RP24
-    
-    // PWM1 Pair 2 -> Right Motor (M2)
-    // PWM1H2 -> M2_IN1
-    // PWM1L2 -> M2_IN2
-    
     // QEI1 -> Left Motor (M1)
     RPINR14bits.QEA1R = 12; //QEI1A -> RP12/M1_CHA
     RPINR14bits.QEB1R = 23; //QEI1B -> RP13/M1_CHB
@@ -42,6 +34,8 @@ void initIO()
     // QEI2 -> Right Motor (M2)
     RPINR16bits.QEA2R = 9; //QEI2A -> RP9/M2_CHA
     RPINR16bits.QEB2R = 22; //QEI2B -> RP22/M2_CHB
+    
+    // TODO UART
 
     __builtin_write_OSCCONL(OSCCON | 0x40);
     

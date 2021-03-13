@@ -20,20 +20,20 @@ void initPWM1()
     P1TPERbits.PTPER = 533; // Determines PWM period
     PWM1CON1bits.PEN1H = 0b1; // Enable PWM on PWM1H1
     PWM1CON1bits.PEN1L = 0b1; // Enable PWM on PWM1L1
-    PWM1CON1bits.PEN2H = 0b1; // Enable PWM on PWM1H2
-    PWM1CON1bits.PEN2L = 0b1; // Enable PWM on PWM1L2
+    PWM1CON1bits.PEN3H = 0b1; // Enable PWM on PWM1H3
+    PWM1CON1bits.PEN3L = 0b1; // Enable PWM on PWM1L3
     
     PWM1CON1bits.PMOD1 = 0b1; // Pair 1 is in independent mode
-    PWM1CON1bits.PMOD2 = 0b1; // Pair 2 is in independent mode
+    PWM1CON1bits.PMOD3 = 0b1; // Pair 3 is in independent mode
     
     P1DC1 = 0; // Duty cycle pair 1 to zero
-    P1DC2 = 0; // Duty cycle pair 2 to zero
+    P1DC3 = 0; // Duty cycle pair 3 to zero
     
     // Prepare initial configuration with all pins to 0
     overridePWM1H1_LOW();
     overridePWM1L1_LOW();
-    overridePWM1H2_LOW();
-    overridePWM1L2_LOW();
+    overridePWM1H3_LOW();
+    overridePWM1L3_LOW();
     
     P1TCONbits.PTEN = 1; // Start PWM 1 generator
 }
@@ -43,8 +43,6 @@ int _computePwmDutyCycle(float dc) {
     if (dc < 0 || dc > _PWM_MAX_SAFE_DUTY_CYCLE) {
         return ERR_DUTY_CYCLE_INVALID;
     }
-    
-    // TODO how does active low/active high play with PWM independent mode?
     
     // PWM1Hx, which is active low. Therefore, a x% duty cycle
     // means PTPER - (PTPER * x/100).
@@ -65,11 +63,11 @@ int setPWM1Pair1DutyCycle(float dc) {
     return ans;
 }
 
-int setPWM1Pair2DutyCycle(float dc) {
+int setPWM1Pair3DutyCycle(float dc) {
     int ans = _computePwmDutyCycle(dc);
     
     if (ans >= 0) {
-        P1DC2 = ans;
+        P1DC3 = ans;
         return ERR_OK;
     }
     
@@ -110,32 +108,32 @@ void disableOverridePWM1L1() {
 
 
 
-void overridePWM1H2_HIGH() {
-    P1OVDCONbits.POUT2H = 0b0;
-    P1OVDCONbits.POVD2H = 0b0;
+void overridePWM1H3_HIGH() {
+    P1OVDCONbits.POUT3H = 0b0;
+    P1OVDCONbits.POVD3H = 0b0;
 }
 
-void overridePWM1H2_LOW() {
-    P1OVDCONbits.POUT2H = 0b1;
-    P1OVDCONbits.POVD2H = 0b0;
+void overridePWM1H3_LOW() {
+    P1OVDCONbits.POUT3H = 0b1;
+    P1OVDCONbits.POVD3H = 0b0;
 }
 
-void disableOverridePWM1H2() {
-    P1OVDCONbits.POVD2H = 0b1;
+void disableOverridePWM1H3() {
+    P1OVDCONbits.POVD3H = 0b1;
 }
 
 
 
-void overridePWM1L2_HIGH() {
-    P1OVDCONbits.POUT2L = 0b0;
-    P1OVDCONbits.POVD2L = 0b0;
+void overridePWM1L3_HIGH() {
+    P1OVDCONbits.POUT3L = 0b0;
+    P1OVDCONbits.POVD3L = 0b0;
 }
 
-void overridePWM1L2_LOW() {
-    P1OVDCONbits.POUT2L = 0b1;
-    P1OVDCONbits.POVD2L = 0b0;
+void overridePWM1L3_LOW() {
+    P1OVDCONbits.POUT3L = 0b1;
+    P1OVDCONbits.POVD3L = 0b0;
 }
 
-void disableOverridePWM1L2() {
-    P1OVDCONbits.POVD2L = 0b1;
+void disableOverridePWM1L3() {
+    P1OVDCONbits.POVD3L = 0b1;
 }

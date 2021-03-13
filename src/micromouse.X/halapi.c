@@ -146,35 +146,35 @@ void motorLeftBrake() {
 }
 
 int setMotorRightForward(float intensity) {
-    int ans = setPWM1Pair2DutyCycle(intensity);
+    int ans = setPWM1Pair3DutyCycle(intensity);
     if (ans != ERR_OK) {
         return ERR_CANNOT_SET_MOTOR_SPEED;
     }
     
-    disableOverridePWM1H2();
-    overridePWM1L2_LOW();
+    disableOverridePWM1H3();
+    overridePWM1L3_LOW();
     return ERR_OK;
 }
 
 int setMotorRightBackward(float intensity) {
-    int ans = setPWM1Pair2DutyCycle(intensity);
+    int ans = setPWM1Pair3DutyCycle(intensity);
     if (ans != ERR_OK) {
         return ERR_CANNOT_SET_MOTOR_SPEED;
     }
     
-    disableOverridePWM1L2();
-    overridePWM1H2_LOW();
+    disableOverridePWM1L3();
+    overridePWM1H3_LOW();
     return ERR_OK;
 }
 
 void motorRightCoast() {
-    overridePWM1H2_LOW();
-    overridePWM1L2_LOW();
+    overridePWM1H3_LOW();
+    overridePWM1L3_LOW();
 }
 
 void motorRightBrake() {
-    overridePWM1H2_HIGH();
-    overridePWM1L2_HIGH();
+    overridePWM1H3_HIGH();
+    overridePWM1L3_HIGH();
 }
 
 long getMotorLeftPosition_ticks() {
