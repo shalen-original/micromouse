@@ -20,8 +20,8 @@
 void initHAL() {
     initIO();
     
-    initTimer1(10 /* ms */);
-    initTimer2(100 /* ms */);
+    initTimer1(TIMER1_PERIOD /* ms */);
+    initTimer2(TIMER2_PERIOD /* ms */);
     
     initButtons();
     
@@ -88,7 +88,7 @@ float _interpolateCurve(const SensorCurvePoint *curve, int length, float value) 
         return ERR_WALL_DISTANCE_NO_AVAIL;
               
     int pointIndex, i;
-    for (i = 0; i < length - 2; i++) {
+    for (i = 0; i <= length - 2; i++) {
         if (curve[i].voltage_v <= value && curve[i + 1].voltage_v > value){
             pointIndex = i;
             break;

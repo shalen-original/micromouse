@@ -31,11 +31,19 @@ typedef struct{
     float desiredVelocityL;
 } Controllerset;
 
+typedef struct {
+    float velocity;
+    float PWM;
+} PWMCurvePoint;
+
 // user level API to set Left motor speed
 void _setRawVelocityL(Controllerset *cset, float speed);
 
 // user level API to set Right motor speed
 void _setRawVelocityR(Controllerset *cset, float speed);
+
+// clear accumulated error inside controller
+void _clearPI (PI *controller);
 
 // set control goal (set point)
 void _setPI (PI *controller, float sp);
@@ -48,6 +56,15 @@ void _disablePI (PI *controller);
 
 // receive pv (measurement), step controller and return value for control
 float _stepPI(PI *controller, float pv);
+
+// intermediate function used to interpolate PWM curve
+float _interpolatePWMCurve(const PWMCurvePoint *curve, int N_points, float desiredVelocity);
+
+// look up PWM for desired velocity
+float _lookupPWM(float desiredVelocity);
+
+// compute wheel speed (mm/s) according to QEI counts
+float _getWheelSpeed(float lastCount,float currentCount,int timerFrequency);
 
 #endif	/* CONTROLLERUTILS_H */
 
