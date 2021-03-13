@@ -27,36 +27,21 @@ void initIO()
     // Remap pins (see tables 11-1 and 11-2 on the datasheet)
     __builtin_write_OSCCONL(OSCCON & 0xbf);
     
-    // QEI1 -> Left Motor (M1)
-    RPINR14bits.QEA1R = 12; //QEI1A -> RP12/M1_CHA
-    RPINR14bits.QEB1R = 23; //QEI1B -> RP13/M1_CHB
-    
-    // QEI2 -> Right Motor (M2)
-    RPINR16bits.QEA2R = 9; //QEI2A -> RP9/M2_CHA
-    RPINR16bits.QEB2R = 22; //QEI2B -> RP22/M2_CHB
-    
-    // TODO UART
+        // QEI1 -> Left Motor (M1)
+        RPINR14bits.QEA1R = 12; //QEI1A -> RP12/M1_CHA
+        RPINR14bits.QEB1R = 23; //QEI1B -> RP13/M1_CHB
+
+        // QEI2 -> Right Motor (M2)
+        RPINR16bits.QEA2R = 9; //QEI2A -> RP9/M2_CHA
+        RPINR16bits.QEB2R = 22; //QEI2B -> RP22/M2_CHB
+
+        // UART
+        RPINR18bits.U1RXR = 20; //U1RX -> RP20/UART_RX
+        RPINR18bits.U1CTSR = 21; //U1CTS -> RP21/BT_CTS
+        RPOR3bits.RP7R = 0b00011; //U1TX -> RP7/UART_TX
+        RPOR4bits.RP8R = 0b00100; //U1RTS -> RP8/BT_RTS
 
     __builtin_write_OSCCONL(OSCCON | 0x40);
-    
-    // TODO:
-    
-    TRISBbits.TRISB2 = 0;// UART1 TX (newer)
-    //TRISBbits.TRISB8 = 0;// UART1 TX
-
-    //PIN MAPPING --------------------------------
-    //before we map, we need to unlock
-    __builtin_write_OSCCONL(OSCCON & 0xbf); // clear bit 6 (unlock, they are usually write protected)
-    
-    // PERIPHERAL receives data from which INPUT  
-    RPINR18bits.U1RXR = 10;//9; //mapped to RP9 is U1 RX
-    
-    //OUTPUT PIN receives data from which PERIPHERAL, 
-    //see table 11-2 in datasheet to check peripheral codes 
-    RPOR1bits.RP2R = 0b00011; //output bin RP2 gets data from peripheral U1 TX 
-
-    //after mapping we lock again
-     __builtin_write_OSCCONL(OSCCON | 0x40); // Lock PPS registers (lock again!)
      
     int i;
     for (i = 0; i < 30000; i++); // short dirty delay for changes to take effect
