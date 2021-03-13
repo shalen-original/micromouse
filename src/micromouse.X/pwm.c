@@ -4,8 +4,6 @@
 #include "errors.h"
 #include "utils.h"
 
-#define _PWM_MAX_SAFE_DUTY_CYCLE 0.66
-
 void initPWM1() 
 {
     P1TCONbits.PTEN = 0; // Stop PWM 1 generator
@@ -39,8 +37,8 @@ void initPWM1()
 }
 
 int _computePwmDutyCycle(float dc) {
-    dc = lerp(dc, 0, _PWM_MAX_SAFE_DUTY_CYCLE);
-    if (dc < 0 || dc > _PWM_MAX_SAFE_DUTY_CYCLE) {
+    dc = lerp(dc, 0, PWM_MAX_SAFE_DUTY_CYCLE);
+    if (dc < 0 || dc > PWM_MAX_SAFE_DUTY_CYCLE) {
         return ERR_DUTY_CYCLE_INVALID;
     }
     

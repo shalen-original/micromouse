@@ -1,7 +1,7 @@
 #ifndef PWM_H
 #define PWM_H
 
-// PWM1 Pair 1 -> Left Motor (M1)
+// PWM1 Pair 1 -> Left Motor (M1) (only if hardware fix)
 // PWM1H1 -> M1_IN1/RB14
 // PWM1L1 -> M1_IN2/RB15
 

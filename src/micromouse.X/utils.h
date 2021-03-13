@@ -11,7 +11,16 @@
  * The duration in nanoseconds of one cycle of the microcontroller
  */
 #define MC_PERIOD_NS 37.5
-#define MC_PERIOD_MS (MC_PERIOD_NS / 1000)
+#define MC_PERIOD_US (MC_PERIOD_NS / 1000)
+#define MC_PERIOD_MS (MC_PERIOD_NS / 1000000)
+
+/**
+ * The maximum allowed duty cycle on a PWM pin.
+ * This in an implementation detail of the HAL and should
+ * not be used outside it. It is here because it is
+ * required in multiple files in the HAL.
+ */
+#define PWM_MAX_SAFE_DUTY_CYCLE 0.66
 
 /**
  * Linearly interpolates between `min` and `max`.
