@@ -4,6 +4,8 @@
 #include "motionControl.h"
 #include "mazeControl.h"
 
+extern Controllerset controllerset;
+
 typedef struct
 {
     movementState movState;
@@ -94,32 +96,37 @@ uint8_t getSensorMeasurement(float sensorR, float sensorL, float sensorF)
 
 void onWallChange(uint8_t newWalls)
 {
-    position posInDir = getPosInDir(state.curPos, state.nextDirection); // wall update is always one cell in advance (as cell position updates must come later)
-    onMazePosExplored(posInDir, newWalls); // update maze walls
     state.walls = newWalls; // update internal state
 }
 
 void onAngleReached()
 {
     // TODO move straight
+    move(&controllerset, 20); // TODO speed (get from mazecontrol?)
     state.movState = MOVE;
     // maybe reset distance to 0?
 }
 
 void onCellChange()
 {
-    state.curPos = getPosInDir(state.curPos, state.nextDirection);
-    state.curDirection = state.nextDirection;
+    // report current internal wall to maze
+    position posInDir = getPosInDir(state.curPos, state.nextDirection); // wall update is always one cell in advance (as cell position updates comes later)
+    onMazePosExplored(posInDir, state.walls); // update maze walls
+    
+    state.curPos = getPosInDir(state.curPos, state.nextDirection); // position update
+    state.curDirection = state.nextDirection; // next to cur override
     state.nextDirection = getNextDirection(state.curPos); // receives new moving direction from mazeControl
     
     if (state.nextDirection != state.curDirection)
     {
         state.movState = TURN;
-        // TODO call spin command
+        //calculate difference in angle
+        float deltaAngle = dirToFloat(state.nextDirection) - dirToFloat(state.curDirection);
+        spin(&controllerset, deltaAngle); // TODO speed is wrong here (only +- and then fixed value)
     } else
     {
         state.movState = MOVE;
-        // TODO call move straight command
+        move(&controllerset, 20); // TODO speed (get from mazecontrol?)
     }
     
     // reset all relative states
