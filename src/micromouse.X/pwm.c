@@ -42,12 +42,11 @@ int _computePwmDutyCycle(float dc) {
         return ERR_DUTY_CYCLE_INVALID;
     }
     
-    // PWM1Hx, which is active low. Therefore, a x% duty cycle
-    // means PTPER - (PTPER * x/100).
-    // Due to the fact that PTPER is shifted left once by the PWM unit, 
-    // we have to multiply it by 2
+    // A x% duty cycle means (PTPER * x/100).
+    // Due to the fact that PTPER is shifted left once 
+    // by the PWM unit, we have to multiply it by 2
     
-    return 2 * (P1TPERbits.PTPER - (P1TPERbits.PTPER * dc));
+    return 2 * (P1TPERbits.PTPER * dc);
 }
 
 int setPWM1Pair1DutyCycle(float dc) {
@@ -75,12 +74,12 @@ int setPWM1Pair3DutyCycle(float dc) {
 void overridePWM1H1_HIGH() {
     // TODO need to look better. POUT1H == 1 means
     // pin 'active', but active high or active low?
-    P1OVDCONbits.POUT1H = 0b0;
+    P1OVDCONbits.POUT1H = 0b1;
     P1OVDCONbits.POVD1H = 0b0;
 }
 
 void overridePWM1H1_LOW() {
-    P1OVDCONbits.POUT1H = 0b1;
+    P1OVDCONbits.POUT1H = 0b0;
     P1OVDCONbits.POVD1H = 0b0;
 }
 
@@ -91,12 +90,12 @@ void disableOverridePWM1H1() {
 
 
 void overridePWM1L1_HIGH() {
-    P1OVDCONbits.POUT1L = 0b0;
+    P1OVDCONbits.POUT1L = 0b1;
     P1OVDCONbits.POVD1L = 0b0;
 }
 
 void overridePWM1L1_LOW() {
-    P1OVDCONbits.POUT1L = 0b1;
+    P1OVDCONbits.POUT1L = 0b0;
     P1OVDCONbits.POVD1L = 0b0;
 }
 
@@ -107,12 +106,12 @@ void disableOverridePWM1L1() {
 
 
 void overridePWM1H3_HIGH() {
-    P1OVDCONbits.POUT3H = 0b0;
+    P1OVDCONbits.POUT3H = 0b1;
     P1OVDCONbits.POVD3H = 0b0;
 }
 
 void overridePWM1H3_LOW() {
-    P1OVDCONbits.POUT3H = 0b1;
+    P1OVDCONbits.POUT3H = 0b0;
     P1OVDCONbits.POVD3H = 0b0;
 }
 
@@ -123,12 +122,12 @@ void disableOverridePWM1H3() {
 
 
 void overridePWM1L3_HIGH() {
-    P1OVDCONbits.POUT3L = 0b0;
+    P1OVDCONbits.POUT3L = 0b1;
     P1OVDCONbits.POVD3L = 0b0;
 }
 
 void overridePWM1L3_LOW() {
-    P1OVDCONbits.POUT3L = 0b1;
+    P1OVDCONbits.POUT3L = 0b0;
     P1OVDCONbits.POVD3L = 0b0;
 }
 
