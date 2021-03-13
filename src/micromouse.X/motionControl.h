@@ -7,13 +7,23 @@
 // initializes the motion control module
 void initMotionControl(Controllerset *cset);
 
-// general move function (where both motor move have to turn with same speed)
+/* Go straight line
+ * both motors set to rawVelocity
+ */ 
 void move(Controllerset *cset, float rawVelocity);
 
-// uses outer wheel to turn
+/* Rotate while running
+ * outer wheel set to rawVelocity, inner wheel stop 
+ * +: turn right
+ * -: turn left
+ */   
 void turn(Controllerset *cset, float rawVelocity);
 
-// rotates while standing (both motors with same speed, but inversed to each other)
+/* Rotate on the spot
+ * both motors set to rawVelocity, but reversed to each other
+ * +: turn right
+ * -: turn left
+ */   
 void spin(Controllerset *cset, float rawVelocity);
 
 // update current information of the micromouse

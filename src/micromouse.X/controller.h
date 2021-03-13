@@ -4,6 +4,8 @@
 #define CONTROLLER_H
 
 // distance controller
-void distanceControl(Controllerset *cset, float sensorR, float sensorL, float sensorF);
+void distanceControl(Controllerset *cset);
 
+// velocity controller
+void velocityControl(Controllerset *cset);
 #endif /* CONTROLLER_H */

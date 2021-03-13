@@ -117,19 +117,19 @@ int main()
 }
 
 void onTimer1Tick() {
-    float sensorR = getDistanceRight_mm();
-    float sensorL = getDistanceLeft_mm();
-    float sensorF = getDistanceFront_mm();
     
-    distanceControl(&controllerset, sensorR, sensorL, sensorF);
+    distanceControl(&controllerset);
 }
 
 void onTimer2Tick() {
+    
+    velocityControl(&controllerset);
+    
     LED_1 = ~LED_1;
 }
 
 void onButtonChanged(BOOL isCurrentlyPressed) {
-    
+    velocityControl(&controllerset);
 }
 
 void onButtonClicked() {

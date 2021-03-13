@@ -11,6 +11,11 @@
 #define LED_ON 0
 #define LED_OFF 1
 
+#define TIMER1_PERIOD 10 /* ms */
+#define TIMER2_PERIOD 100 /* ms */
+
+#define TIMER1_FREQUENCY 1000/TIMER1_PERIOD /* Hz */
+#define TIMER2_FREQUENCY 1000/TIMER2_PERIOD /* Hz */
 
 /**
  * Initializes the HAL. To be called from main before using
