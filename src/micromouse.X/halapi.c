@@ -11,6 +11,10 @@
 #include "ioconfig.h"
 #include "uart.h"
 
+#ifdef SOFTWARE_FIX
+#include "oc.h"
+#endif
+
 #include <assert.h>
 
 void initHAL() {
@@ -26,6 +30,12 @@ void initHAL() {
     initPWM1();
     initQEI();
     initUART();
+    
+#ifdef SOFTWARE_FIX
+    initTimer3();
+    initOC();
+    startTimer3();
+#endif
     
     startTimer1();
     startTimer2();
@@ -114,6 +124,14 @@ float getDistanceFront_mm() {
 }
 
 int setMotorLeftForward(float intensity) {
+#ifdef SOFTWARE_FIX
+    int ans1 = setOC1DutyCycle(intensity);
+    int ans2 = setOC2DutyCycle(0);
+    
+    if (ans1 != ERR_OK || ans2 != ERR_OK) {
+        return ERR_CANNOT_SET_MOTOR_SPEED;
+    }
+#else
     int ans = setPWM1Pair1DutyCycle(intensity);
     if (ans != ERR_OK) {
         return ERR_CANNOT_SET_MOTOR_SPEED;
@@ -121,10 +139,20 @@ int setMotorLeftForward(float intensity) {
     
     disableOverridePWM1H1();
     overridePWM1L1_LOW();
+#endif
+    
     return ERR_OK;
 }
 
 int setMotorLeftBackward(float intensity) {
+#ifdef SOFTWARE_FIX
+    int ans1 = setOC1DutyCycle(0);
+    int ans2 = setOC2DutyCycle(intensity);
+    
+    if (ans1 != ERR_OK || ans2 != ERR_OK) {
+        return ERR_CANNOT_SET_MOTOR_SPEED;
+    }
+#else
     int ans = setPWM1Pair1DutyCycle(intensity);
     if (ans != ERR_OK) {
         return ERR_CANNOT_SET_MOTOR_SPEED;
@@ -132,17 +160,29 @@ int setMotorLeftBackward(float intensity) {
     
     disableOverridePWM1L1();
     overridePWM1H1_LOW();
+#endif
+    
     return ERR_OK;
 }
 
 void motorLeftCoast() {
+#ifdef SOFTWARE_FIX
+    setOC1DutyCycle(0);
+    setOC2DutyCycle(0);
+#else
     overridePWM1H1_LOW();
     overridePWM1L1_LOW();
+#endif
 }
 
 void motorLeftBrake() {
+#ifdef SOFTWARE_FIX
+    setOC1DutyCycle(1);
+    setOC2DutyCycle(1);
+#else
     overridePWM1H1_HIGH();
     overridePWM1L1_HIGH();
+#endif
 }
 
 int setMotorRightForward(float intensity) {

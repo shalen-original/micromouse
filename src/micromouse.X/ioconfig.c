@@ -40,6 +40,12 @@ void initIO()
         RPINR18bits.U1CTSR = 21; //U1CTS -> RP21/BT_CTS
         RPOR3bits.RP7R = 0b00011; //U1TX -> RP7/UART_TX
         RPOR4bits.RP8R = 0b00100; //U1RTS -> RP8/BT_RTS
+        
+#ifdef SOFTWARE_FIX
+        //Output compare
+        RPOR11bits.RP23R = 0b10010; //OC1 -> RP23/M1_IN1
+        RPOR12bits.RP24R = 0b10011; //OC2 -> RP24/M1_IN2
+#endif
 
     __builtin_write_OSCCONL(OSCCON | 0x40);
      
