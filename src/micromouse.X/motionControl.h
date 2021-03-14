@@ -34,7 +34,7 @@ void spin(Controllerset *cset, float rawVelocity);
  * float distance(mm): + forward / - backward
  * float angle(°): + turn right / - turn left 
  */
-infoUpdate update(Controllerset *cset); 
+distanceUpdateDirection update(Controllerset *cset); 
 
 #endif	/* MOTION_CONTROL_H */
 

@@ -19,16 +19,16 @@ void distanceControl(Controllerset *cset){
     
     //---write info for update()---
     if (sensorR <= 150){
-        cset->info.wallRight = TRUE;
+        cset->info.sensorR = TRUE;
     }
     else{
-        cset->info.wallRight = FALSE;
+        cset->info.sensorR = FALSE;
     }
     if (sensorL <= 150){
-        cset->info.wallLeft = TRUE;
+        cset->info.sensorL = TRUE;
     }
     else{
-        cset->info.wallLeft = FALSE;
+        cset->info.sensorL = FALSE;
     }
     
     //---check sensor validity for distance controllers---
@@ -129,7 +129,7 @@ void velocityControl(Controllerset *cset){
     float wheelDistanceL = _getWheelDistance(lastEncoderL, currentEncoderL);
     float wheelDistanceR = _getWheelDistance(lastEncoderR, currentEncoderR);
     
-    cset->info.distance = 0.5*(wheelDistanceL + wheelDistanceR); // distance
+    cset->info.distanceDelta = 0.5*(wheelDistanceL + wheelDistanceR); // distance
     
     int turnRight = wheelDistanceL > wheelDistanceR;
     int turnLeft = wheelDistanceL < wheelDistanceR;
@@ -138,18 +138,18 @@ void velocityControl(Controllerset *cset){
     
     if (cset->API == 2){ // turn mode
         if (turnRight){
-            cset->info.angle = wheelDistanceL/(3.142*b) *360;
+            cset->info.angleDelta = wheelDistanceL/(3.142*b) *360;
         }
         else if(turnLeft){
-            cset->info.angle = -1 * wheelDistanceR/(3.142*b) *360;
+            cset->info.angleDelta = -1 * wheelDistanceR/(3.142*b) *360;
         }
     }
     else if(cset->API == 3){ // spin mode
         if (turnRight){
-            cset->info.angle = wheelDistanceL/(3.142*0.5*b) *360;
+            cset->info.angleDelta = wheelDistanceL/(3.142*0.5*b) *360;
         }
         else if(turnLeft){
-            cset->info.angle = -1 * wheelDistanceR/(3.142*0.5*b) *360;
+            cset->info.angleDelta = -1 * wheelDistanceR/(3.142*0.5*b) *360;
         }
     }
     

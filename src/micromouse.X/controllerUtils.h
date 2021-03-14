@@ -1,4 +1,5 @@
 #include "boolean.h"
+#include "updateStruct.h"
 
 #ifndef CONTROLLERUTILS_H
 #define	CONTROLLERUTILS_H
@@ -23,14 +24,6 @@ typedef struct{
     PI F; // Distance controller Front sensor
 } distanceControllers;
 
-// define a struct for information updates
-typedef struct{
-    BOOL wallRight; // if right wall exist
-    BOOL wallLeft; // if left wall exist
-    float distance; // average of both motor distances
-    float angle; // turned angle
-} infoUpdate;
-
 // define a set to contain all controllers (VR,VL,DR,DL,DF)
 typedef struct{
     velocityControllers V;
@@ -39,7 +32,7 @@ typedef struct{
     float rawVelocityL;
     float desiredVelocityR;
     float desiredVelocityL;
-    infoUpdate info;
+    distanceUpdateDirection info;
     int API; // 0:no, 1:move, 2:rotate, 3:spin
 } Controllerset;
 

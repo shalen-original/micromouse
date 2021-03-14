@@ -7,7 +7,7 @@ extern Controllerset controllerset;
 void initMotionControl(Controllerset *cset){
     // Below are settings for Controller parameters
     // (PI){kp, ki, e_sum, sp, enable}  
-    //(infoUpdate){wallRight,wallLeft,distance,angle}
+    //(distanceUpdateDirection){wallLeft,wallRight,wallFront,distance,angle}
     cset->D.R = (PI){0.1, 0.1, 0, 0, 0};
     cset->D.L = (PI){0.1, 0.1, 0, 0, 0};
     cset->D.F = (PI){0.1, 0.1, 0, 84, 0}; // Front sensor keep 84mm to front wall(middle of maze)
@@ -17,7 +17,7 @@ void initMotionControl(Controllerset *cset){
     cset->rawVelocityR = 0;
     cset->desiredVelocityL = 0;
     cset->desiredVelocityR = 0;
-    cset->info = (infoUpdate){TRUE,TRUE,0,0};
+    cset->info = (distanceUpdateDirection){TRUE,TRUE,TRUE,0,0};
     cset->API = 0;
 }
 
@@ -81,7 +81,7 @@ void spin(Controllerset *cset, float rawVelocity)
     _disablePI(&cset->D.F);
 }
 
-infoUpdate update(Controllerset *cset){
+distanceUpdateDirection update(Controllerset *cset){
 
     return cset->info;
 }
