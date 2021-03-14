@@ -28,6 +28,8 @@ typedef struct{
 typedef struct{
     velocityControllers V;
     distanceControllers D;
+    float commandStartEncoderR;
+    float commandStartEncoderL;
     float rawVelocityR;
     float rawVelocityL;
     float desiredVelocityR;
@@ -65,6 +67,9 @@ float _stepPI(PI *controller, float pv);
 // select API 
 // 0:no, 1:move, 2:rotate, 3:spin
 void _selectAPI(Controllerset *cset, int API);
+
+// before move/ turn/ spin, record start encoder value
+void _recordStartPosition(Controllerset *cset);
 
 // intermediate function used to interpolate PWM curve
 float _interpolatePWMCurve(const PWMCurvePoint *curve, int N_points, float desiredVelocity);

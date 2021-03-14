@@ -126,30 +126,30 @@ void velocityControl(Controllerset *cset){
     
     //---write info for update()---
     
-    float wheelDistanceL = _getWheelDistance(lastEncoderL, currentEncoderL);
-    float wheelDistanceR = _getWheelDistance(lastEncoderR, currentEncoderR);
+    float wheelDistanceL = _getWheelDistance(cset->commandStartEncoderL, currentEncoderL); // compute distance traveled since command start
+    float wheelDistanceR = _getWheelDistance(cset->commandStartEncoderR, currentEncoderR);
     
-    cset->info.distanceDelta = 0.5*(wheelDistanceL + wheelDistanceR); // distance
+    cset->info.distanceDelta = 0.5*(wheelDistanceL + wheelDistanceR); // write distance to update()
     
     int turnRight = wheelDistanceL > wheelDistanceR;
     int turnLeft = wheelDistanceL < wheelDistanceR;
     
-    float b = 40; // TODO confirm the space between wheels
+    float width = 40; // TODO confirm the (track width)
     
     if (cset->API == 2){ // turn mode
         if (turnRight){
-            cset->info.angleDelta = wheelDistanceL/(3.142*b) *360;
+            cset->info.angleDelta = wheelDistanceL/(3.142*width) *360; // write angle to update()
         }
         else if(turnLeft){
-            cset->info.angleDelta = -1 * wheelDistanceR/(3.142*b) *360;
+            cset->info.angleDelta = -1 * wheelDistanceR/(3.142*width) *360; // write angle to update()
         }
     }
     else if(cset->API == 3){ // spin mode
         if (turnRight){
-            cset->info.angleDelta = wheelDistanceL/(3.142*0.5*b) *360;
+            cset->info.angleDelta = wheelDistanceL/(3.142*0.5*width) *360; // write angle to update()
         }
         else if(turnLeft){
-            cset->info.angleDelta = -1 * wheelDistanceR/(3.142*0.5*b) *360;
+            cset->info.angleDelta = -1 * wheelDistanceR/(3.142*0.5*width) *360; // write angle to update()
         }
     }
     

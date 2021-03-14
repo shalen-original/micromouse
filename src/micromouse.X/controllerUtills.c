@@ -1,6 +1,7 @@
 #include "xc.h"
 #include "controllerUtils.h"
 #include "utils.h"
+#include "halapi.h"
 
 void _setRawVelocityL(Controllerset *cset, float speed){
     cset->rawVelocityL = speed;
@@ -40,6 +41,11 @@ float _stepPI(PI *controller, float pv){ // pv stands for present value
 
 void _selectAPI(Controllerset *cset, int API){ // 0:no, 1:move, 2:rotate, 3:spin
     cset->API = API;
+}
+
+void _recordStartPosition(Controllerset *cset){
+    cset->commandStartEncoderL = getMotorLeftPosition_ticks(); 
+    cset->commandStartEncoderR = getMotorRightPosition_ticks();
 }
 
 float _interpolatePWMCurve(const PWMCurvePoint *curve, int N_points, float desiredVelocity) {

@@ -13,6 +13,8 @@ void initMotionControl(Controllerset *cset){
     cset->D.F = (PI){0.1, 0.1, 0, 84, 0}; // Front sensor keep 84mm to front wall(middle of maze)
     cset->V.R = (PI){0.1, 0.1, 0, 0, 1}; // velocity controllers are always ON
     cset->V.L = (PI){0.1, 0.1, 0, 0, 1};
+    cset->commandStartEncoderL = 0;
+    cset->commandStartEncoderR= 0;
     cset->rawVelocityL = 0;
     cset->rawVelocityR = 0;
     cset->desiredVelocityL = 0;
@@ -22,7 +24,8 @@ void initMotionControl(Controllerset *cset){
 }
 
 void move(Controllerset *cset, float rawVelocity)
-{
+{   
+    _recordStartPosition(cset);
     _selectAPI(cset,1);
     _setRawVelocityL(cset,rawVelocity); // set raw velocity
     _setRawVelocityR(cset,rawVelocity);
@@ -36,6 +39,7 @@ void move(Controllerset *cset, float rawVelocity)
 
 void turn(Controllerset *cset, float rawVelocity)
 {   
+    _recordStartPosition(cset);
     _selectAPI(cset,2);
     int turnRight =  (rawVelocity >= 0); // switch cases for right /left 
     int turnLeft = (rawVelocity < 0);
@@ -60,6 +64,7 @@ void turn(Controllerset *cset, float rawVelocity)
 
 void spin(Controllerset *cset, float rawVelocity)
 {
+    _recordStartPosition(cset);
     _selectAPI(cset,3);
     int turnRight =  rawVelocity >= 0; // switch cases for right /left 
     int turnLeft = rawVelocity < 0;
