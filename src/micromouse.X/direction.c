@@ -26,20 +26,12 @@ dir getInverse(dir direction)
 dir getClockwise(dir direction)
 {
     dir clockwise;
-    switch (direction)
+    if (direction == WEST)
     {
-        case NORTH:
-            clockwise = EAST;
-            break;
-        case SOUTH:
-            clockwise = WEST;
-            break;
-        case EAST:
-            clockwise = SOUTH;
-            break;
-        case WEST:
-            clockwise = NORTH;
-            break;
+        direction = NORTH;
+    } else
+    {
+        clockwise = direction << 1;
     }
     return clockwise;
 }
@@ -47,20 +39,12 @@ dir getClockwise(dir direction)
 dir getCounterClockwise(dir direction)
 {
     dir counterClockwise;
-    switch (direction)
+    if (direction == NORTH)
     {
-        case NORTH:
-            counterClockwise = WEST;
-            break;
-        case SOUTH:
-            counterClockwise = EAST;
-            break;
-        case EAST:
-            counterClockwise = NORTH;
-            break;
-        case WEST:
-            counterClockwise = SOUTH;
-            break;
+        counterClockwise = WEST;
+    } else 
+    {
+        counterClockwise = direction >> 1;
     }
     return counterClockwise;
 }

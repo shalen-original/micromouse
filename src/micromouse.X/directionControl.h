@@ -4,6 +4,7 @@
 
 #include <xc.h> // include processor files - each processor file is guarded.
 #include "utils.h"
+#include "updateStruct.h"
 
 typedef enum // movement state of robot
 {
@@ -25,10 +26,9 @@ typedef enum // environement state of robot (where are walls)
 void initRobot(void);
 
 // is called whenever the sensors are read
-void onUpdate(float sensorR, float sensorL, float sensorF, float distancePassed, float angleChange);
+void onUpdate(distanceUpdateDirection pack);
 
-BOOL sensorConvertToBool(float sensorValue);
-uint8_t getSensorMeasurement(float sensorR, float sensorL, float sensorF);
+uint8_t getSensorMeasurement(BOOL sensorR, BOOL sensorL, BOOL sensorF);
 
 void onWallChange(uint8_t newWalls);
 void onAngleReached();

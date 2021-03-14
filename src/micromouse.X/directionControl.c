@@ -36,20 +36,20 @@ void initRobot()
     state.nextDirection = getNextDirection(state.curPos);
 }
 
-void onUpdate(float sensorR, float sensorL, float sensorF, float distancePassed, float angleChange)
+void onUpdate(distanceUpdateDirection pack)
 {
     // robot is currently turning/spinning?
     if (state.movState == TURN)
     {
-        state.curAngleChange += angleChange;
+        state.curAngleChange += pack.angleDelta;
         if (directionEqualsAngle(state.curAngleChange, state.nextDirection, 5)) // TODO ERROR MARGIN (5 is too low?)
         {
             onAngleReached();
         }
     } else // robot is moving straight
     {
-        state.distanceSinceLastCell += distancePassed;
-        uint8_t wallMeasured = getSensorMeasurement(sensorR, sensorL, sensorF);
+        state.distanceSinceLastCell += pack.distanceDelta;
+        uint8_t wallMeasured = getSensorMeasurement(pack.sensorR, pack.sensorL, pack.sensorF);
         // wall changed?
         if (wallMeasured != state.walls)
         {
@@ -67,27 +67,18 @@ void onUpdate(float sensorR, float sensorL, float sensorF, float distancePassed,
     }
 }
 
-BOOL sensorConvertToBool(float sensorValue)
-{
-    if (sensorValue < 180 && sensorValue > 40) // TODO set thresholds correctly (between 4 and 18 cm)
-    {
-        return TRUE;
-    }
-    return FALSE;
-}
-
-uint8_t getSensorMeasurement(float sensorR, float sensorL, float sensorF)
+uint8_t getSensorMeasurement(BOOL sensorR, BOOL sensorL, BOOL sensorF)
 {
     uint8_t wallNew = 0b0;
-    if (sensorConvertToBool(sensorR) == TRUE)
+    if (sensorR == TRUE)
     {
         wallNew |= getClockwise(state.curDirection);
     }
-    if (sensorConvertToBool(sensorL) == TRUE)
+    if (sensorL == TRUE)
     {
         wallNew |= getCounterClockwise(state.curDirection);
     }
-    if (sensorConvertToBool(sensorF) == TRUE)
+    if (sensorF == TRUE)
     {
         wallNew |= state.curDirection;
     }
