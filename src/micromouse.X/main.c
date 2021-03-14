@@ -127,11 +127,10 @@ void onTimer2Tick() {
     
     velocityControl(&controllerset);
     
-    LED_1 = ~LED_1;
 }
 
 void onButtonChanged(BOOL isCurrentlyPressed) {
-    velocityControl(&controllerset);
+    LED_1 = ~LED_1;
 }
 
 void onButtonClicked() {

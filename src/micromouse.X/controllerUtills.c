@@ -38,6 +38,10 @@ float _stepPI(PI *controller, float pv){ // pv stands for present value
     }
 }
 
+void _selectAPI(Controllerset *cset, int API){ // 0:no, 1:move, 2:rotate, 3:spin
+    cset->API = API;
+}
+
 float _interpolatePWMCurve(const PWMCurvePoint *curve, int N_points, float desiredVelocity) {
     float minVelocity = 0;
     float maxVelocity = 316;
@@ -95,11 +99,11 @@ float _getWheelSpeed(float lastCount,float currentCount,int timerFrequency){
      * Angle per count (°)
      * alpha = 360/ N_pulse
      * 
-     * angular velocity(°/s)
+     * wheel angular velocity(°/s)
      * V_angular = V_cps * alpha /(K_e * Gr)
      * 
-     * wheel velocity (mm/s)
-     * V_wheel = V_angular/ 360 * 3.14* Dwheel 
+     * wheel linear velocity (mm/s)
+     * V_linear = V_angular/ 360 * 3.142* Dwheel 
      */
     
     int N_pulse =16;
@@ -108,13 +112,44 @@ float _getWheelSpeed(float lastCount,float currentCount,int timerFrequency){
     int Dwheel =40;
 
     float V_cps = (currentCount - lastCount) * timerFrequency;
-
     float alpha = 360/ N_pulse;
-    
     float V_angular = V_cps * alpha /(K_e * Gr);
-
-    float V_wheel = V_angular/ 360 * 3.142 * Dwheel;
+    float V_linear = V_angular/ 360 * 3.142 * Dwheel;
     
-    return V_wheel;
+    return V_linear;
+}
+
+float _getWheelDistance(float lastCount,float currentCount){
+    /* ### Hardware related parameters ###
+     * N_pulse: pulses per revolution (=16 for our motor) 
+     * K_e: edge gain (=4 in our case)
+     * Gr: gear ratio (=33 in our case)
+     * Dwheel: wheel diameter(=40 mm)
+     * 
+     * ### Formula ###
+     * delta_count
+     * delta_count = currentCount - lastCount
+     * 
+     * Angle per count (°)
+     * alpha = 360/ N_pulse
+     * 
+     * wheel angles
+     * angle_wheel = delta_count * alpha /(K_e * Gr)
+     * 
+     * wheel velocity (mm/s)
+     * distance_wheel = angle_wheel/ 360 * 3.142* Dwheel 
+     */
+    
+    int N_pulse =16;
+    int K_e =4;
+    int Gr=33;
+    int Dwheel =40;
+
+    float delta_count = currentCount - lastCount;
+    float alpha = 360/ N_pulse;
+    float angle_wheel = delta_count * alpha /(K_e * Gr);
+    float distance_wheel = angle_wheel/ 360 * 3.142 * Dwheel;
+    
+    return distance_wheel;
 }
 

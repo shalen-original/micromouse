@@ -7,6 +7,7 @@ extern Controllerset controllerset;
 void initMotionControl(Controllerset *cset){
     // Below are settings for Controller parameters
     // (PI){kp, ki, e_sum, sp, enable}  
+    //(infoUpdate){wallRight,wallLeft,distance,angle}
     cset->D.R = (PI){0.1, 0.1, 0, 0, 0};
     cset->D.L = (PI){0.1, 0.1, 0, 0, 0};
     cset->D.F = (PI){0.1, 0.1, 0, 84, 0}; // Front sensor keep 84mm to front wall(middle of maze)
@@ -16,10 +17,13 @@ void initMotionControl(Controllerset *cset){
     cset->rawVelocityR = 0;
     cset->desiredVelocityL = 0;
     cset->desiredVelocityR = 0;
+    cset->info = (infoUpdate){TRUE,TRUE,0,0};
+    cset->API = 0;
 }
 
 void move(Controllerset *cset, float rawVelocity)
 {
+    _selectAPI(cset,1);
     _setRawVelocityL(cset,rawVelocity); // set raw velocity
     _setRawVelocityR(cset,rawVelocity);
     _clearPI(&cset->D.R); // clear the accumulated error inside distance controllers
@@ -32,6 +36,7 @@ void move(Controllerset *cset, float rawVelocity)
 
 void turn(Controllerset *cset, float rawVelocity)
 {   
+    _selectAPI(cset,2);
     int turnRight =  (rawVelocity >= 0); // switch cases for right /left 
     int turnLeft = (rawVelocity < 0);
     
@@ -55,6 +60,7 @@ void turn(Controllerset *cset, float rawVelocity)
 
 void spin(Controllerset *cset, float rawVelocity)
 {
+    _selectAPI(cset,3);
     int turnRight =  rawVelocity >= 0; // switch cases for right /left 
     int turnLeft = rawVelocity < 0;
     
@@ -75,7 +81,7 @@ void spin(Controllerset *cset, float rawVelocity)
     _disablePI(&cset->D.F);
 }
 
-void update(void){
-    
-    // TODO
+infoUpdate update(Controllerset *cset){
+
+    return cset->info;
 }

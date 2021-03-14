@@ -11,14 +11,32 @@ void distanceControl(Controllerset *cset){
      * 
      * Scenario 3: Both side opening
      * achieve same speed on both wheels*/
+    
+    //---read sensors---
     float sensorR = getDistanceRight_mm();
     float sensorL = getDistanceLeft_mm();
     float sensorF = getDistanceFront_mm();
     
+    //---write info for update()---
+    if (sensorR <= 150){
+        cset->info.wallRight = TRUE;
+    }
+    else{
+        cset->info.wallRight = FALSE;
+    }
+    if (sensorL <= 150){
+        cset->info.wallLeft = TRUE;
+    }
+    else{
+        cset->info.wallLeft = FALSE;
+    }
+    
+    //---check sensor validity for distance controllers---
     int validF = sensorF >= 40 && sensorF <= 150;// front sensor only used when close to maze wall
     int validR = sensorR >= 20 && sensorR <= 150;// check whether sensors have valid values
     int validL = sensorL >= 20 && sensorL <= 150;
-
+    
+    //---set distance controllers---
     if (validR && validL){ //scenario 1
         float sp = 84;        
         _setPI(&cset->D.L,sp);
@@ -53,7 +71,8 @@ void distanceControl(Controllerset *cset){
         _disablePI(&cset->D.F);
         _clearPI(&cset->D.F);
     }
-
+    
+    //---update desired velocity---
     float adjustR = _stepPI(&cset->D.R, sensorR); // calculate control adjustment
     float adjustL = _stepPI(&cset->D.L, sensorL);
     float adjustF = _stepPI(&cset->D.F, sensorF);
@@ -64,7 +83,8 @@ void distanceControl(Controllerset *cset){
     _setPI(&cset->V.R,cset->desiredVelocityR); // set desired values for velocity controller
     _setPI(&cset->V.L,cset->desiredVelocityL);
     
-    _clearPI(&cset->V.R); // everytime new desired velocity comes, clear accumulated error
+    //---clear accumulated error in velocity controllers---
+    _clearPI(&cset->V.R); 
     _clearPI(&cset->V.L);
 }
 
@@ -75,18 +95,21 @@ void velocityControl(Controllerset *cset){
 
     //----------------------regular execution-----------------------------------
     
-    float currentEncoderL = getMotorLeftPosition_ticks(); // update current encoder position
-    float currentEncoderR = getMotorRightPosition_ticks();
-
-    float wheelSpeedL = _getWheelSpeed(lastEncoderL, currentEncoderL, TIMER2_FREQUENCY); // compute current wheel speed(mm/s)
-    float wheelSpeedR = _getWheelSpeed(lastEncoderR, currentEncoderR, TIMER2_FREQUENCY); 
-    
-    float adjustR = _stepPI(&cset->V.R, wheelSpeedR);
-    float adjustL = _stepPI(&cset->V.L, wheelSpeedL);  
-    
+    //---look up PWM without control---
     float lookupPWMR = _lookupPWM(cset->desiredVelocityR);
     float lookupPWML = _lookupPWM(cset->desiredVelocityL);
-
+    
+    //---read encoders---
+    float currentEncoderL = getMotorLeftPosition_ticks(); 
+    float currentEncoderR = getMotorRightPosition_ticks();
+    
+    //---compute current wheel speed(mm/s)---
+    float wheelSpeedL = _getWheelSpeed(lastEncoderL, currentEncoderL, TIMER2_FREQUENCY); 
+    float wheelSpeedR = _getWheelSpeed(lastEncoderR, currentEncoderR, TIMER2_FREQUENCY); 
+    
+    //---set final PWM with control---
+    float adjustR = _stepPI(&cset->V.R, wheelSpeedR);
+    float adjustL = _stepPI(&cset->V.L, wheelSpeedL);  
 
     float finalPWMR= lookupPWMR + adjustR;
     float finalPWML= lookupPWML + adjustL;
@@ -101,6 +124,36 @@ void velocityControl(Controllerset *cset){
     else
         {setMotorLeftBackward(-1*finalPWML);}
     
-    lastEncoderL = currentEncoderL; // last thing is to update value of last tick
+    //---write info for update()---
+    
+    float wheelDistanceL = _getWheelDistance(lastEncoderL, currentEncoderL);
+    float wheelDistanceR = _getWheelDistance(lastEncoderR, currentEncoderR);
+    
+    cset->info.distance = 0.5*(wheelDistanceL + wheelDistanceR); // distance
+    
+    int turnRight = wheelDistanceL > wheelDistanceR;
+    int turnLeft = wheelDistanceL < wheelDistanceR;
+    
+    float b = 40; // TODO confirm the space between wheels
+    
+    if (cset->API == 2){ // turn mode
+        if (turnRight){
+            cset->info.angle = wheelDistanceL/(3.142*b) *360;
+        }
+        else if(turnLeft){
+            cset->info.angle = -1 * wheelDistanceR/(3.142*b) *360;
+        }
+    }
+    else if(cset->API == 3){ // spin mode
+        if (turnRight){
+            cset->info.angle = wheelDistanceL/(3.142*0.5*b) *360;
+        }
+        else if(turnLeft){
+            cset->info.angle = -1 * wheelDistanceR/(3.142*0.5*b) *360;
+        }
+    }
+    
+    //---save current value to history---
+    lastEncoderL = currentEncoderL; 
     lastEncoderR = currentEncoderR;
 }
