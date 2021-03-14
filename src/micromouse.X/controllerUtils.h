@@ -1,3 +1,5 @@
+#include "boolean.h"
+
 #ifndef CONTROLLERUTILS_H
 #define	CONTROLLERUTILS_H
 
@@ -21,6 +23,14 @@ typedef struct{
     PI F; // Distance controller Front sensor
 } distanceControllers;
 
+// define a struct for information updates
+typedef struct{
+    BOOL wallRight; // if right wall exist
+    BOOL wallLeft; // if left wall exist
+    float distance; // average of both motor distances
+    float angle; // turned angle
+} infoUpdate;
+
 // define a set to contain all controllers (VR,VL,DR,DL,DF)
 typedef struct{
     velocityControllers V;
@@ -29,6 +39,8 @@ typedef struct{
     float rawVelocityL;
     float desiredVelocityR;
     float desiredVelocityL;
+    infoUpdate info;
+    int API; // 0:no, 1:move, 2:rotate, 3:spin
 } Controllerset;
 
 typedef struct {
@@ -57,6 +69,10 @@ void _disablePI (PI *controller);
 // receive pv (measurement), step controller and return value for control
 float _stepPI(PI *controller, float pv);
 
+// select API 
+// 0:no, 1:move, 2:rotate, 3:spin
+void _selectAPI(Controllerset *cset, int API);
+
 // intermediate function used to interpolate PWM curve
 float _interpolatePWMCurve(const PWMCurvePoint *curve, int N_points, float desiredVelocity);
 
@@ -65,6 +81,9 @@ float _lookupPWM(float desiredVelocity);
 
 // compute wheel speed (mm/s) according to QEI counts
 float _getWheelSpeed(float lastCount,float currentCount,int timerFrequency);
+
+// compute wheel distance (mm) according to QEI counts
+float _getWheelDistance(float lastCount,float currentCount);
 
 #endif	/* CONTROLLERUTILS_H */
 
