@@ -9,15 +9,12 @@ extern Controllerset controllerset;
 typedef struct
 {
     movementState movState;
-    //envState walls;
     uint8_t walls; // walls for all cardinal directions
     position curPos;
     dir nextDirection; // goal cell is one cell in this dir
     dir curDirection; // curent direction (last known if unknown)
     float curAngleChange; // total angle change
-    //float desiredAngleChange; // desired angle change
     float distanceSinceLastCell;
-    //float velocity; //in m/s
 } robotState;
 
 robotState state;
@@ -26,45 +23,41 @@ void initRobot()
 {
     state.curPos.x = 0;
     state.curPos.y = 0;
-        
-    //state.walls = NWALL;
+
     state.walls = SOUTH + WEST;
     state.movState = IDLE;
     state.distanceSinceLastCell = 0.0;
-    //state.velocity = 0.0;
     state.curDirection = NORTH;
-    state.nextDirection = getNextDirection(state.curPos);
+    state.nextDirection = NORTH; //will be replaced when removing IDLE
 }
 
 void onUpdate(distanceUpdateDirection pack)
 {
-    // robot is currently turning/spinning?
     if (state.movState == TURN)
     {
         state.curAngleChange += pack.angleDelta;
-        if (directionEqualsAngle(state.curAngleChange, state.nextDirection, 5)) // TODO ERROR MARGIN (5 is too low?)
+        if (directionEqualsAngle(state.curAngleChange, state.nextDirection, ANGLE_ERROR_MARGIN))
         {
-            onAngleReached();
+            switchSpinToMove();
         }
-    } else // robot is moving straight
+    } else if (state.movState == MOVE) // robot is moving straight
     {
         state.distanceSinceLastCell += pack.distanceDelta;
         uint8_t wallMeasured = getSensorMeasurement(pack.sensorR, pack.sensorL, pack.sensorF);
-        // wall changed?
         if (wallMeasured != state.walls)
         {
-            // wall change
             onWallChange(wallMeasured);
         }
         else 
         {
-            // no wall change
-            if (state.distanceSinceLastCell > 8.0) // TODO distance threshold
+            if (state.distanceSinceLastCell > DISTANCE_PASSED_THRESHOLD)
             {
-                onCellChange();
+                cellChangeInGoalDirection();
+                setupNewMotionDirection();
             }
         }
     }
+    // Does nothing if being IDLE (needs signal from higherlevel module)
 }
 
 uint8_t getSensorMeasurement(BOOL sensorR, BOOL sensorL, BOOL sensorF)
@@ -87,40 +80,64 @@ uint8_t getSensorMeasurement(BOOL sensorR, BOOL sensorL, BOOL sensorF)
 
 void onWallChange(uint8_t newWalls)
 {
-    state.walls = newWalls; // update internal state
+    state.walls = newWalls;
 }
 
-void onAngleReached()
+void switchSpinToMove()
 {
-    // TODO move straight
-    move(&controllerset, 20); // TODO speed (get from mazecontrol?)
+    move(&controllerset, SPEED_NORMAL);
     state.movState = MOVE;
     // maybe reset distance to 0?
 }
 
-void onCellChange()
+void cellChangeInGoalDirection()
 {
-    // report current internal wall to maze
-    position posInDir = getPosInDir(state.curPos, state.nextDirection); // wall update is always one cell in advance (as cell position updates comes later)
-    onMazePosExplored(posInDir, state.walls); // update maze walls
-    
-    state.curPos = getPosInDir(state.curPos, state.nextDirection); // position update
-    state.curDirection = state.nextDirection; // next to cur override
-    state.nextDirection = getNextDirection(state.curPos); // receives new moving direction from mazeControl
+    // wall update is always one cell in advance (as cell position updates comes later)
+    position posInDir = getPosInDir(state.curPos, state.nextDirection);
+    onMazePosExplored(posInDir, state.walls);
+    state.curPos = getPosInDir(state.curPos, state.nextDirection);
+    state.curDirection = state.nextDirection;
+    // reset all relative states
+    state.curAngleChange = 0;
+    state.distanceSinceLastCell = 0.0;
+}
+
+
+void setupNewMotionDirection()
+{
+    state.nextDirection = getNextDirection(state.curPos); // receives new goal direction from mazeControl
     
     if (state.nextDirection != state.curDirection)
     {
         state.movState = TURN;
-        //calculate difference in angle
         float deltaAngle = dirToFloat(state.nextDirection) - dirToFloat(state.curDirection);
-        spin(&controllerset, deltaAngle); // TODO speed is wrong here (only +- and then fixed value)
+        if (deltaAngle > 0)
+        {
+            spin(&controllerset, (-1)*SPEED_SPIN_NORMAL); // turn counterclockwise (/left)
+        } else
+        {
+            spin(&controllerset, SPEED_SPIN_NORMAL); // turn clockwise (/right)
+        }
     } else
     {
         state.movState = MOVE;
-        move(&controllerset, 20); // TODO speed (get from mazecontrol?)
+        move(&controllerset, SPEED_NORMAL);
     }
-    
-    // reset all relative states
-    state.curAngleChange = 0;
-    state.distanceSinceLastCell = 0.0;
+}
+
+void switchIdle()
+{
+    if (state.movState = IDLE)
+    {
+        startDirectionControl();
+    } else
+    {
+        state.movState = IDLE;
+        move(&controllerset, 0); // TODO is zero here correct?
+    }
+}
+
+void startDirectionControl()
+{
+    setupNewMotionDirection();
 }

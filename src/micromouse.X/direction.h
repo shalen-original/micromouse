@@ -1,12 +1,15 @@
-// This is a guard condition so that contents of this file are not included
-// more than once.  
 #ifndef DIRECTION_H
 #define	DIRECTION_H
 
 #include <xc.h> // include processor files - each processor file is guarded.  
 #include "position.h"
 
-typedef enum // cardinal direction enum (binary, 4 bits required)
+/*
+ * Cardinal direction with global axis
+ * NORTH is in positive y direction (explained in position.h)
+ * expressed as binary to utilize bitwise operators
+ */
+typedef enum
 {
     NORTH = 0b0001,
     EAST = 0b0010,

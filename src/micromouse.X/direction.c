@@ -135,7 +135,7 @@ float dirToFloat(dir direction)
 
 dir floatToDir(float angle, int errorMargin)
 {
-    assert(errorMargin > 0 && errorMargin <= 40 && angle >= 0 && angle <= 360);
+    __conditional_software_breakpoint(errorMargin > 0 && errorMargin <= 40 && angle >= 0 && angle <= 360);
     dir directions[4] = {NORTH, EAST, SOUTH, WEST};
     int dirIndex = 0;
     for (dirIndex = 0; dirIndex < 4; dirIndex ++)

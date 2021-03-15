@@ -6,7 +6,14 @@
 #include <xc.h> // include processor files - each processor file is guarded.  
 #include "boolean.h"
 
-typedef struct { // general 2D maze cell position
+/*
+ * 2D position in maze
+ * each position corresponds to one maze cell
+ * origin (0,0) is at the bottom left
+ * x axis goes to the right
+ * y axis goes to the top
+ */
+typedef struct {
     int x;
     int y;
 } position;

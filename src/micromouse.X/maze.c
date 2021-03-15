@@ -126,7 +126,7 @@ cell* getNeighborCellInDir(position pos, dir direction)
 
 cell* getCellAt(position pos)
 {
-    assert(pos.x < mazeWidth && pos.x >= 0 && pos.y < mazeHeight && pos.y >= 0);
+    __conditional_software_breakpoint(pos.x < mazeWidth && pos.x >= 0 && pos.y < mazeHeight && pos.y >= 0);
     return &maze[pos.x][pos.y];
 }
 
@@ -142,6 +142,6 @@ BOOL isMazeWallAt(position pos, dir direction)
 
 BOOL isExploredCell(position pos)
 {
-    assert(pos.x < mazeWidth && pos.x >= 0 && pos.y < mazeHeight && pos.y >= 0);
+    __conditional_software_breakpoint(pos.x < mazeWidth && pos.x >= 0 && pos.y < mazeHeight && pos.y >= 0);
     return maze[pos.x][pos.y].visited;
 }

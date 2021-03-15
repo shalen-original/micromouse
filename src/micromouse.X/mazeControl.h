@@ -1,5 +1,3 @@
-// This is a guard condition so that contents of this file are not included
-// more than once.  
 #ifndef MAZE_CONTROL_H
 #define	MAZE_CONTROL_H
 
