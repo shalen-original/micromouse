@@ -87,7 +87,7 @@ void switchSpinToMove()
 {
     move(&controllerset, SPEED_NORMAL);
     state.movState = MOVE;
-    // maybe reset distance to 0?
+    // TODO maybe reset distance to 0?
 }
 
 void cellChangeInGoalDirection()
@@ -105,7 +105,7 @@ void cellChangeInGoalDirection()
 
 void setupNewMotionDirection()
 {
-    state.nextDirection = getNextDirection(state.curPos); // receives new goal direction from mazeControl
+    state.nextDirection = getNextDirection(state.curPos, state.curDirection); // receives new goal direction from mazeControl
     
     if (state.nextDirection != state.curDirection)
     {

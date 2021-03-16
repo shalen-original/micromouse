@@ -1,8 +1,10 @@
 #include "xc.h"
 #include "mazeControl.h"
 #include "direction.h"
+#include <assert.h>
 
 int costs[16][16];
+BOOL inExplorationMode = TRUE; //Race-mode <=> FALSE
 
 void initMazeControl(int width, int height, position startPos, position goalPos[])
 {
@@ -96,18 +98,36 @@ dir getNewRaceDirection(position curPos)
         }
     }
     
-    if (curDirection == 0)
-    {
-        //TODO: Throw Error (no space to move to!)
-    } else
-    {
-        return curDirection;
-    }
-    return 0;
+    __conditional_software_breakpoint(curDirection == 0);
+    return curDirection;
 }
 
-dir getNextDirection(position curPos)
+dir getNewExploreDirection(position curPos, dir curDirection)
 {
-    // TODO implement this (returns depend on explore or race mode)
-    return NORTH;
+    // Hug right wall algorithm (TODO make it more advanced)
+    dir goalDirection = 0;
+    dir tryDirection = getClockwise(curDirection); // dir to robot's right
+    
+    while (tryDirection != getInverse(curDirection))
+    {
+        if (isMazeWallAt(curPos, tryDirection) == FALSE)
+        {
+            goalDirection = tryDirection;
+        }
+        tryDirection = getCounterClockwise(tryDirection);
+    }
+    
+    __conditional_software_breakpoint(goalDirection == 0);
+    return goalDirection;
+}
+
+dir getNextDirection(position curPos, dir curDirection)
+{
+    if (inExplorationMode)
+    {
+        return getNewExploreDirection(curPos, curDirection);
+    } else
+    {
+        return getNewRaceDirection(curPos);
+    }
 }

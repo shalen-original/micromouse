@@ -5,10 +5,10 @@
 #include "utils.h"
 #include "updateStruct.h"
 
-#define DISTANCE_PASSED_THRESHOLD 8.0
-#define ANGLE_ERROR_MARGIN 5.0
-#define SPEED_NORMAL 20
-#define SPEED_SPIN_NORMAL 20
+#define DISTANCE_PASSED_THRESHOLD 150.0 //mm
+#define ANGLE_ERROR_MARGIN 5.0 //degrees
+#define SPEED_NORMAL 5
+#define SPEED_SPIN_NORMAL 5
 
 typedef enum // movement state of robot
 {
