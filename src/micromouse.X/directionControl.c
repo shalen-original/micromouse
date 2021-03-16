@@ -36,7 +36,7 @@ void onUpdate(distanceUpdateDirection pack)
     if (state.movState == TURN)
     {
         state.curAngleChange += pack.angleDelta;
-        if (directionEqualsAngle(state.curAngleChange, state.nextDirection, ANGLE_ERROR_MARGIN))
+        if (directionEqualsAngle(state.nextDirection, (dirToFloat(state.curDirection) + state.curAngleChange), ANGLE_ERROR_MARGIN))
         {
             switchSpinToMove();
         }
@@ -111,7 +111,7 @@ void setupNewMotionDirection()
     {
         state.movState = TURN;
         float deltaAngle = dirToFloat(state.nextDirection) - dirToFloat(state.curDirection);
-        if (deltaAngle > 0)
+        if (deltaAngle > 0 && deltaAngle <= 180)
         {
             spin(&controllerset, (-1)*SPEED_SPIN_NORMAL); // turn counterclockwise (/left)
         } else
@@ -127,7 +127,7 @@ void setupNewMotionDirection()
 
 void switchIdle()
 {
-    if (state.movState = IDLE)
+    if (IDLE == state.movState)
     {
         startDirectionControl();
     } else
