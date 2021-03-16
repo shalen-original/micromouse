@@ -1,6 +1,7 @@
 #include "controllerUtils.h"
 #include "controller.h"
 #include "halapi.h"
+#include "directionControl.h"
 
 void distanceControl(Controllerset *cset){
     /* Scenario 1: Corridor 
@@ -86,6 +87,8 @@ void distanceControl(Controllerset *cset){
     //---clear accumulated error in velocity controllers---
     _clearPI(&cset->V.R); 
     _clearPI(&cset->V.L);
+    
+    onUpdate(cset->info); // calls the update in direction control
 }
 
 void velocityControl(Controllerset *cset){
