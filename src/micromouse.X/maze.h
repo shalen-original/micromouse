@@ -1,5 +1,3 @@
-// This is a guard condition so that contents of this file are not included
-// more than once.  
 #ifndef MAZE_H
 #define	MAZE_H
 
@@ -12,8 +10,11 @@ typedef struct { // cell struct
     uint8_t wall; // 8 bit integer, we need only 4 bits
 } cell;
 
+#define MAZE_WIDTH 16
+#define MAZE_HEIGHT 16
+
 // setups maze with border walls
-void initMaze(int width, int height);
+void initMaze();
 // gets cell at target maze position
 cell* getCellAt(position pos);
 // get cell at (pos + moving once in direction)
@@ -27,7 +28,7 @@ void addMazeWall(position pos, dir direction);
 void removeMazeWall(position pos, dir direction);
 // checks if wall at specified pos and dir exists
 BOOL isMazeWallAt(position pos, dir direction);
-//
+// checks whether cell at position pos has been explored
 BOOL isExploredCell(position pos);
 
 #endif	/* MAZE_H */

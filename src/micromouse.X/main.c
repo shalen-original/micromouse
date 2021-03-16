@@ -45,6 +45,7 @@
 #include "motionControl.h"
 #include "halapi.h"
 #include "boolean.h"
+#include "mazeControl.h"
 
 #include <string.h>
 
@@ -105,8 +106,9 @@ int main()
     while (OSCCONbits.LOCK != 1); //Wait for PPL to lock
     
     initHAL();
-    initMaze(16, 16);
-    initRobot();
+    initMaze();
+    initMazeControl();
+    initDirectionControl;
    // ------------------------Control part begins-----------------------------
     
     initMotionControl(&controllerset); // initialize controller

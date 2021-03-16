@@ -7,8 +7,8 @@
 
 #define DISTANCE_PASSED_THRESHOLD 150.0 //mm
 #define ANGLE_ERROR_MARGIN 5.0 //degrees
-#define SPEED_NORMAL 5
-#define SPEED_SPIN_NORMAL 5
+#define SPEED_NORMAL 50
+#define SPEED_SPIN_NORMAL 50
 
 typedef enum // movement state of robot
 {
@@ -18,7 +18,7 @@ typedef enum // movement state of robot
 } movementState;
 
 // setups the initial robot configuration
-void initRobot(void);
+void initDirectionControl(void);
 
 // is called from distanceControl on each timer interrupt
 void onUpdate(distanceUpdateDirection pack);

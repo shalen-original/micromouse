@@ -19,12 +19,12 @@ typedef struct
 
 robotState state;
 
-void initRobot()
+void initDirectionControl()
 {
     state.curPos.x = 0;
     state.curPos.y = 0;
 
-    state.walls = SOUTH + WEST;
+    state.walls = SOUTH | WEST;
     state.movState = IDLE;
     state.distanceSinceLastCell = 0.0;
     state.curDirection = NORTH;
@@ -35,7 +35,10 @@ void onUpdate(distanceUpdateDirection pack)
 {
     if (state.movState == TURN)
     {
-        state.curAngleChange += pack.angleDelta;
+        state.curAngleChange += pack.angleDelta; 
+        // TODO no need for accumulation anymore (same for position later)
+        // TODO angle is positive in clockwise direction
+        // TODO use angle difference
         if (directionEqualsAngle(state.nextDirection, (dirToFloat(state.curDirection) + state.curAngleChange), ANGLE_ERROR_MARGIN))
         {
             switchSpinToMove();
@@ -53,7 +56,7 @@ void onUpdate(distanceUpdateDirection pack)
             if (state.distanceSinceLastCell > DISTANCE_PASSED_THRESHOLD)
             {
                 cellChangeInGoalDirection();
-                setupNewMotionDirection();
+                setupNewGoalDirection();
             }
         }
     }
@@ -102,8 +105,7 @@ void cellChangeInGoalDirection()
     state.distanceSinceLastCell = 0.0;
 }
 
-
-void setupNewMotionDirection()
+void setupNewGoalDirection()
 {
     state.nextDirection = getNextDirection(state.curPos, state.curDirection); // receives new goal direction from mazeControl
     
@@ -139,5 +141,5 @@ void switchIdle()
 
 void startDirectionControl()
 {
-    setupNewMotionDirection();
+    setupNewGoalDirection();
 }
