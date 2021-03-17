@@ -35,7 +35,7 @@ typedef struct{
     float desiredVelocityR;
     float desiredVelocityL;
     distanceUpdateDirection info;
-    int API; // 0:no, 1:move, 2:rotate, 3:spin
+    int API; // 0:none, 1:move, 2:rotate, 3:spin
 } Controllerset;
 
 typedef struct {
@@ -80,8 +80,8 @@ float _lookupPWM(float desiredVelocity);
 // compute wheel speed (mm/s) according to QEI counts
 float _getWheelSpeed(float lastCount,float currentCount,int timerFrequency);
 
-// compute wheel distance (mm) according to QEI counts
-float _getWheelDistance(float lastCount,float currentCount);
+// compute wheel distance (mm) according to QEI counts since command start
+float _getWheelDistance(float startCount,float currentCount);
 
 #endif	/* CONTROLLERUTILS_H */
 

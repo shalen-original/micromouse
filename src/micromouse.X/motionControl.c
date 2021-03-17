@@ -19,8 +19,8 @@ void initMotionControl(Controllerset *cset){
     cset->rawVelocityR = 0;
     cset->desiredVelocityL = 0;
     cset->desiredVelocityR = 0;
-    cset->info = (distanceUpdateDirection){TRUE,TRUE,TRUE,0,0};
-    cset->API = 0;
+    cset->info = (distanceUpdateDirection){FALSE,FALSE,FALSE,0,0};
+    cset->API = 0; 
 }
 
 void move(Controllerset *cset, float rawVelocity)

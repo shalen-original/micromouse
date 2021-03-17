@@ -125,7 +125,7 @@ float _getWheelSpeed(float lastCount,float currentCount,int timerFrequency){
     return V_linear;
 }
 
-float _getWheelDistance(float lastCount,float currentCount){
+float _getWheelDistance(float startCount,float currentCount){
     /* ### Hardware related parameters ###
      * N_pulse: pulses per revolution (=16 for our motor) 
      * K_e: edge gain (=4 in our case)
@@ -151,7 +151,7 @@ float _getWheelDistance(float lastCount,float currentCount){
     int Gr=33;
     int Dwheel =40;
 
-    float delta_count = currentCount - lastCount;
+    float delta_count = currentCount - startCount;
     float alpha = 360/ N_pulse;
     float angle_wheel = delta_count * alpha /(K_e * Gr);
     float distance_wheel = angle_wheel/ 360 * 3.142 * Dwheel;
