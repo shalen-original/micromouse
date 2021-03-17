@@ -54,7 +54,7 @@
 
 // ------------------------Control part begins-----------------------------
 
-Controllerset controllerset; // global controller set
+Controllerset controllerset; // initialize an empty global controllerset
 
 // ------------------------Control part ends------------------------------
 
@@ -111,7 +111,7 @@ int main()
     initDirectionControl;
    // ------------------------Control part begins-----------------------------
     
-    initMotionControl(&controllerset); // initialize controller
+    initMotionControl(&controllerset); // assign initialization parameters to controllerset
   
     // ------------------------Control part ends------------------------------
 
@@ -122,12 +122,12 @@ int main()
 
 void onTimer1Tick() {
     
-    distanceControl(&controllerset);
+    distanceControl(&controllerset); // distance controller 
 }
 
 void onTimer2Tick() {
     
-    velocityControl(&controllerset);
+    velocityControl(&controllerset); // velocity controller
     
 }
 
