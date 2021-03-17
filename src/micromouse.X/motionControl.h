@@ -27,14 +27,5 @@ void turn(Controllerset *cset, float rawVelocity);
  */   
 void spin(Controllerset *cset, float rawVelocity);
 
-/* update current information of the micromouse
- * (infoUpdate){wallRight,wallLeft,distance,angle}
- * BOOL wallRight: TRUE if there is a wall
- * BOOL wallLeft
- * float distance(mm): + forward / - backward
- * float angle(°): + turn right / - turn left 
- */
-distanceUpdateDirection update(Controllerset *cset); 
-
 #endif	/* MOTION_CONTROL_H */
 

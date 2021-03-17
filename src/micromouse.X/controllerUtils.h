@@ -52,7 +52,7 @@ void _setRawVelocityR(Controllerset *cset, float speed);
 // clear accumulated error inside controller
 void _clearPI (PI *controller);
 
-// set control goal (set point)
+// set control goal (sp: set point)
 void _setPI (PI *controller, float sp);
 
 // enable controller
@@ -61,7 +61,8 @@ void _enablePI (PI *controller);
 // disable controller
 void _disablePI (PI *controller);
 
-// receive pv (measurement), step controller and return value for control
+// receive pv (pv: measurement), step controller and return value for control
+// if controller is disabled, error will not be counted and return 0
 float _stepPI(PI *controller, float pv);
 
 // select API 

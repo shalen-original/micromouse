@@ -49,8 +49,8 @@ void _recordStartPosition(Controllerset *cset){
 }
 
 float _interpolatePWMCurve(const PWMCurvePoint *curve, int N_points, float desiredVelocity) {
-    float minVelocity = 0;
-    float maxVelocity = 316;
+    float minVelocity = curve[0].velocity;
+    float maxVelocity = curve[N_points - 1].velocity;
     
     if (desiredVelocity < minVelocity || desiredVelocity > maxVelocity)
         return -6; // TODO: connect to error.h
@@ -72,7 +72,7 @@ float _interpolatePWMCurve(const PWMCurvePoint *curve, int N_points, float desir
 
 #define N_POINTS_PWMCurvePoint 2
 
-PWMCurvePoint samplekurve[] = { // MUST be sorted by velocity ASCENDING
+PWMCurvePoint samplekurve[] = { //{velocity, PWM} MUST be sorted by velocity ASCENDING
     { 0, 0 },
     {316, 1 },
 };
@@ -82,9 +82,7 @@ float _lookupPWM(float desiredVelocity){
         return _interpolatePWMCurve(samplekurve, N_POINTS_PWMCurvePoint, desiredVelocity);
     }
     else{ 
-        return -1*_interpolatePWMCurve(samplekurve, N_POINTS_PWMCurvePoint, -1*desiredVelocity);} 
-    
-    return -7;// connect to error.h
+        return -1*_interpolatePWMCurve(samplekurve, N_POINTS_PWMCurvePoint, -1*desiredVelocity);}  
     
 }
     

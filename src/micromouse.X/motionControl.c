@@ -29,7 +29,7 @@ void move(Controllerset *cset, float rawVelocity)
     _selectAPI(cset,1);
     _setRawVelocityL(cset,rawVelocity); // set raw velocity
     _setRawVelocityR(cset,rawVelocity);
-    _clearPI(&cset->D.R); // clear the accumulated error inside distance controllers
+    _clearPI(&cset->D.R); // clear the accumulated error from previous command in distance controllers
     _clearPI(&cset->D.L);
     _clearPI(&cset->D.F);
     _enablePI(&cset->D.R); // switch on distance controllers
@@ -53,7 +53,7 @@ void turn(Controllerset *cset, float rawVelocity)
         _setRawVelocityR(cset,rawVelocity);
     }
     
-    _clearPI(&cset->D.R); // clear the accumulated error inside distance controllers
+    _clearPI(&cset->D.R); // clear the accumulated error from previous command in distance controllers
     _clearPI(&cset->D.L);
     _clearPI(&cset->D.F);
     _disablePI(&cset->D.R); // when turning, switch off distance controllers
@@ -78,7 +78,7 @@ void spin(Controllerset *cset, float rawVelocity)
         _setRawVelocityR(cset,rawVelocity);
     }
     
-    _clearPI(&cset->D.R); // clear the accumulated error inside distance controllers
+    _clearPI(&cset->D.R); // clear the accumulated error from previous command in distance controllers
     _clearPI(&cset->D.L);
     _clearPI(&cset->D.F);
     _disablePI(&cset->D.R); // when spinning, switch off distance controllers
@@ -86,7 +86,3 @@ void spin(Controllerset *cset, float rawVelocity)
     _disablePI(&cset->D.F);
 }
 
-distanceUpdateDirection update(Controllerset *cset){
-
-    return cset->info;
-}
