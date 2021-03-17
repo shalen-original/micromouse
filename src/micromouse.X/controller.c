@@ -31,6 +31,12 @@ void distanceControl(Controllerset *cset){
     else{
         cset->info.sensorL = FALSE;
     }
+    if (sensorF <= 150){
+        cset->info.sensorF = TRUE;
+    }
+    else{
+        cset->info.sensorF = FALSE;
+    }
     
     //---check sensor validity for distance controllers---
     int validF = sensorF >= 40 && sensorF <= 150;// front sensor only used when close to maze wall
