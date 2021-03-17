@@ -60,11 +60,7 @@ void removeMazeWall(position pos, dir direction)
 
 cell* getNeighborCellInDir(position pos, dir direction)
 {
-    position neighborPos = pos;
-    position posChangeFromDir = getPositionChange(direction);
-    neighborPos.x += posChangeFromDir.x;
-    neighborPos.y += posChangeFromDir.y;
-    return getCellAt(neighborPos);
+    return getCellAt(getPosInDir(pos, direction));
 }
 
 cell* getCellAt(position pos)

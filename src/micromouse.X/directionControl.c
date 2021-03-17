@@ -8,13 +8,12 @@ extern Controllerset controllerset;
 
 typedef struct
 {
-    movementState movState;
+    movementState movState; // contains IDLE, MOVE or TURN
     uint8_t walls; // walls for all cardinal directions
-    position curPos;
+    position curPos; // latest cell position
     dir nextDirection; // goal cell is one cell in this dir
-    dir curDirection; // curent direction (last known if unknown)
-    float curAngleChange; // total angle change
-    float distanceSinceLastCell;
+    dir curDirection; // last known direction of the robot
+    float distanceSinceLastWallChange; // distance passed from last cell to the point of wallChange (during move straight)
 } robotState;
 
 robotState state;
@@ -26,7 +25,6 @@ void initDirectionControl()
 
     state.walls = SOUTH | WEST;
     state.movState = IDLE;
-    state.distanceSinceLastCell = 0.0;
     state.curDirection = NORTH;
     state.nextDirection = NORTH; //will be replaced when removing IDLE
 }
@@ -35,25 +33,24 @@ void onUpdate(distanceUpdateDirection pack)
 {
     if (state.movState == TURN)
     {
-        state.curAngleChange += pack.angleDelta; 
-        // TODO no need for accumulation anymore (same for position later)
-        // TODO angle is positive in clockwise direction
-        // TODO use angle difference
-        if (directionEqualsAngle(state.nextDirection, (dirToFloat(state.curDirection) + state.curAngleChange), ANGLE_ERROR_MARGIN))
+        float angleDiff = getDifferenceInDirections(state.curDirection, state.nextDirection);
+        if (angleEqualsAngle(angleDiff, pack.angleDelta, ANGLE_ERROR_MARGIN))
         {
             switchSpinToMove();
         }
     } else if (state.movState == MOVE) // robot is moving straight
     {
-        state.distanceSinceLastCell += pack.distanceDelta;
         uint8_t wallMeasured = getSensorMeasurement(pack.sensorR, pack.sensorL, pack.sensorF);
         if (wallMeasured != state.walls)
         {
-            onWallChange(wallMeasured);
+            onWallChange(wallMeasured, pack.distanceDelta);
         }
         else 
         {
-            if (state.distanceSinceLastCell > DISTANCE_PASSED_THRESHOLD)
+            // distance check: either wallchange occured and distance from that wallchange on must be reached, or whole distance must match
+            // TODO make this less ugly
+            if ((state.distanceSinceLastWallChange != 0.0 && (pack.distanceDelta - state.distanceSinceLastWallChange) >= DISTANCE_PASSED_WALLCHANGE_THRESHOLD)
+            || (pack.distanceDelta >= DISTANCE_PASSED_THRESHOLD))
             {
                 cellChangeInGoalDirection();
                 setupNewGoalDirection();
@@ -81,16 +78,17 @@ uint8_t getSensorMeasurement(BOOL sensorR, BOOL sensorL, BOOL sensorF)
     return wallNew;
 }
 
-void onWallChange(uint8_t newWalls)
+void onWallChange(uint8_t newWalls, float distanceRecorded)
 {
     state.walls = newWalls;
+    state.distanceSinceLastWallChange = distanceRecorded;
 }
 
 void switchSpinToMove()
 {
     move(&controllerset, SPEED_NORMAL);
     state.movState = MOVE;
-    // TODO maybe reset distance to 0?
+    state.distanceSinceLastWallChange = 0.0; //this is done just in case
 }
 
 void cellChangeInGoalDirection()
@@ -98,11 +96,9 @@ void cellChangeInGoalDirection()
     // wall update is always one cell in advance (as cell position updates comes later)
     position posInDir = getPosInDir(state.curPos, state.nextDirection);
     onMazePosExplored(posInDir, state.walls);
-    state.curPos = getPosInDir(state.curPos, state.nextDirection);
+    state.curPos = posInDir;
     state.curDirection = state.nextDirection;
-    // reset all relative states
-    state.curAngleChange = 0;
-    state.distanceSinceLastCell = 0.0;
+    state.distanceSinceLastWallChange = 0.0;
 }
 
 void setupNewGoalDirection()
@@ -112,13 +108,13 @@ void setupNewGoalDirection()
     if (state.nextDirection != state.curDirection)
     {
         state.movState = TURN;
-        float deltaAngle = dirToFloat(state.nextDirection) - dirToFloat(state.curDirection);
-        if (deltaAngle > 0 && deltaAngle <= 180)
-        {
-            spin(&controllerset, (-1)*SPEED_SPIN_NORMAL); // turn counterclockwise (/left)
-        } else
+        float deltaAngle = getDifferenceInDirections(state.curDirection, state.nextDirection);
+        if (deltaAngle > 0)
         {
             spin(&controllerset, SPEED_SPIN_NORMAL); // turn clockwise (/right)
+        } else
+        {
+            spin(&controllerset, (-1)*SPEED_SPIN_NORMAL); // turn counterclockwise (/left)
         }
     } else
     {
@@ -135,7 +131,7 @@ void switchIdle()
     } else
     {
         state.movState = IDLE;
-        move(&controllerset, 0); // TODO is zero here correct?
+        move(&controllerset, 0);
     }
 }
 

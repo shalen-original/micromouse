@@ -1,59 +1,36 @@
 #include "xc.h"
 #include "direction.h"
 #include <assert.h>
+#include <math.h>
 
 dir getInverse(dir direction)
 {
-    dir inverse;
-    switch (direction)
-    {
-        case NORTH:
-            inverse = SOUTH;
-            break;
-        case SOUTH:
-            inverse = NORTH;
-            break;
-        case EAST:
-            inverse = WEST;
-            break;
-        case WEST:
-            inverse = EAST;
-            break;
-    }
-    return inverse;
+    return getClockwise(getClockwise(direction));
 }
 
 dir getClockwise(dir direction)
 {
-    dir clockwise;
-    if (direction == WEST)
+    dir clockwise = direction << 1;
+    if (clockwise > MAX_DIR_INT)
     {
-        direction = NORTH;
-    } else
-    {
-        clockwise = direction << 1;
+        clockwise = NORTH;
     }
     return clockwise;
 }
 
 dir getCounterClockwise(dir direction)
 {
-    dir counterClockwise;
+    dir counterClockwise = direction >> 1;
     if (direction == NORTH)
     {
         counterClockwise = WEST;
-    } else 
-    {
-        counterClockwise = direction >> 1;
     }
     return counterClockwise;
 }
 
 position getPositionChange(dir direction)
 {
-    position posChange;
-    posChange.x = 0;
-    posChange.y = 0;
+    position posChange = {.x = 0, .y = 0};
     switch (direction)
     {
         case NORTH:
@@ -93,23 +70,8 @@ dir getDirectionFromPos(position positionChange)
 
 position getPosInDir(position pos, dir direction)
 {
-    position neighborPos = pos;
-    switch (direction)
-    {
-        case NORTH:
-            neighborPos.y ++;
-            break;
-        case SOUTH:
-            neighborPos.y --;
-            break;
-        case EAST:
-            neighborPos.x ++;
-            break;
-        case WEST:
-            neighborPos.x --;
-            break;
-    }
-    return neighborPos;
+    position posChange = getPositionChange(direction);
+    return addTwoPositions(pos, posChange);
 }
 
 float dirToFloat(dir direction)
@@ -133,7 +95,7 @@ float dirToFloat(dir direction)
     return angle;
 }
 
-dir floatToDir(float angle, int errorMargin)
+dir floatToDir(float angle, unsigned int errorMargin)
 {
     __conditional_software_breakpoint(errorMargin > 0 && errorMargin <= 40 && angle >= 0 && angle <= 360);
     dir directions[4] = {NORTH, EAST, SOUTH, WEST};
@@ -149,11 +111,42 @@ dir floatToDir(float angle, int errorMargin)
     return 0; // should not happen and result in error
 }
 
-BOOL directionEqualsAngle(dir direction, float angle, int errorMargin)
+BOOL directionEqualsAngle(dir direction, float angle, unsigned int errorMargin)
 {
     if (direction == floatToDir(angle, errorMargin))
     {
         return TRUE;
     }
     return FALSE;
+}
+
+BOOL angleEqualsAngle(float angle1, float angle2, unsigned int errorMargin)
+{
+    if (fabsf(angle2 - angle1) <= errorMargin)
+    {
+        return TRUE;
+    }
+    return FALSE;
+}
+
+//difference from dir1 to dir2
+float getDifferenceInDirections(dir dir1, dir dir2)
+{
+    float angle1 = dirToFloat(dir1);
+    float angle2 = dirToFloat(dir2);
+    
+    float diffAngle = angle2 - angle1;
+    if ((diffAngle > 0 && diffAngle <= 180) || (diffAngle < 0 && diffAngle >= -180))
+    {
+        return (-1) * diffAngle;
+    } else
+    {
+        return 360 - diffAngle;
+    }
+}
+
+dir getDirectionListAt(unsigned int index)
+{
+    __conditional_software_breakpoint(index < NUMBER_OF_DIR);
+    return (NORTH << index);
 }

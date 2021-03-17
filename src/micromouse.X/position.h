@@ -1,9 +1,7 @@
-// This is a guard condition so that contents of this file are not included
-// more than once.  
 #ifndef POSITION_H
 #define	POSITION_H
 
-#include <xc.h> // include processor files - each processor file is guarded.  
+#include <xc.h>
 #include "boolean.h"
 
 /*

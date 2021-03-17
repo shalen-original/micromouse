@@ -5,6 +5,8 @@
 //#include "utils.h"
 #include "maze.h"
 
+#define NUMBER_OF_GOAL_STATES 4
+
 // setups maze control
 void initMazeControl();
 // returns floodfillcost at position
@@ -13,7 +15,7 @@ int getCostAt(position pos);
 void setCostAt(position pos, int val);
 void setCostAtRelative(position pos, int val);
 // path algorithm to find fastest route from start to goal (a* maybe better?)
-void floodFillAlgorithm(position startPos, position goalPos[]);
+void floodFillAlgorithm();
 // one step of the floodfill (fill every space around pos and call this recursively)
 void floodFillStep(position pos);
 // returns the direction the robot should move next (based on floodfill values)
@@ -22,5 +24,6 @@ dir getNewRaceDirection(position curPos);
 dir getNewExploreDirection(position curPos, dir curDirection);
 // depending on explore or race-mode, calls one of the two above functions
 dir getNextDirection(position curPos, dir curDirection);
+
 #endif	/* MAZE_CONTROL_H */
 

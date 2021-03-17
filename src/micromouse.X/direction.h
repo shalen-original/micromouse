@@ -4,10 +4,12 @@
 #include <xc.h> // include processor files - each processor file is guarded.  
 #include "position.h"
 
+#define MAX_DIR_INT 8
+#define NUMBER_OF_DIR 4
 /*
  * Cardinal direction with global axis
  * NORTH is in positive y direction (explained in position.h)
- * expressed as binary to utilize bitwise operators
+ * expressed as bitfield to utilize bitwise operators
  */
 typedef enum
 {
@@ -26,9 +28,18 @@ dir getDirectionFromPos(position positionChange);
 
 position getPosInDir(position pos, dir direction);
 
+// converts direction to float and vice versa
 float dirToFloat(dir direction);
-dir floatToDir(float angle, int errorMargin);
-BOOL directionEqualsAngle(dir direction, float angle, int errorMargin);
+dir floatToDir(float angle, unsigned int errorMargin);
+
+// equality functions with errorMargin
+BOOL directionEqualsAngle(dir direction, float angle, unsigned int errorMargin);
+BOOL angleEqualsAngle(float angle1, float angle2, unsigned int errorMargin);
+
+//difference from dir1 to dir2
+float getDifferenceInDirections(dir dir1, dir dir2);
+// returns a direction at index in clockwise order starting from NORTH
+dir getDirectionListAt(unsigned int index);
 
 #endif	/* DIRECTION_H */
 
