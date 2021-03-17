@@ -9,7 +9,7 @@ extern Controllerset controllerset;
 typedef struct
 {
     movementState movState; // contains IDLE, MOVE or TURN
-    uint8_t walls; // walls for all cardinal directions
+    uint8_t walls; // walls for all cardinal directions (if zero => next wallchange does not influence movement)
     position curPos; // latest cell position
     dir nextDirection; // goal cell is one cell in this dir
     dir curDirection; // last known direction of the robot
@@ -23,7 +23,7 @@ void initDirectionControl()
     state.curPos.x = 0;
     state.curPos.y = 0;
 
-    state.walls = SOUTH | WEST;
+    state.walls = 0;
     state.movState = IDLE;
     state.curDirection = NORTH;
     state.nextDirection = NORTH; //will be replaced when removing IDLE
@@ -80,8 +80,11 @@ uint8_t getSensorMeasurement(BOOL sensorR, BOOL sensorL, BOOL sensorF)
 
 void onWallChange(uint8_t newWalls, float distanceRecorded)
 {
+    if (state.walls != 0) //means the wall change comes from changing cells
+    {
+        state.distanceSinceLastWallChange = distanceRecorded;
+    }
     state.walls = newWalls;
-    state.distanceSinceLastWallChange = distanceRecorded;
 }
 
 void switchSpinToMove()
@@ -127,6 +130,7 @@ void switchIdle()
 {
     if (IDLE == state.movState)
     {
+        state.walls = 0; // for safety: makes sure first wall detection is considered from the "old" cell
         startDirectionControl();
     } else
     {
