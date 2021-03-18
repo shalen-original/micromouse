@@ -108,7 +108,7 @@ int main()
     initHAL();
     initMaze();
     initMazeControl();
-    initDirectionControl;
+    initDirectionControl();
    // ------------------------Control part begins-----------------------------
     
     initMotionControl(&controllerset); // assign initialization parameters to controllerset

@@ -23,7 +23,7 @@ void initDirectionControl()
     state.curPos.x = 0;
     state.curPos.y = 0;
 
-    state.walls = 0;
+    state.walls = WALL_SKIP_STATE;
     state.movState = IDLE;
     state.curDirection = NORTH;
     state.nextDirection = NORTH; //will be replaced when removing IDLE
@@ -80,7 +80,7 @@ uint8_t getSensorMeasurement(BOOL sensorR, BOOL sensorL, BOOL sensorF)
 
 void onWallChange(uint8_t newWalls, float distanceRecorded)
 {
-    if (state.walls != 0) //means the wall change comes from changing cells
+    if (state.walls != WALL_SKIP_STATE) //means the wall change comes from changing cells
     {
         state.distanceSinceLastWallChange = distanceRecorded;
     }
@@ -130,7 +130,7 @@ void switchIdle()
 {
     if (IDLE == state.movState)
     {
-        state.walls = 0; // for safety: makes sure first wall detection is considered from the "old" cell
+        state.walls = WALL_SKIP_STATE; // for safety: makes sure first wall detection is considered from the "old" cell
         startDirectionControl();
     } else
     {

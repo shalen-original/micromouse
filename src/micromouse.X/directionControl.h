@@ -12,6 +12,8 @@
 #define SPEED_NORMAL 50 //mm/s
 #define SPEED_SPIN_NORMAL 50 //mm/s
 
+#define WALL_SKIP_STATE (MAX_DIR_INT << 1) // state where the next wallchange does not influence movement control
+
 typedef enum // movement state of robot
 {
     IDLE=0,
