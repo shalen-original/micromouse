@@ -9,7 +9,7 @@ extern Controllerset controllerset;
 typedef struct
 {
     movementState movState; // contains IDLE, MOVE or TURN
-    uint8_t walls; // walls for all cardinal directions (if zero => next wallchange does not influence movement)
+    uint8_t walls; // walls for all cardinal directions
     position curPos; // latest cell position
     dir nextDirection; // goal cell is one cell in this dir
     dir curDirection; // last known direction of the robot
@@ -20,13 +20,13 @@ robotState state;
 
 void initDirectionControl()
 {
-    state.curPos.x = 0;
-    state.curPos.y = 0;
+    state.curPos = posTuple(0, 0);
 
     state.walls = WALL_SKIP_STATE;
     state.movState = IDLE;
     state.curDirection = NORTH;
     state.nextDirection = NORTH; //will be replaced when removing IDLE
+    state.distanceSinceLastWallChange = 0.0;
 }
 
 void onUpdate(distanceUpdateDirection pack)
@@ -36,6 +36,7 @@ void onUpdate(distanceUpdateDirection pack)
         float angleDiff = getDifferenceInDirections(state.curDirection, state.nextDirection);
         if (angleEqualsAngle(angleDiff, pack.angleDelta, ANGLE_ERROR_MARGIN))
         {
+            state.curDirection = state.nextDirection;
             switchSpinToMove();
         }
     } else if (state.movState == MOVE) // robot is moving straight
@@ -100,7 +101,7 @@ void cellChangeInGoalDirection()
     position posInDir = getPosInDir(state.curPos, state.nextDirection);
     onMazePosExplored(posInDir, state.walls);
     state.curPos = posInDir;
-    state.curDirection = state.nextDirection;
+    //state.curDirection = state.nextDirection;
     state.distanceSinceLastWallChange = 0.0;
 }
 
@@ -126,20 +127,25 @@ void setupNewGoalDirection()
     }
 }
 
-void switchIdle()
+void toggleDirectionControl(toggleMode mode)
 {
-    if (IDLE == state.movState)
+    if (IDLE == state.movState && (TOGGLE == mode || ON == mode))
     {
-        state.walls = WALL_SKIP_STATE; // for safety: makes sure first wall detection is considered from the "old" cell
         startDirectionControl();
-    } else
+    } else if (IDLE != state.movState && (TOGGLE == mode || OFF == mode))
     {
-        state.movState = IDLE;
-        move(&controllerset, 0);
+        stopDirectionControl();
     }
 }
 
 void startDirectionControl()
 {
+    state.walls = WALL_SKIP_STATE; // for safety: makes sure first wall detection is considered from the "old" cell
     setupNewGoalDirection();
+}
+
+void stopDirectionControl()
+{
+    state.movState = IDLE;
+    move(&controllerset, 0);
 }

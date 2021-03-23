@@ -46,6 +46,8 @@
 #include "halapi.h"
 #include "boolean.h"
 #include "mazeControl.h"
+#include "uart.h"
+#include <stdlib.h>
 
 #include <string.h>
 
@@ -105,43 +107,75 @@ int main()
     // In reality, give some time to the PLL to lock
     while (OSCCONbits.LOCK != 1); //Wait for PPL to lock
     
+    // INIT MODULES ----------------
     initHAL();
     initMaze();
     initMazeControl();
     initDirectionControl();
-   // ------------------------Control part begins-----------------------------
-    
     initMotionControl(&controllerset); // assign initialization parameters to controllerset
-  
-    // ------------------------Control part ends------------------------------
-
+    
     while(1) { };
 
     return 0;
 }
 
-void onTimer1Tick() {
-    
+void onTimer1Tick() 
+{
     distanceControl(&controllerset); // distance controller 
 }
 
-void onTimer2Tick() {
-    
+void onTimer2Tick() 
+{
     velocityControl(&controllerset); // velocity controller
-    
 }
 
-void onButtonChanged(BOOL isCurrentlyPressed) {
+void onButtonChanged(BOOL isCurrentlyPressed) 
+{
     LED_1 = ~LED_1;
 }
 
-void onButtonClicked() {
+void onButtonClicked() 
+{
     LED_2 = ~LED_2;
 }
 
-void onCommandReceived(char* receivedCommand) {
-    if (!strcmp(receivedCommand, "LED"))
+
+void onCommandReceived(char* receivedCommand) 
+{
+    unsigned long hashValue = hashCommand(receivedCommand);
+    switch (hashValue)
     {
-        LED_3 = ~LED_3;
+        case CMD_LED: // led toggle
+            LED_3 = ~LED_3;
+            break;
+        case CMD_CLRS: // soft reset (of higher level modules), clears maze and any progress
+            initMazeControl();
+            initDirectionControl(); // automatically goes to IDLE as well
+            break;
+        case CMD_CLRH: // hard reset of everything (not tested, might break stuff)
+            initHAL();
+            initMaze();
+            initMazeControl();
+            initDirectionControl();
+            initMotionControl(&controllerset);
+            break;
+        case CMD_GO: // start direction control
+            toggleDirectionControl(ON);
+            break;
+        case CMD_STOP: // stop direction control
+            toggleDirectionControl(OFF);
+            break;
+        case CMD_PAUSE: // pause/unpause direction control
+            toggleDirectionControl(TOGGLE);
+            break;
+        case CMD_SPIN: // override of motion to spin (breaks control structures!)
+            spin(&controllerset, SPEED_SPIN_NORMAL);
+            break;
+        case CMD_MAP: ;// sends current map over UART
+            uint8_t *map = malloc(sizeof(uint8_t) * MAZE_WIDTH * MAZE_HEIGHT);
+            getMazeMapInBuffer(map);
+            uartSendAsync(map, MAZE_WIDTH * MAZE_HEIGHT);
+            free(map);
+            break;
     }
 }

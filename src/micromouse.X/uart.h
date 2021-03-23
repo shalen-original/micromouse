@@ -9,4 +9,6 @@ int uartSendAsync(const uint8_t *msg, uint8_t msgLength);
 // is the duration of the invokation of `onCommandReceived`.
 void onCommandReceived(char* receivedCommand);
 
+unsigned long hashCommand(char* string);
+
 #endif

@@ -8,6 +8,18 @@
 #include "position.h"
 
 /**
+ * The hash values of the UART commands
+ */
+#define CMD_LED 12452 //0b11000 01010 0100
+#define CMD_CLRS 111187
+#define CMD_CLRH 111176
+#define CMD_GO 239
+#define CMD_STOP 643568
+#define CMD_PAUSE 16832101
+#define CMD_SPIN 639278
+#define CMD_MAP 13360
+
+/**
  * The duration in nanoseconds of one cycle of the microcontroller
  */
 #define MC_PERIOD_NS 37.5

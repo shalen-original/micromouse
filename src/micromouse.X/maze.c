@@ -84,3 +84,19 @@ BOOL isExploredCell(position pos)
     __conditional_software_breakpoint(pos.x < MAZE_WIDTH && pos.x >= 0 && pos.y < MAZE_HEIGHT && pos.y >= 0);
     return maze[pos.x][pos.y].visited;
 }
+
+void getMazeMapInBuffer(uint8_t *buffer)
+{
+    int c;
+    
+    while((c = *buffer++))
+    {
+        position pos = posTuple(c%MAZE_WIDTH, c/MAZE_WIDTH);
+        uint8_t val = getCellAt(pos)->wall;
+        if (TRUE == getCellAt(pos)->visited)
+        {
+            val += (MAX_DIR_INT << 1);
+        }
+        *buffer = val;
+    }
+}

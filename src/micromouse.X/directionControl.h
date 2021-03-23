@@ -21,6 +21,13 @@ typedef enum // movement state of robot
     TURN
 } movementState;
 
+typedef enum // toggle properties
+{
+    ON=0,
+    OFF,
+    TOGGLE
+} toggleMode;
+
 // setups the initial robot configuration
 void initDirectionControl(void);
 
@@ -35,8 +42,9 @@ void cellChangeInGoalDirection();
 void setupNewGoalDirection();
 
 void startDirectionControl();
+void stopDirectionControl();
 // pauses/unpauses the robot directionControl
-void switchIdle();
+void toggleDirectionControl(toggleMode mode);
 
 #endif	/* DIRECTION_CONTROL_H */
 

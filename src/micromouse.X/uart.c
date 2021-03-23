@@ -102,6 +102,19 @@ int uartSendAsync(const uint8_t *msg, uint8_t msgLength) {
     return 0;
 }
 
+unsigned long hashCommand(char* string)
+{
+    // 32 bits (safely supports strings up to 5 chars)
+    unsigned long hash = 0;
+    int c;
+    
+    while((c = *string++))
+    {
+        hash = (hash << 5) + (c - 64); //65 == 'A' -- 90 == 'Z'
+    }
+    return hash;
+}
+
 void __attribute__((__interrupt__, auto_psv)) _U1TXInterrupt(void)
 {
     IFS0bits.U1TXIF = 0;

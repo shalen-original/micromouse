@@ -31,5 +31,8 @@ BOOL isMazeWallAt(position pos, dir direction);
 // checks whether cell at position pos has been explored
 BOOL isExploredCell(position pos);
 
+// fills buffer with maze map
+void getMazeMapInBuffer(uint8_t *buffer);
+
 #endif	/* MAZE_H */
 

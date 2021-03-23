@@ -32,6 +32,8 @@ void initMazeControl()
     {
         setCostAt(goalStates[goalIndex], 0);
     }
+    
+    inExplorationMode = TRUE;
 }
 
 int getCostAt(position pos)
@@ -134,4 +136,10 @@ dir getNextDirection(position curPos, dir curDirection)
     {
         return getNewRaceDirection(curPos);
     }
+}
+
+void switchToRaceMode()
+{
+    floodFillAlgorithm();
+    inExplorationMode = FALSE;
 }
