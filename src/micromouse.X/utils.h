@@ -9,15 +9,16 @@
 
 /**
  * The hash values of the UART commands
+ * Commands are sent with upper-case letters (and are always equal to the part after CMD_
  */
-#define CMD_LED 12452 //0b11000 01010 0100
-#define CMD_CLRS 111187
-#define CMD_CLRH 111176
-#define CMD_GO 239
-#define CMD_STOP 643568
-#define CMD_PAUSE 16832101
-#define CMD_SPIN 639278
-#define CMD_MAP 13360
+#define CMD_LED 12452 //"LED" 0b11000 01010 0100
+#define CMD_CLRS 111187 //"CLRS"
+#define CMD_CLRH 111176 //"CLRH"
+#define CMD_GO 239 //"GO"
+#define CMD_STOP 643568 //"STOP"
+#define CMD_PAUSE 16832101 //"PAUSE"
+#define CMD_SPIN 639278 //"SPIN"
+#define CMD_MAP 13360 //"MAP"
 
 /**
  * The duration in nanoseconds of one cycle of the microcontroller
