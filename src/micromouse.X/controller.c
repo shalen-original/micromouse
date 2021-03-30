@@ -47,7 +47,7 @@ void distanceControl(Controllerset *cset){
         
         //---set distance controllers---
         if (validR && validL){ //scenario 1
-            float sp = 84;        
+            float sp = 71.5f;        
             _setPI(&cset->D.L,sp);
             _setPI(&cset->D.R,sp);  
 
@@ -55,14 +55,14 @@ void distanceControl(Controllerset *cset){
             _enablePI(&cset->D.R); 
         }
         else if (validR && !validL){ //scenario 2 only right wall
-            float sp = 84;
+            float sp = 71.5f;
             _setPI(&cset->D.R,sp); 
 
             _enablePI(&cset->D.R);
             _disablePI(&cset->D.L);
         }
         else if (validL && !validR){ //scenario 2 only left wall
-            float sp = 84;
+            float sp = 71.5f;
             _setPI(&cset->D.L,sp);
 
             _enablePI(&cset->D.L); 
